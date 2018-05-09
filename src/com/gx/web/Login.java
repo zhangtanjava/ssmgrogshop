@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.gx.po.StayRegisterPo;
@@ -16,7 +17,7 @@ import com.gx.service.UserService;
 
 @Controller
 @RequestMapping("/Login")
-@SessionAttributes({"userPo","userName"})
+@SessionAttributes({"userPo","userName","retMsg"})
 public class Login {
 	
 	@Autowired
@@ -26,7 +27,8 @@ public class Login {
 	private StayRegisterService stayRegisterService;
 	
 	@RequestMapping("/tologin")
-	public String tologin(){
+	public String tologin(SessionStatus status){
+		status.setComplete();//清空session
 		return "/login/login";
 	}
 	
@@ -50,6 +52,7 @@ public class Login {
 			map.addAttribute("userPo", u);
 			mv=new ModelAndView("/main/main");
 		}else {
+			map.addAttribute("retMsg", "用户名或者密码错误！");
 			mv=new ModelAndView("/login/login");
 		}
 		mv.addObject("zongFeiYongOne",zongFeiYongOne);

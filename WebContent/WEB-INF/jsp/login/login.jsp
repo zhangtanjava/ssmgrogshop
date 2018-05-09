@@ -45,18 +45,21 @@
         <h4>用户登录</h4>
       </div>
       <div class="modal-body">
-          <form id="form1" class="form-horizontal" action="${ctx}/Login/tomain.do" method="post">
+          <form id="form1" class="form-horizontal" action="${ctx}/Login/tomain.do" method="post" onsubmit="return check()">
             <div class="control-group">
               <label class="control-label">用户名</label>
               <div class="controls">
-                <input name="userName" type="text">
+                <input id = "userName" name="userName" type="text">
               </div>
             </div>
              <div class="control-group">
               <label class="control-label">密码</label>
               <div class="controls">
-                <input name="password" type="password">
+                <input id="password" name="password" type="password">
               </div>
+            </div>
+            <div class="control-group">
+					<span id="passwordTip" style="color:red; text-align: center;display:block;">${sessionScope.retMsg}</span>
             </div>
           </form>
       </div>
@@ -67,8 +70,22 @@
   
 </div>
   
- 
-  
-    
   </body>
+  
+  <script type="text/javascript"> 
+    function check(){
+    	if(document.getElementById("userName").value==""){
+ 	       alert("用户名  是必填项，不能为空哦！");
+ 	       document.getElementById("userName").focus();
+ 	       return false;
+ 	    }else if(document.getElementById("password").value==""){
+	       alert("密码  是必填项，不能为空哦！");
+	       document.getElementById("password").focus();
+	       return false;
+	    }else{
+	    	return true;
+	    }
+    	
+    }
+</script> 
 </html>
