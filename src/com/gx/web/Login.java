@@ -14,12 +14,14 @@ import com.gx.po.StayRegisterPo;
 import com.gx.po.UserPo;
 import com.gx.service.StayRegisterService;
 import com.gx.service.UserService;
+import com.gx.service.impl.UserServiceImpl;
+import com.sun.istack.internal.logging.Logger;
 
 @Controller
 @RequestMapping("/Login")
 @SessionAttributes({"userPo","userName","retMsg"})
 public class Login {
-	
+	Logger logger = Logger.getLogger(Login.class);
 	@Autowired
 	private UserService userService;
 	
@@ -27,13 +29,17 @@ public class Login {
 	private StayRegisterService stayRegisterService;
 	
 	@RequestMapping("/tologin")
-	public String tologin(SessionStatus status){
+	public String tologin(SessionStatus status,ModelMap map){
 		status.setComplete();//清空session
+		map.put("userPo", "");
+		map.put("userName", "");
+		map.put("retMsg", "");
 		return "/login/login";
 	}
 	
 	@RequestMapping("/tomain")
 	public ModelAndView tomain(UserPo user,ModelMap map){
+		logger.info("Login tomain..."); 
 		ModelAndView mv=null;
 		double zongFeiYongOne=0;
 		double zongFeiYongTwo=0;
@@ -53,6 +59,10 @@ public class Login {
 			mv=new ModelAndView("/main/main");
 		}else {
 			map.addAttribute("retMsg", "用户名或者密码错误！");
+			if (user==null) {
+				map.addAttribute("retMsg", "请重新登陆！");
+			}
+			
 			mv=new ModelAndView("/login/login");
 		}
 		mv.addObject("zongFeiYongOne",zongFeiYongOne);

@@ -113,8 +113,8 @@
 		          <td><input type="checkbox" name="id" value="${item.id}"></td>
 		          <td>${item.userName}</td>
 		          <td>${item.password}</td>
-		          <td>${item.createTime}</td>
-		          <td>${item.updateTime}</td>
+		          <td><fmt:formatDate value="${item.createTime}" pattern="yyyy-MM-dd HH:mm:ss"/> </td>
+		          <td><fmt:formatDate value="${item.updateTime}" pattern="yyyy-MM-dd HH:mm:ss"/> </td>
 		          <td>
 		          	<c:if test="${item.roleID==0}">领导</c:if>
 		          	<c:if test="${item.roleID==1}">员工</c:if>

@@ -12,8 +12,8 @@
       <arg column="userName" jdbcType="VARCHAR" javaType="java.lang.String" />
       <arg column="password" jdbcType="VARCHAR" javaType="java.lang.String" />
        <arg column="roleID" jdbcType="VARCHAR" javaType="java.lang.String" />
-      <arg column="createTime" jdbcType="TIMESTAMP" javaType="java.sql.Timestamp" />
-      <arg column="updateTime" jdbcType="TIMESTAMP" javaType="java.sql.Timestamp" />
+      <arg column="createTime" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+      <arg column="updateTime" jdbcType="TIMESTAMP" javaType="java.util.Date" />
     </constructor>
   </resultMap>
 
@@ -57,7 +57,8 @@
    <update id="updateById" parameterType="com.gx.po.UserPo">
       UPDATE users SET userName=#{userName,jdbcType=INTEGER},
 					      password=#{password,jdbcType=INTEGER},
-					      roleID=#{roleID,jdbcType=INTEGER}
+					      roleID=#{roleID,jdbcType=INTEGER},
+					      updateTime=#{updateTime,jdbcType=TIMESTAMP}
                    WHERE id = #{id,jdbcType=INTEGER}
    </update>
    

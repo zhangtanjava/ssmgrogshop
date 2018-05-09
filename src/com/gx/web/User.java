@@ -17,11 +17,14 @@ import com.gx.po.AttributePo;
 import com.gx.po.UserPo;
 import com.gx.service.AttributeService;
 import com.gx.service.UserService;
+import com.gx.service.impl.UserServiceImpl;
+import com.sun.istack.internal.logging.Logger;
 
 @Controller
 @RequestMapping("/User")
 public class User {
 	
+	Logger logger = Logger.getLogger(User.class);
 	@Autowired
 	private AttributeService attributeService;
 	
@@ -44,6 +47,7 @@ public class User {
 		}
 		vo.setCurrentPage(currentPage);
 		vo=this.userService.pageFuzzyselect(txtname, vo);
+		logger.info("createTime 是："+vo.getResult().get(0).getCreateTime());
 		mv.addObject("list",vo);
 		mv.addObject("txtname",txtname);
 		return mv;

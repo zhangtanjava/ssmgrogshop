@@ -37,7 +37,7 @@
   </filter-mapping>
   
   <session-config><!--分钟为单位-->  
-     <session-timeout>0</session-timeout> <!-- 0或者负数表示永久有效 -->
+     <session-timeout>60</session-timeout> <!-- 0或者负数表示永久有效 -->
   </session-config> 
   
   <servlet>
