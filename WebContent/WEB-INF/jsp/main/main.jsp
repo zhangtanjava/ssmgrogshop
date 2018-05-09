@@ -266,11 +266,8 @@
 						</li>
 						<li id="smallGuide" class="active"></li>
 					</ul><!--.breadcrumb-->
-							
-					</ul><!--.breadcrumb-->
-
 				</div>
-
+				
 				<div style="width:100%;height:100%;">
 				  <iframe id="Mainid" src="${ctx}/Main/todata.do" style="width:100%;height:100%;"  frameBorder="0" scrolling="no"></iframe>
 				</div>
@@ -311,6 +308,9 @@
 						<div>
 							<input type="checkbox" class="ace-checkbox-2" id="ace-settings-rtl" />
 							<label class="lbl" for="ace-settings-rtl">左右互换</label>
+						</div>
+						<div>
+							<a id=HyperLink3 onclick="logout()" href="javascript:window.opener=null;%20window.close();">退出系统</a>
 						</div>
 					</div>
 				</div><!--/#ace-settings-container-->
@@ -665,7 +665,11 @@
 			     document.getElementById('Mainid').src='${ctx}/FinancialStatistics/tolist.do';
 			}
 	
-			
+		    function logout(){
+		        if (confirm("您确定要退出系统吗？"))
+		            top.location = "${ctx}/Login/tologin.do";
+		         return false;
+		    }
 		</script>
 	</body>
 </html>
