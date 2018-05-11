@@ -1,7 +1,10 @@
 package com.gx.service.impl;
 
+import java.util.Date;
 import java.util.List;
 
+import com.gx.web.Passenger;
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -16,6 +19,8 @@ import com.gx.service.PassengerService;
 @Service(value="passengerService")
 public class PassengerServiceImpl implements PassengerService {
 
+	Logger logger = Logger.getLogger(PassengerServiceImpl.class);
+
 	@Autowired
 	private PassengerDao passengerDao;
 	
@@ -26,6 +31,10 @@ public class PassengerServiceImpl implements PassengerService {
 
 	@Override
 	public int insertAll(PassengerPo passengerPo) {
+		System.out.println("----------");
+		passengerPo.setCreateTime(new Date());
+		passengerPo.setUpdateTime(new Date());
+		logger.info("PassengerServiceImpl insertAll req"+passengerPo);
 		return passengerDao.insertAll(passengerPo);
 	}
 
@@ -36,6 +45,8 @@ public class PassengerServiceImpl implements PassengerService {
 
 	@Override
 	public int updateById(PassengerPo passengerPo) {
+
+		passengerPo.setUpdateTime(new Date());
 		return passengerDao.updateById(passengerPo);
 	}
 

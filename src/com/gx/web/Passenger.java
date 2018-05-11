@@ -3,7 +3,9 @@ package com.gx.web;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.jsp.tagext.TryCatchFinally;
 
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,7 +22,8 @@ import com.gx.service.PassengerService;
 @Controller
 @RequestMapping("/Passenger")
 public class Passenger {
-	
+
+	Logger logger = Logger.getLogger(Passenger.class);
 	@Autowired
 	private AttributeService attributeService;
 	
@@ -90,8 +93,14 @@ public class Passenger {
 	
 	@RequestMapping("/add")
 	public ModelAndView add(PassengerPo passengerPo){
+
 		ModelAndView mv=null;
-		passengerService.insertAll(passengerPo);
+		try {
+			passengerService.insertAll(passengerPo);
+		}catch (Exception e){
+			logger.info("添加用户信息异常："+e.getMessage());
+		}
+
 		mv=new ModelAndView("redirect:/Passenger/tolist.do");
 		return mv;
 	}

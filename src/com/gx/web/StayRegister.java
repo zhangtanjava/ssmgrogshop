@@ -265,7 +265,7 @@ public class StayRegister {
 	}
 	
 	
-	@RequestMapping("/register")
+	/*@RequestMapping("/register")
 	public ModelAndView register(PassengerPo passengerPo,Integer LvKeLeiXingId){
 		Integer lvkeid=passengerPo.getLvKeID();
 		if (lvkeid==null) {
@@ -279,7 +279,7 @@ public class StayRegister {
 		ModelAndView mv=null;
 		mv=new ModelAndView("redirect:/StayRegister/tolist.do?LvKeLeiXingId="+LvKeLeiXingId);
 		return mv;
-	}
+	}*/
 	
 	
 	@ResponseBody

@@ -9,49 +9,26 @@
     -->
     <constructor >
       <idArg column="id" jdbcType="INTEGER" javaType="java.lang.Integer" />
-      <arg column="papersID" jdbcType="INTEGER" javaType="java.lang.Integer" />
-      <arg column="educationDegreeID" jdbcType="INTEGER" javaType="java.lang.Integer" />
-      <arg column="genderID" jdbcType="INTEGER" javaType="java.lang.Integer" />
-      <arg column="passengerLevelID" jdbcType="INTEGER" javaType="java.lang.Integer" />
-      <arg column="nationID" jdbcType="INTEGER" javaType="java.lang.Integer" />
-      <arg column="thingReasonID" jdbcType="INTEGER" javaType="java.lang.Integer" />
       <arg column="name" jdbcType="VARCHAR" javaType="java.lang.String" />
-      <arg column="papersNumber" jdbcType="VARCHAR" javaType="java.lang.String" />
-      <arg column="birthDate" jdbcType="VARCHAR" javaType="java.lang.String" />
-      <arg column="licenceIssuingAuthorty" jdbcType="VARCHAR" javaType="java.lang.String" />
-      <arg column="unitsOrAddress" jdbcType="VARCHAR" javaType="java.lang.String" />
-      <arg column="papersValidity" jdbcType="VARCHAR" javaType="java.lang.String" />
-      <arg column="profession" jdbcType="VARCHAR" javaType="java.lang.String" />
-      <arg column="whereAreFrom" jdbcType="VARCHAR" javaType="java.lang.String" />
-      <arg column="whereToGo" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="genderID" jdbcType="INTEGER" javaType="java.lang.Integer" />
       <arg column="contactPhoneNumber" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="unitsOrAddress" jdbcType="VARCHAR" javaType="java.lang.String" />
       <arg column="remarks" jdbcType="VARCHAR" javaType="java.lang.String" />
+        <arg column="creteTime" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+        <arg column="updateTime" jdbcType="TIMESTAMP" javaType="java.util.Date" />
     </constructor>
   </resultMap>
 
 <!--   新增 -->
   <insert id="insertAll" useGeneratedKeys="true" keyProperty="id" parameterType="com.gx.po.PassengerPo" >
-       INSERT INTO passenger (papersID,educationDegreeID,genderID,passengerLevelID,nationID,
-     thingReasonID,name,papersNumber,birthDate,licenceIssuingAuthorty,unitsOrAddress,
-     papersValidity,profession,whereAreFrom,whereToGo,contactPhoneNumber,remarks)
-     values (#{papersID,jdbcType=INTEGER},
-		     #{educationDegreeID,jdbcType=INTEGER},
-		     #{genderID,jdbcType=INTEGER},
-		     #{passengerLevelID,jdbcType=INTEGER},
-		     #{nationID,jdbcType=INTEGER},
-		     #{thingReasonID,jdbcType=INTEGER},
-             #{name,jdbcType=VARCHAR},
-             #{papersNumber,jdbcType=VARCHAR},
-             #{birthDate,jdbcType=VARCHAR},
-             #{licenceIssuingAuthorty,jdbcType=VARCHAR},
-             #{unitsOrAddress,jdbcType=VARCHAR},
-             #{papersValidity,jdbcType=VARCHAR},
-             #{profession,jdbcType=VARCHAR},
-             #{whereAreFrom,jdbcType=VARCHAR},
-             #{whereToGo,jdbcType=VARCHAR},
+      insert into passenger (name,genderID,contactPhoneNumber,unitsOrAddress,remarks,createTime,updateTime)
+      values (#{name,jdbcType=VARCHAR},
+             #{genderID,jdbcType=VARCHAR},
              #{contactPhoneNumber,jdbcType=VARCHAR},
-             #{remarks,jdbcType=VARCHAR})
-            
+             #{unitsOrAddress,jdbcType=VARCHAR},
+             #{remarks,jdbcType=VARCHAR},
+             #{createTime,jdbcType=TIMESTAMP},
+             #{updateTime,jdbcType=TIMESTAMP})
   </insert>
   
 <!--   查询全部 -->
@@ -68,23 +45,12 @@
    
 <!--    修改 -->
    <update id="updateById" parameterType="com.gx.po.PassengerPo">
-      UPDATE passenger SET papersID=#{papersID,jdbcType=INTEGER},
-					      educationDegreeID=#{educationDegreeID,jdbcType=INTEGER},
-					      genderID=#{genderID,jdbcType=INTEGER},
-					      passengerLevelID=#{passengerLevelID,jdbcType=INTEGER},
-					      nationID=#{nationID,jdbcType=INTEGER},
-					      thingReasonID=#{thingReasonID,jdbcType=INTEGER},
-			              name=#{name,jdbcType=VARCHAR},
-			              papersNumber=#{papersNumber,jdbcType=VARCHAR},
-			              birthDate=#{birthDate,jdbcType=VARCHAR},
-			              licenceIssuingAuthorty=#{licenceIssuingAuthorty,jdbcType=VARCHAR},
-			              unitsOrAddress=#{unitsOrAddress,jdbcType=VARCHAR},
-			              papersValidity=#{papersValidity,jdbcType=VARCHAR},
-			              profession=#{profession,jdbcType=VARCHAR},
-			              whereAreFrom=#{whereAreFrom,jdbcType=VARCHAR},
-			              whereToGo=#{whereToGo,jdbcType=VARCHAR},
+      UPDATE passenger SET name=#{name,jdbcType=VARCHAR},
+			              genderID=#{genderID,jdbcType=VARCHAR},
 			              contactPhoneNumber=#{contactPhoneNumber,jdbcType=VARCHAR},
-			              remarks=#{remarks,jdbcType=VARCHAR}
+			              unitsOrAddress=#{unitsOrAddress,jdbcType=VARCHAR},
+			              remarks=#{remarks,jdbcType=VARCHAR},
+			              updateTime=#{updateTime,jdbcType=TIMESTAMP}
                    WHERE id = #{id,jdbcType=INTEGER}
    </update>
    
@@ -94,28 +60,18 @@
   
    <!--   分页模糊查询 -->
    <select id="pageFuzzyselect" resultType="com.gx.po.PassengerPo">
-       SELECT p.*,a.attributeDetailsName AS papersName,b.attributeDetailsName AS educationDegreeName,
-     c.attributeDetailsName AS genderName,d.attributeDetailsName AS passengerLevelName,
-     e.attributeDetailsName AS nationName,f.attributeDetailsName AS thingReasonName
-     FROM passenger p INNER JOIN attributedetails a ON p.papersID=a.id 
-     INNER JOIN attributedetails b ON p.educationDegreeID=b.id  INNER JOIN attributedetails c ON p.genderID=c.id 
-     INNER JOIN attributedetails d ON p.passengerLevelID=d.id INNER JOIN attributedetails e ON p.nationID=e.id
-     INNER JOIN attributedetails f ON p.thingReasonID=f.id 
+       SELECT * from passenger
      WHERE name like CONCAT('%',#{name,jdbcType=VARCHAR},'%') 
      limit #{start},#{pageSize}
   </select>
   
   
   <select id="countFuzzyselect" resultType="java.lang.Integer">
-       SELECT count(*) FROM passenger p INNER JOIN attributedetails a ON p.papersID=a.id 
-     INNER JOIN attributedetails b ON p.educationDegreeID=b.id  INNER JOIN attributedetails c ON p.genderID=c.id 
-     INNER JOIN attributedetails d ON p.passengerLevelID=d.id INNER JOIN attributedetails e ON p.nationID=e.id
-     INNER JOIN attributedetails f ON p.thingReasonID=f.id  
+       SELECT count(*) FROM passenger
      WHERE name like CONCAT('%',#{name,jdbcType=VARCHAR},'%')
   </select>
   
-  
-  
+
    <select id="selectYZ" resultType="java.lang.Integer">
     SELECT COUNT(*) FROM passenger Where papersNumber=#{papersNumber}
   </select>
