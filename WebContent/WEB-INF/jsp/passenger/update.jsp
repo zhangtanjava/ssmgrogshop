@@ -184,7 +184,7 @@
 			          <option value="0" <c:if test="${0==list.genderID}">selected="selected"</c:if>>
 			            男
 			          </option>
-						<option value="0" <c:if test="${1==list.genderID}">selected="selected"</c:if>>
+						<option value="1" <c:if test="${1==list.genderID}">selected="selected"</c:if>>
 							女
 						</option>
 		          </select>

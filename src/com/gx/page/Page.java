@@ -1,6 +1,7 @@
 package com.gx.page;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class Page<T> {
@@ -24,6 +25,11 @@ public class Page<T> {
 	 * 结果集
 	 * */
 	private List<T> result=new ArrayList<T>();
+
+	private Date beginDate;
+
+	private  Date endDate;
+
 	public int getPageSize() {
 		return pageSize;
 	}
@@ -57,6 +63,20 @@ public class Page<T> {
 	public void setTotalPage(long totalPage) {
 		this.totalPage = totalPage;
 	}
-	
-	
+
+	public Date getBeginDate() {
+		return beginDate;
+	}
+
+	public void setBeginDate(Date beginDate) {
+		this.beginDate = beginDate;
+	}
+
+	public Date getEndDate() {
+		return endDate;
+	}
+
+	public void setEndDate(Date endDate) {
+		this.endDate = endDate;
+	}
 }

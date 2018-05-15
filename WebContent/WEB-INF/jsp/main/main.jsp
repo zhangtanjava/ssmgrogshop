@@ -180,24 +180,45 @@
 					<li>
 						<a id="financeManageId" onclick="financeManage()" class="dropdown-toggle">
 							<i class="icon-heart"></i>
-							<span class="menu-text">财务管理 </span>
+							<span class="menu-text">交易管理 </span>
 
 							<b class="arrow icon-angle-down"></b>
 						</a>
-						
+
 						<ul class="submenu">
 
 							<li>
 								<a id="financeStatisticsId" onclick="financeStatistics()">
 									<i class="icon-double-angle-right"></i>
-									<span>财务统计 </span>
+									<span>交易统计 </span>
 								</a>
 							</li>
 
 						</ul>
-						
+
 					</li>
-					
+
+					<li>
+						<a id="transManageId" onclick="transManage()" class="dropdown-toggle">
+							<i class="icon-heart"></i>
+							<span class="menu-text">交易管理 </span>
+
+							<b class="arrow icon-angle-down"></b>
+						</a>
+
+						<ul class="submenu">
+
+							<li>
+								<a id="transInfoId" onclick="transInfo()">
+									<i class="icon-double-angle-right"></i>
+									<span>交易统计 </span>
+								</a>
+							</li>
+
+						</ul>
+
+					</li>
+
 					<li>
 						<a id="passengerManageId" onclick="passengerManage()" class="dropdown-toggle">
 							<i class="icon-user"></i>
@@ -651,6 +672,8 @@
 			function financeManage(){
 			    
 			}
+
+
 			function financeStatistics(){
 			     var a=document.getElementById("financeManageId").getElementsByTagName('span')[0].innerHTML;
 			     document.getElementById("bigGuide").innerHTML=a+"";
@@ -658,7 +681,18 @@
 			     document.getElementById("smallGuide").innerHTML=s+"";
 			     document.getElementById('Mainid').src='${ctx}/FinancialStatistics/tolist.do';
 			}
-	
+
+            function transManage(){
+
+            }
+            function transInfo(){
+                var a=document.getElementById("transManageId").getElementsByTagName('span')[0].innerHTML;
+                document.getElementById("bigGuide").innerHTML=a+"";
+                var s=document.getElementById("transInfoId").getElementsByTagName('span')[0].innerHTML;
+                document.getElementById("smallGuide").innerHTML=s+"";
+                document.getElementById('Mainid').src='${ctx}/TranStatistics/tolist.do';
+            }
+
 		    function logout(){
 		        if (confirm("您确定要退出系统吗？"))
 		            top.location = "${ctx}/Login/tologin.do";

@@ -114,7 +114,10 @@
 		        <tr>
 		          <td><input type="checkbox" name="id" value="${item.id}"></td>
 		          <td>${item.name}</td>
-				  <td>${item.genderID}</td>
+				  <td>
+					  <c:if test="${0==item.genderID}">男</c:if>
+					  <c:if test="${1==item.genderID}">女</c:if>
+				  </td>
 		          <td>${item.contactPhoneNumber}</td>
 		          <td>${item.unitsOrAddress}</td>
 		          <td>${item.remarks}</td>
