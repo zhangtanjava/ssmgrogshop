@@ -43,18 +43,20 @@ public class TranInfoServiceImpl implements com.gx.service.TranInfoService {
 	}
 
 	@Override
-	public Page<TransInfoPo> pageFuzzyselect(Page<TransInfoPo> vo) {
+	public Page<TransInfoPo> pageFuzzyselect(Page<TransInfoPo> vo,TransInfoPo transInfoPo) {
+		logger.info("TranInfoServiceImpl pageFuzzyselect transInfoPo:"+transInfoPo);
 		int start=0;
 		if (vo.getCurrentPage()>1) {
 			start=(vo.getCurrentPage()-1)*vo.getPageSize();
 		}
 		List<TransInfoPo> list=transInfoDao.pageFuzzyselect(start, vo.getPageSize(),
-				vo.getBeginDate(),vo.getEndDate());
+				transInfoPo.getBeginDate(),transInfoPo.getEndDate(),transInfoPo.getAgreementID());
 		vo.setResult(list);
 		int count=transInfoDao.countFuzzyselect();
 		vo.setTotal(count);
 		return vo;
 	}
+
 
 	@Override
 	public List<TransInfoPo> selectAll() {
@@ -67,8 +69,12 @@ public class TranInfoServiceImpl implements com.gx.service.TranInfoService {
 	}
 
 	@Override
-	//通过合同号查询
-	public int selectByUserName(String userName){
-		return 0;
+	public int selectByAgreementID(String agreementID) {
+		return transInfoDao.selectByAgreementID(agreementID);
+	}
+
+	@Override
+	public TransInfoPo statisticsInfo(TransInfoPo vo) {
+		return transInfoDao.statisticsInfo(vo);
 	}
 }

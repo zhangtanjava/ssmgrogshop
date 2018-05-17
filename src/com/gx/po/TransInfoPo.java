@@ -21,6 +21,10 @@ public class TransInfoPo {
 
     private Date payDate;           //交款日期
 
+    private String playDateStr;                //下单日期
+
+    private String payDateStr;           //交款日期
+
     private String smartLock;            //智能锁
 
     private String smartCatEye;                  //智能猫眼
@@ -42,6 +46,10 @@ public class TransInfoPo {
     private Date beginDate;                    //开始时间
 
     private Date endDate;                    //结束时间
+
+    private Integer counts;                 //总条数
+
+    private BigDecimal sumMoney;               //总金额
 
     public Integer getId() {
         return id;
@@ -194,5 +202,66 @@ public class TransInfoPo {
 
     public void setEndDate(Date endDate) {
         this.endDate = endDate;
+    }
+
+    public Integer getCounts() {
+        return counts;
+    }
+
+    public void setCounts(Integer counts) {
+        this.counts = counts;
+    }
+
+    public BigDecimal getSumMoney() {
+        return sumMoney;
+    }
+
+    public void setSumMoney(BigDecimal sumMoney) {
+        this.sumMoney = sumMoney;
+    }
+
+    public String getPlayDateStr() {
+        return playDateStr;
+    }
+
+    public void setPlayDateStr(String playDateStr) {
+        this.playDateStr = playDateStr;
+    }
+
+    public String getPayDateStr() {
+        return payDateStr;
+    }
+
+    public void setPayDateStr(String payDateStr) {
+        this.payDateStr = payDateStr;
+    }
+
+    @Override
+    public String toString() {
+        return "TransInfoPo{" +
+                "id=" + id +
+                ", agreementID='" + agreementID + '\'' +
+                ", paymentID='" + paymentID + '\'' +
+                ", model='" + model + '\'' +
+                ", price=" + price +
+                ", deposit=" + deposit +
+                ", playDate=" + playDate +
+                ", payDate=" + payDate +
+                ", playDateStr=" + playDateStr +
+                ", payDateStr=" + payDateStr +
+                ", smartLock='" + smartLock + '\'' +
+                ", smartCatEye='" + smartCatEye + '\'' +
+                ", remarks='" + remarks + '\'' +
+                ", createDate=" + createDate +
+                ", updateDate=" + updateDate +
+                ", operatorID='" + operatorID + '\'' +
+                ", storeID='" + storeID + '\'' +
+                ", roleID='" + roleID + '\'' +
+                ", merName='" + merName + '\'' +
+                ", beginDate=" + beginDate +
+                ", endDate=" + endDate +
+                ", counts=" + counts +
+                ", sumMoney=" + sumMoney +
+                '}';
     }
 }

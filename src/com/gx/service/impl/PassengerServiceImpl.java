@@ -78,4 +78,8 @@ public class PassengerServiceImpl implements PassengerService {
 		return this.passengerDao.selectYZ(papersNumber);
 	}
 
+	@Override
+	public int selectByUserName(String userName) {
+		return  passengerDao.selectByUserName(userName);
+	}
 }

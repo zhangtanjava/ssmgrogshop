@@ -133,6 +133,12 @@ public class Passenger {
 		Gson gson =new Gson();
 		return gson.toJson(YorN);
 	}
-	
 
+	@ResponseBody
+	@RequestMapping(value="/selectByUserName")
+	public Object selectByName(String userName){
+		int accout = passengerService.selectByUserName(userName);
+		Gson gson =new Gson();
+		return gson.toJson(accout);
+	}
 }

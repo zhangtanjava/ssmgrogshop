@@ -11,7 +11,7 @@ public interface TransInfoDao {
 
 	public TransInfoPo selectByname(TransInfoPo transInfoPo);
 
-	public int selectByUserName(String userName);
+	public int selectByAgreementID(String agreementID);
 
 	public int deleteById(Integer id);
 
@@ -25,7 +25,8 @@ public interface TransInfoDao {
 
 	//分页模糊查询
     public List<TransInfoPo> pageFuzzyselect(@Param("start") int start, @Param("pageSize") int pageSize,
-                                             @Param("beginDate") Date beginDate, @Param("endDate") Date endDate);
+                                             @Param("beginDate") Date beginDate, @Param("endDate") Date endDate,
+                                             @Param("agreementID") String agreementID);
 
     //分页模糊查询总条数
     public int countFuzzyselect();
@@ -42,4 +43,7 @@ public interface TransInfoDao {
     
     //模糊查询 运用 Ajax 非分页
     public List<TransInfoPo> selectAjaxList(String userName);
+
+
+    public  TransInfoPo statisticsInfo(TransInfoPo vo);
 }

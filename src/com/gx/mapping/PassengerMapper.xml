@@ -75,14 +75,11 @@
    <select id="selectYZ" resultType="java.lang.Integer">
     SELECT COUNT(*) FROM passenger Where papersNumber=#{papersNumber}
   </select>
-  
-  
-  
-  
-  
-  
 
 
+    <select id="selectByUserName" resultType="java.lang.Integer" parameterType="java.lang.String" >
+    Select count(*) From passenger Where name = #{name,jdbcType=VARCHAR}
+  </select>
 
 
 

@@ -170,7 +170,7 @@
 	      <div class="row-fluid">
 		     <div class="span3">
 		        <label>姓名：</label>
-		        <input id="nameId" name="name" type="text" style="width:97%;height:27px;float:left;" onchange="onchangeOne()">
+		        <input id="nameId" name="name" type="text" style="width:97%;height:27px;float:left;" onchange="onchangeOne()" onblur="selectName(this.value)">
 		        <div id="divOne" style="float:right;">
 			         <label class="yansered" style="margin-top:7px;">*</label>
 			    </div> 
@@ -279,7 +279,28 @@
 	       }
      }
    }
-   
+
+    function selectName(value){
+        console.log(11);
+        if(value!=""){
+            $.ajax({
+                cache:false,                                             //是否使用缓存提交 如果为TRUE 会调用浏览器的缓存 而不会提交
+                type: "POST",                                           //上面3行都是必须要的
+                url: '${ctx}/Passenger/selectByUserName.do',       //地址 type 带参数
+                data:"userName="+value,                         // IDCardValue 自定义的。相当于name把值赋予给 他可以在servlet 获取
+                async:false,                                          // 是否 异步 提交
+                success: function (result) {                          // 不出现异常 进行立面方
+                    if(result>=1){
+                        alert("姓名已存在！");                     //提示框
+                        document.getElementById("nameId").value="";     //这个id的文本框的值 将会清空
+                        document.getElementById("nameId").focus();      // 给这个id的文本框提供焦点
+                        document.getElementById("nameId").style.display="block"; //显示
+                    }
+                },
+                error: function(data) {  }
+            });
+        }
+    }
  </script>
 
   </body>

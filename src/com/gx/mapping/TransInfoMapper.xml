@@ -33,14 +33,14 @@
     Select * From transInfo Where agreementID = #{agreementID,jdbcType=VARCHAR}
   </select>
 
-    <select id="selectByUserName" resultType="java.lang.Integer" parameterType="java.lang.String">
-    Select count(*) From transInfo Where userName = #{userName,jdbcType=VARCHAR}
+    <select id="selectByAgreementID" resultType="java.lang.Integer" parameterType="java.lang.String">
+    Select count(*) From transInfo Where agreementID = #{agreementID,jdbcType=VARCHAR}
   </select>
 
     <!--   新增 -->
     <insert id="insertAll" useGeneratedKeys="true" keyProperty="id" parameterType="com.gx.po.TransInfoPo">
-       INSERT INTO transInfo (agreementID,paymentID,model,price,deposit,playDate,payDate,smartLock,smartLock,
-       createDate,updateDate,operatorID,storeID,roleID,merName)
+       INSERT INTO transInfo (agreementID,paymentID,model,price,deposit,playDate,payDate,smartLock,smartCatEye,
+       remarks,createDate,updateDate,operatorID,storeID,roleID,merName)
      values (#{agreementID,jdbcType=VARCHAR},
 		     #{paymentID,jdbcType=VARCHAR},
 		     #{model,jdbcType=VARCHAR},
@@ -102,8 +102,11 @@
        SELECT * from transInfo
 
         <where>
+            <if test="agreementID != null and agreementID != '' ">
+                agreementID = #{agreementID}
+            </if>
             <if test="beginDate != null">
-                playDate &gt;= #{beginDate}
+                and playDate &gt;= #{beginDate}
             </if>
             <if test="endDate != null">
                 AND playDate &lt;= #{endDate}
@@ -122,10 +125,27 @@
     SELECT COUNT(*) FROM transInfo Where roleID=#{roleID}
   </select>
 
+    <!--   查询所有数据  非本派所用 -->
+    <select id="selectAll" resultType="com.gx.po.TransInfoPo" parameterType="com.gx.po.TransInfoPo" >
+        SELECT * from transInfo;
+    </select>
 
     <!--   查询所有数据  非本派所用 -->
-    <select id="selectAll" resultType="com.gx.po.TransInfoPo">
-    SELECT * from transInfo;
+
+
+    <select id="statisticsInfo" resultType="com.gx.po.TransInfoPo" parameterType="com.gx.po.TransInfoPo" >
+    SELECT count(*) as counts,sum(price) as sumMoney from transInfo
+        <where>
+            <if test="agreementID != null and agreementID != '' ">
+                agreementID = #{agreementID}
+            </if>
+            <if test="beginDate != null">
+                and playDate &gt;= #{beginDate}
+            </if>
+            <if test="endDate != null">
+                AND playDate &lt;= #{endDate}
+            </if>
+        </where>
    </select>
 
     <!--  模糊查询 运用 Ajax 非分页 -->

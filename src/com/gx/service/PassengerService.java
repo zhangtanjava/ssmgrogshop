@@ -31,4 +31,6 @@ public interface PassengerService {
   //ajax 验证是否存在 此身份证号码
    public int selectYZ(String papersNumber);
 
+    //ajax 验证是否存在 此用户名
+    public int selectByUserName(String userName);
 }

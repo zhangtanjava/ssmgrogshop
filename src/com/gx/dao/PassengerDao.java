@@ -38,5 +38,7 @@ public interface PassengerDao {
 	    
 	    //模糊查询 运用 Ajax 非分页
 	    public List<PassengerPo> selectAjaxList(String name);
+
+		public int selectByUserName(@Param("name")String name);
 	
 }

@@ -20,7 +20,7 @@ public interface TranInfoService {
 
 
 	//分页需要
-	public Page<TransInfoPo> pageFuzzyselect(Page<TransInfoPo> vo);
+	public Page<TransInfoPo> pageFuzzyselect(Page<TransInfoPo> vo,TransInfoPo transInfoPo);
 
 	//查询所有数据  非本派所用
 	public List<TransInfoPo> selectAll();
@@ -29,6 +29,7 @@ public interface TranInfoService {
 	public List<TransInfoPo> selectAjaxList(String name);
 
 	//通过合同号查询
-	public int selectByUserName(String userName);
+	public int selectByAgreementID(String userName);
 
+	public  TransInfoPo statisticsInfo(TransInfoPo vo);
 }

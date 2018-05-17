@@ -101,23 +101,37 @@
                 <!--最大日期为当前系统日期，最小日期为id="datemin选中值"-->
                 <input style="width:25.5%;height:26px;" type="text" id="datemax" class="input-text Wdate"
                        onfocus="WdatePicker({minDate:'#F{$dp.$D(\'datemin\')}',maxDate:'%y-%M-%d'})" value="${max}">
-                <button onclick="timeSelect()" type="button" class="btn-success" style="margin-top:-12px;height:25px;">
-                    <li class="icon-search icon-white"></li>
-                    查询
-                </button>
-                <button onclick="particulars()" type="button" class="btn-info" style="margin-top:-12px;height:25px;">
-                    <li class="icon-zoom-in icon-white"></li>
-                    详情
-                </button>
+                <div>
+                    <label style="float:left;">合同编号：</label>
+                    <input id="agreementID" name="agreementID" class="tnput-text" style="width:54.5%;height:26px;" type="text"  value="${agID}">
+                    <button onclick="timeSelect()" type="button" class="btn-success" style="margin-top:-12px;height:25px;">
+                        <li class="icon-search icon-white"></li>
+                        查询
+                    </button>
+                    <%--合同号--%>
+                    <button onclick="particulars()" type="button" class="btn-info" style="margin-top:-12px;height:25px;">
+                        <li class="icon-zoom-in icon-white"></li>
+                        详情
+                    </button>
+                </div>
             </div>
-            <label style="float:left;">出租房间数：</label>
-            <label style="float:left;margin-right:15px;">${chuZuFangJianShu}</label>
-            <label style="float:left;">住宿人数：</label>
-            <label style="float:left;margin-right:15px;">${zhuSuRenShu}</label>
-            <label style="float:left;">消费金额总计：</label>
-            <label style="float:left;margin-right:15px;color:blue;">${xiaoFeiJinE}</label>
-            <label style="float:left;">结账金额总计：</label>
-            <label style="float:left;color:red;">${JieZhangJinE}</label>
+            <label style="float:left;">订单总金额：</label>
+            <label style="float:left;margin-right:15px;color:blue;">${sumMoney}</label>
+            <label style="float:left;">订单数量：</label>
+            <label style="float:left;color:red;">${sumCount}</label>
+        </div>
+        <div class="span6">
+            <div class="row-fluid">
+                <div class="span3">
+                    <button class="btn btn-info btn-small textone" type="button" onclick="addfunction()"><li class="icon-plus icon-white"></li>新增</button>
+                </div>
+                <div class="span3">
+                    <button class="btn btn-warning btn-small textone" type="button" onclick="updatefunction()"><li class="icon-pencil icon-white"></li>修改</button>
+                </div>
+                <div class="span3">
+                    <button class="btn btn-danger btn-small textone" type="button" onclick="deletefunction()"><li class="icon-remove icon-white"></li>删除</button>
+                </div>
+            </div>
         </div>
     </div>
     <div class="span12" style="margin-top:10px;">
@@ -126,7 +140,7 @@
                 <thead class="theadone">
                 <tr>
                     <th>选择</th>
-                    <th>合同号</th>
+                    <th>合同编号</th>
                     <th>交款凭证ID</th>
                     <th>型号</th>
                     <th>价格</th>
@@ -145,9 +159,10 @@
                         <td>${item.model}</td>
                         <td>${item.price}</td>
                         <td>${item.deposit}</td>
-                        <td>${item.playDate}</td>
-                        <td>${item.payDate}</td>
+                        <td><fmt:formatDate value="${item.playDate}" pattern="yyyy-MM-dd HH:mm:ss"/> </td>
+                        <td><fmt:formatDate value="${item.payDate}" pattern="yyyy-MM-dd HH:mm:ss"/> </td>
                         <td>${item.merName}</td>
+                        </td>
                     </tr>
                 </c:forEach>
                 </tbody>
@@ -168,8 +183,9 @@
     function timeSelect() {
         var datemin = document.getElementById("datemin").value;
         var datemax = document.getElementById("datemax").value;
+        var agreementID = document.getElementById("agreementID").value;
         parent.document.getElementById('Mainid').src = '${ctx}/TranStatistics/tolist.do?datemin=' +
-            datemin + '&datemax=' + datemax;
+            datemin + '&datemax=' + datemax +'&agreementID=' + agreementID;
     }
 
     function particulars() {
@@ -209,7 +225,40 @@
         }
     });
 
+    function addfunction(){
+        parent.document.getElementById('Mainid').src='${ctx}/TranStatistics/toadd.do';
+    }
 
+    function updatefunction(){
+        var chk_value=[];
+        $('input[name="id"]:checked').each(function(){
+            chk_value.push($(this).val());
+        });
+        if(chk_value!=""){
+            if(chk_value.toString().indexOf(",")>0){
+                alert("修改只能选择一条");
+            }else{
+                parent.document.getElementById("Mainid").src='${ctx}/TranStatistics/toupdate.do?id='+chk_value;
+            }
+        }else{
+            alert("请选择一条数据进行修改");
+        }
+    }
+
+    function deletefunction(){
+        var chk_value=[];
+        $('input[name="id"]:checked').each(function(){
+            chk_value.push($(this).val());
+        });
+        if(chk_value!=""){
+            var flag=window.confirm("注意：您确定要永久删除该信息吗?");
+            if(flag){
+                parent.document.getElementById("Mainid").src='${ctx}/TranStatistics/delete.do?id='+chk_value;
+            }
+        }else{
+            alert("请选择一条或多条数据进行删除");
+        }
+    }
 </script>
 
 </body>
