@@ -173,7 +173,7 @@
     <div class="span11" style=" border: solid; border-color: #DDDDDD;">
     <div class="span9 margin-top-one">
       <div class="row-fluid">
-        <h3 style="text-align: center;">房间信息详情</h3>
+        <h3 style="text-align: center;">交易信息详情</h3>
         
       </div>
     </div>
@@ -203,16 +203,16 @@
 	    <div class="span12">
 	      <div class="row-fluid">
 		     <div class="span4">
-		        <label class="floatont">房间号：</label>
-		        <label class="yanseblue">${list[0].roomNumber}</label>
+		        <label class="floatont">合同编号：</label>
+		        <label class="yanseblue">${list.agreementID}</label>
 		     </div>
 		     <div class="span4">
-		        <label class="floatont">客房等级：</label>
-		        <label class="yanseblue">${list[0].roomGuestRoomLevelName}</label>
+		        <label class="floatont">交款凭证号：</label>
+		        <label class="yanseblue">${list.paymentID}</label>
 		     </div>
 		     <div class="span4">
-		        <label class="floatont">接待对象：</label> <!-- 散客 -->
-		        <label class="yanseblue">${list[0].receiveTeamName==""?"散客":list[0].receiveTeamName}</label>
+		        <label class="floatont">型号：：</label> <!-- 散客 -->
+		        <label class="yanseblue">${list.model}</label>
 		     </div>
 		  </div>
 	    </div>
@@ -220,33 +220,16 @@
 	    <div class="span12">
 	      <div class="row-fluid">
 		     <div class="span4">
-		        <label class="floatont">团队编码：</label>
-		        <label class="yanseblue">${list[0].receiveTeamCode}</label>
+		        <label class="floatont">价格：</label>
+		        <label class="yanseblue">${list.price}</label>
 		     </div>
 		     <div class="span4">
-		        <label class="floatont">负责人：</label>
-		        <label class="yanseblue">${list[0].receivePrincipal}</label>
+		        <label class="floatont">定金：</label>
+		        <label class="yanseblue">${list.deposit}</label>
 		     </div>
 		     <div class="span4">
-		        <label class="floatont">团队电话：</label> <!-- 团队 -->
-		        <label class="yanseblue">${list[0].receiveTargetID==2?"":list[0].receiveContactPhoneNUmber}</label>
-		     </div>
-		  </div>
-	    </div>
-	    <!--  ———————————————————————————————————————————————————————————————————————————————————————— -->
-	    <div class="span12">
-	      <div class="row-fluid">
-	         <div class="span4">
-		        <label class="floatont">旅客姓名：</label>
-		        <label class="yanseblue">${list[0].passengerName}</label>
-		     </div>
-		     <div class="span4">
-		        <label class="floatont">旅客性别：</label>
-		        <label class="yanseblue">${list[0].passengerGenderName}</label>
-		     </div>
-		     <div class="span4">
-		        <label class="floatont">证件类型：</label>
-		        <label class="yanseblue">${list[0].passengerPapersName}</label>
+		        <label class="floatont">下单日期：</label> <!-- 团队 -->
+		        <label class="yanseblue"><fmt:formatDate value="${list.playDate}" pattern="yyyy-MM-dd HH:mm:ss"/></label>
 		     </div>
 		  </div>
 	    </div>
@@ -254,204 +237,42 @@
 	    <div class="span12">
 	      <div class="row-fluid">
 	         <div class="span4">
-		        <label class="floatont">证件号码：</label>
-		        <label class="yanseblue">${list[0].passengerPapersNumber}</label>
+		        <label class="floatont">交款日期：</label>
+		        <label class="yanseblue"><fmt:formatDate value="${list.payDate}" pattern="yyyy-MM-dd HH:mm:ss"/></label>
 		     </div>
 		     <div class="span4">
-		        <label class="floatont">旅客电话：</label>
-		        <label class="yanseblue">${list[0].pssengerContactPhoneNumber}</label>
+		        <label class="floatont">智能锁：</label>
+		        <label class="yanseblue">${list.smartLock}</label>
 		     </div>
 		     <div class="span4">
-		        <label class="floatont">旅客类别：</label>
-		        <label class="yanseblue">${list[0].passengerTypeName}</label>
+		        <label class="floatont">智能猫眼：</label>
+		        <label class="yanseblue">${list.smartCatEye}</label>
 		     </div>
 		  </div>
 	    </div>
 	    <!--  ———————————————————————————————————————————————————————————————————————————————————————— -->
 	    <div class="span12">
 	      <div class="row-fluid">
+	         <div class="span4">
+		        <label class="floatont">客户：</label>
+		        <label class="yanseblue">${list.merName}</label>
+		     </div>
 		     <div class="span4">
-		        <label class="floatont">旅客级别：</label>
-		        <label class="yanseblue">${list[0].passengerLevelName}</label>
+		        <label class="floatont">备注：</label>
+		        <label class="yanseblue">${list.remarks}</label>
 		     </div>
-		      <div class="span4">
-		        <label class="floatont">登记时间：</label>
-		        <label class="yanseblue">${list[0].registerTime}</label>
-		     </div>
-		     <div class="span3">
-		        <label class="floatont">出租方式：</label>
-		        <label class="yanseblue">${list[0].rentOutTypeName}</label>
+		     <div class="span4">
+		        <label class="floatont">操作员工：</label>
+		        <label class="yanseblue">${list.operatorID}</label>
 		     </div>
 		  </div>
 	    </div>
-	   <!--  ———————————————————————————————————————————————————————————————————————————————————————— -->
-	     <div class="span12">
-	      <div class="row-fluid">
-		     <div class="span4">
-		        <label class="floatont">结账方式：</label>
-		        <label class="yanseblue">${list[0].payWayName}</label>
-		     </div>
-		     <div class="span4">
-		        <label class="floatont">结账单位：</label>
-		        <label class="yanseblue">${list[0].billUnitName}</label>
-		     </div>
-		     <div class="span4">
-		        <label class="floatont">是否预订：</label>
-		        <label style="color:orange">${list[0].predetermineID==null?"否":"是"}</label>
-		     </div>
-		  </div>
-	    </div>
-	   <!--  ———————————————————————————————————————————————————————————————————————————————————————— -->
-	    <div class="span12">
-	      <div class="row-fluid">
-		     <div class="span4">
-		        <label class="floatont">房价/天：</label>
-		        <label class="yanseblue">${list[0].roomStandardPriceDay}</label>
-		     </div>
-		     <div class="span4">
-		        <label class="floatont">房价/小时：</label>
-		        <label class="yanseblue">${list[0].roomStandardPrice}</label>
-		     </div>
-		     <div class="span3">
-		        <label class="floatont">首段价格：</label>
-		        <label class="yanseblue">${list[0].roomFirstPrice}</label>
-		     </div>
-		  </div>
-	    </div>
-	     <!--  ———————————————————————————————————————————————————————————————————————————————————————— -->
-	    <div class="span12">
-	      <div class="row-fluid">
-		     <div class="span4">
-		        <label class="floatont">天数或钟点数：</label>
-		        <label class="yanseblue">${list[0].stayNumber}</label>
-		     </div>
-		     <div class="span4">
-		        <label class="floatont">住宿费：</label>
-		        <label class="yanseblue">${zhuSuFei}</label>
-		     </div>
-		     <div class="span3">
-		        <label class="floatont">换房费：</label>
-		        <label class="yanseblue">${list[0].changRoomMoney}</label>
-		     </div>
-		  </div>
-	    </div>
-	     <!--  ———————————————————————————————————————————————————————————————————————————————————————— -->
-	    <div class="span12">
-	      <div class="row-fluid">
-		     <div class="span4">
-		        <label class="floatont">其他消费：</label>
-		        <label class="yanseblue">${qiTaXiaoFei}</label>
-		     </div>
-		     <div class="span4">
-		        <label class="floatont">旅客押金：</label>
-		        <label class="yanseblue">${yaJin}</label>
-		     </div>
-		     <div class="span3">
-		        <label class="floatont">总费用：</label>
-		        <label class="yansered">${list[0].sumConst}</label>
-		     </div>
-		  </div>
-	    </div>
-        
-        <div class="span10 margin-top-one">
-	      <fieldset>
-	        <legend >预订信息：</legend>
-	      </fieldset>
-	    </div>
-	     <div class="span12">
-	      <div class="row-fluid">
-		     <div class="span4">
-		        <label class="floatont">预订者姓名：</label>
-		        <label class="yanseblue">${list[0].predeterminePassengerName}</label>
-		     </div>
-		     <div class="span4">
-		        <label class="floatont">证件号码：</label>
-		        <label class="yanseblue">${list[0].predeterminePassengerPapersNumber}</label>
-		     </div>
-		     <div class="span3">
-		        <label class="floatont">联系电话：</label>
-		        <label class="yansered">${list[0].predeterminePassengerContactPhoneNumber}</label>
-		     </div>
-		  </div>
-	    </div>
-	    </div>
-	    <!--  ———————————————————————————————————————————————————————————————————————————————————————— -->
-	   <div class="span10 margin-top-one">
-	      <fieldset>
-	        <legend>押金记录：</legend>
-	      </fieldset>
-	    </div>
-	   <div class="span12">
-       <table class="table table-condensed table-bordered table-striped" id="tableid">
-	      <thead class="theadone">
-	        <tr>
-	          <th rowspan="2">接待对象</th>
-	          <th rowspan="2">押金</th>
-	          <th rowspan="2">支付方式</th>
-	          <th rowspan="2">押金时间</th>
-	          
-	      </thead>
-	      <tbody id="tbody">
-	        <c:forEach items="${listDeposit}" var="item">
-		        <tr>
-		          <c:if test="${item.receiveTargetID==2}">
-		             <td>${item.receiveTargeTypeName}</td>
-		          </c:if>
-		          <c:if test="${item.receiveTargetID!=2}">
-		             <td>${item.receiveTeamName}</td>
-		          </c:if>
-		          <td>${item.deposit}</td>
-		          <td>${item.depositPayWayName}</td>
-		          <td>${item.depositRegisterTime}</td>
-		        </tr>
-	        </c:forEach>
-	      </tbody>
-	    </table>
-	    </div>
-	    <div class="span10 margin-top-one">
-	      <fieldset>
-	        <legend>消费记录：</legend>
-	      </fieldset>
-	    </div>
-	    
-	    <div class="dgvone">
-	    <div class="span12">
-       <table class="table table-condensed table-bordered table-striped" id="tableid">
-	      <thead class="theadone">
-	        <tr>
-	          <th >商品名称</th>
-	          <th >商品类别</th>
-	          <th >计量单位</th>
-	          <th >消费数量</th>
-	          <th >销售价格</th>
-	          <th >总计</th>
-	          <th >消费时间</th>
-	        </tr>
-	      </thead>
-	      <tbody id="tbodyTwo">
-	        <c:forEach items="${listXiaoFei}" var="item">
-		        <tr>
-		          <td>${item.commodityName}</td>
-		          <td>${item.commodityTypeName}</td>
-		          <td>${item.commodityUOMName}</td>
-		          <td>${item.consumptionNumber}</td>
-		          <td>${item.commoditySalePrice}</td>
-		          <td>${item.consumptionMoney}</td>
-		          <td>${item.consumptionTime}</td>
-		        </tr>
-	        </c:forEach>
-	      </tbody>
-	    </table>
     </div>
-    </div>
-    </div>
-	    
-	
-		  
     </form>
-      
-    </div>
-  
+
+	</div>
+  </div>
+
  
  
  
@@ -465,7 +286,7 @@
  function deletefunction(){
      var datemin=document.getElementById("minId").value;
      var datemax=document.getElementById("maxId").value;
-     parent.document.getElementById('Mainid').src='${ctx}/FinancialStatistics/tolist.do?datemin='+
+     parent.document.getElementById('Mainid').src='${ctx}/TranStatistics/tolist.do?datemin='+
      datemin+'&datemax='+datemax;
  }
  

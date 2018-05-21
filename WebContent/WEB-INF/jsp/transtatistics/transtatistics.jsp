@@ -143,7 +143,7 @@
                     <th>合同编号</th>
                     <th>交款凭证ID</th>
                     <th>型号</th>
-                    <th>价格</th>
+                    <th>订单金额</th>
                     <th>定金</th>
                     <th>下单日期</th>
                     <th>交款日期</th>
@@ -198,17 +198,17 @@
         $('input[name="id"]:checked').each(function () {             // 遍历获取input被checked的
             id.push($(this).val());                             // 获取选中的ID
             selectedIndex = this.parentNode.parentNode.rowIndex;
-            stayregisterdetailsId = table.rows[selectedIndex - 1].cells[9].innerHTML;
+            /*stayregisterdetailsId = table.rows[selectedIndex - 1].cells[9].innerHTML;*/
         });
-        if (stayregisterdetailsId == "") {
-            alert("请选择一个房间再按 详情");
+        /*if (stayregisterdetailsId == "") {
+            alert("请选择一条数据再按 详情");
             return false;
-        }
+        }*/
         if (id != "") {
-            parent.document.getElementById('Mainid').src = '${ctx}/FinancialStatistics/toinformation.do?id='
+            parent.document.getElementById('Mainid').src = '${ctx}/TranStatistics/toinformation.do?id='
                 + id + '&stayregisterdetailsId=' + stayregisterdetailsId + '&min=' + datemin + '&max=' + datemax;
         } else {
-            alert("请选择一个房间再按 详情");
+            alert("请选择一条数据再按 详情");
         }
     }
 

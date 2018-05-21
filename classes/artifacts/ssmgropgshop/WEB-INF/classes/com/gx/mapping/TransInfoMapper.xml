@@ -77,7 +77,7 @@
       UPDATE transInfo SET agreementID=#{agreementID,jdbcType=VARCHAR},
 					      paymentID=#{paymentID,jdbcType=VARCHAR},
 					      model=#{model,jdbcType=VARCHAR},
-					      price=#{updateTpriceime,jdbcType=DECIMAL},
+					      price=#{price,jdbcType=DECIMAL},
                            deposit=#{deposit,jdbcType=DECIMAL},
                          playDate=#{playDate,jdbcType=TIMESTAMP},
                         payDate= #{payDate,jdbcType=TIMESTAMP},

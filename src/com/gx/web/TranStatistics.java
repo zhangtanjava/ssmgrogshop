@@ -3,6 +3,7 @@ package com.gx.web;
 import com.alibaba.druid.util.StringUtils;
 import com.google.gson.Gson;
 import com.gx.page.Page;
+import com.gx.po.StayRegisterPo;
 import com.gx.po.TransInfoPo;
 import com.gx.service.TranInfoService;
 import org.apache.log4j.Logger;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
 @Controller
 @RequestMapping("/TranStatistics")
@@ -67,11 +69,6 @@ public class TranStatistics {
 		return mv;
 	}
 	
-	@RequestMapping("/toinformation")
-	public ModelAndView toinformation(Integer id,Integer stayregisterdetailsId,String min, String max){
-
-		return null;
-	}
 
 	@RequestMapping("/toadd")
 	public ModelAndView toadd(){
@@ -109,16 +106,30 @@ public class TranStatistics {
 		transInfoPo.setCreateDate(new Date());
 		transInfoPo.setUpdateDate(new Date());
 		tranInfoService.insertAll(transInfoPo);
-		mv=new ModelAndView("redirect:/Transtatistics/tolist.do");
+		mv=new ModelAndView("redirect:/TranStatistics/tolist.do");
 		return mv;
 	}
 
 	@RequestMapping("/update")
 	public ModelAndView update(TransInfoPo transInfoPo){
 		ModelAndView mv=null;
+		String payDateStr = transInfoPo.getPayDateStr();
+		String playdateStr = transInfoPo.getPlayDateStr();
+
+		try {
+			if (!StringUtils.isEmpty(payDateStr)){
+				transInfoPo.setPayDate(simpleDateFormat.parse(payDateStr));
+			}
+			if (!StringUtils.isEmpty(playdateStr)){
+				transInfoPo.setPlayDate(simpleDateFormat.parse(playdateStr));
+			}
+		}catch (Exception e){
+			logger.info("日期转换异常："+e);
+		}
+
 		transInfoPo.setUpdateDate(new Date());
 		tranInfoService.updateById(transInfoPo);
-		mv=new ModelAndView("redirect:/Transtatistics/tolist.do");
+		mv=new ModelAndView("redirect:/TranStatistics/tolist.do");
 		return mv;
 	}
 
@@ -129,7 +140,7 @@ public class TranStatistics {
 		for (int i = 0; i < FenGe.length; i++) {
 			tranInfoService.deleteById(Integer.parseInt(FenGe[i]));
 		}
-		mv=new ModelAndView("redirect:/Transtatistics/tolist.do");
+		mv=new ModelAndView("redirect:/TranStatistics/tolist.do");
 		return mv;
 	}
 
@@ -139,5 +150,18 @@ public class TranStatistics {
 		int accout = tranInfoService.selectByAgreementID(agreementID);
 		Gson gson =new Gson();
 		return gson.toJson(accout);
+	}
+
+	@RequestMapping("/toinformation")
+	public ModelAndView toinformation(Integer id,Integer stayregisterdetailsId,String min, String max){
+		ModelAndView mv=null;
+		TransInfoPo list=tranInfoService.selectById(id);
+
+		mv=new ModelAndView("/transtatistics/particulars");
+		mv.addObject("list",list);
+		mv.addObject("id",id);
+		mv.addObject("min",min);
+		mv.addObject("max",max);
+		return mv;
 	}
 }

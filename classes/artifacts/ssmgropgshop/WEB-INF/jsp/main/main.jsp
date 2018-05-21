@@ -97,26 +97,8 @@
 				</div><!--#sidebar-shortcuts-->
 
 				<ul class="nav nav-list">
-					<li>
-						<a id="dateViewId" onclick="" class="dropdown-toggle">
-						<i class="icon-dashboard"></i>
-							<span class="menu-text">数据视图 </span>
-							<b class="arrow icon-angle-down"></b>
-						</a>
-						<ul class="submenu">
-							<li>
-								<a id="yingYeJinEId" onclick="dateView()">
-									<i class="icon-double-angle-right"></i>
-									<span>营业金额</span>
-								</a>
-							</li>
 
-
-						</ul>
-					</li>
-
-
-					<li>
+					<%--<li>
 						<a id="roomManageId" onclick="roomManage()" class="dropdown-toggle">
 							<i class="icon-home"></i>
 							<span class="menu-text">房间管理 </span>
@@ -140,84 +122,28 @@
 							</li>
 
 						</ul>
-					</li>
+					</li>--%>
+
+						<%--<li>
+							<a id="dateViewId" onclick="" class="dropdown-toggle">
+								<i class="icon-dashboard"></i>
+								<span class="menu-text">数据视图 </span>
+								<b class="arrow icon-angle-down"></b>
+							</a>
+							<ul class="submenu">
+								<li>
+									<a id="yingYeJinEId" onclick="dateView()">
+										<i class="icon-double-angle-right"></i>
+										<span>营业金额</span>
+									</a>
+								</li>
+
+
+							</ul>
+						</li>--%>
+
+
 					
-					
-					
-					<li>
-						<a id="stayManageId" onclick="stayManage()" class="dropdown-toggle">
-							<i class="icon-move"></i>
-							<span class="menu-text">住宿管理 </span>
-
-							<b class="arrow icon-angle-down"></b>
-						</a>
-
-						<ul class="submenu">
-							<li>
-								<a id="reservationsId" onclick="reservations()">
-									<i class="icon-double-angle-right"></i>
-									<span>客房预订</span>
-								</a>
-							</li>
-
-							<li>
-								<a id="personageId" onclick="personage()">
-									<i class="icon-double-angle-right"></i>
-									<span>住宿登记</span>
-								</a>
-							</li>
-							
-							<!-- <li>
-								<a id="groupId" onclick="group()">
-									<i class="icon-double-angle-right"></i>
-									<span>团队住宿登记 </span>
-								</a>
-							</li> -->
-
-						</ul>
-					</li>
-					
-					<li>
-						<a id="financeManageId" onclick="financeManage()" class="dropdown-toggle">
-							<i class="icon-heart"></i>
-							<span class="menu-text">交易管理 </span>
-
-							<b class="arrow icon-angle-down"></b>
-						</a>
-
-						<ul class="submenu">
-
-							<li>
-								<a id="financeStatisticsId" onclick="financeStatistics()">
-									<i class="icon-double-angle-right"></i>
-									<span>交易统计 </span>
-								</a>
-							</li>
-
-						</ul>
-
-					</li>
-
-					<li>
-						<a id="transManageId" onclick="transManage()" class="dropdown-toggle">
-							<i class="icon-heart"></i>
-							<span class="menu-text">交易管理 </span>
-
-							<b class="arrow icon-angle-down"></b>
-						</a>
-
-						<ul class="submenu">
-
-							<li>
-								<a id="transInfoId" onclick="transInfo()">
-									<i class="icon-double-angle-right"></i>
-									<span>交易统计 </span>
-								</a>
-							</li>
-
-						</ul>
-
-					</li>
 
 					<li>
 						<a id="passengerManageId" onclick="passengerManage()" class="dropdown-toggle">
@@ -239,6 +165,63 @@
 						</ul>
 						
 					</li>
+
+						<li>
+							<a id="transManageId" onclick="transManage()" class="dropdown-toggle">
+								<%--<i class="icon-heart"></i>--%>
+								<i class="icon-move"></i>
+								<span class="menu-text">交易管理 </span>
+
+								<b class="arrow icon-angle-down"></b>
+							</a>
+
+							<ul class="submenu">
+
+								<li>
+									<a id="transInfoId" onclick="transInfo()">
+										<i class="icon-double-angle-right"></i>
+										<span>交易统计 </span>
+									</a>
+								</li>
+
+							</ul>
+
+						</li>
+
+						<li>
+							<a id="stayManageId" onclick="stayManage()" class="dropdown-toggle">
+								<%--<i class="icon-move"></i>--%>
+								<i class="icon-home"></i>
+								<span class="menu-text">表格管理 </span>
+
+								<b class="arrow icon-angle-down"></b>
+							</a>
+
+							<ul class="submenu">
+								<li>
+									<a id="reservationsId" onclick="reservations()">
+										<i class="icon-double-angle-right"></i>
+										<span>客房预订</span>
+									</a>
+								</li>
+
+								<li>
+									<a id="personageId" onclick="personage()">
+										<i class="icon-double-angle-right"></i>
+										<span>住宿登记</span>
+									</a>
+								</li>
+
+								<!-- <li>
+                                    <a id="groupId" onclick="group()">
+                                        <i class="icon-double-angle-right"></i>
+                                        <span>团队住宿登记 </span>
+                                    </a>
+                                </li> -->
+
+							</ul>
+						</li>
+
 
 					<li <c:if test="${sessionScope.userPo.roleID ==1}">style="display:none"</c:if>
 		          	>

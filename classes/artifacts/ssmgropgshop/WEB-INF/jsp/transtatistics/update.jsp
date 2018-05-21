@@ -22,7 +22,8 @@
   <link href="${ctx}/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">  <!-- start 响应式布局要添加的 -->
   <script src="${ctx}/bootstrap/js/jquery-3.1.1.min.js"></script>
   <script src="${ctx}/bootstrap/js/bootstrap.js"></script>
-   
+  <script type="text/javascript" src="${ctx}/My97DatePicker/WdatePicker.js"></script>
+
    <style>
    
    .container{
@@ -165,38 +166,77 @@
       </div>
     </div>
     
-    <form action="${ctx}/User/update.do" method="post" onsubmit="return verify()">
+    <form action="${ctx}/TranStatistics/update.do" method="post" onsubmit="return verify()">
     <!--  ———————————————————————————————————————————————————————————————————————————————————————— -->
-	    <input type="hidden" name="id" value="${list.id}" />
+	    <input type="hidden" name="id" value="${list.id}" >
 	    <div class="span12">
-	      <div class="row-fluid">
-		     <div class="span3">
-		        <label>用户姓名：</label>
-		        <input id="userName" name="userName" type="text" value="${list.userName}"
-		        style="width:97%;height:26px;float:left;" onchange="onchangeOne()">
-		        <div id="divOne" style="float:right;" hidden>
-			         <label class="yansered" style="margin-top:7px;">*</label>
-			    </div> 
-		      </div>
-		       <div class="span3">
-		        <label>密码：</label>
-		        <input id="password" name="password" type="text" value="${list.password}"
-		        style="width:97%;height:26px;float:left;" onchange="onchangeOne()">
-		        <div id="divOne" style="float:right;" hidden>
-			         <label class="yansered" style="margin-top:7px;">*</label>
-			    </div> 
-		     </div>
-		     <div class="span3">
-		        <label>角色：</label>
-		        <select name="roleID" style="width:100%;height:26px;">
-			          <option value="0" <c:if test="${0==list.roleID}">selected="selected"</c:if>>
-			            领导
-			          </option>
-			          <option value="1" <c:if test="${1==list.roleID}">selected="selected"</c:if> >
-			            员工
-			          </option>
-		          </select>
-		     </div>
+			<div class="row-fluid">
+				<div class="span3">
+					<label>合同编号：</label>
+					<input id="agreementID" name="agreementID"  type="text" style="width:97%;height:27px;float:left;"  onblur="selectAgreementID(this.value)"
+						   onchange="onchangeOne()" value="${list.agreementID}" readonly="readonly"/>
+					<div id="divOne" style="float:right;">
+						<label class="yansered" style="margin-top:7px;">*</label>
+					</div>
+				</div>
+				<div class="span3">
+					<label>交款凭证号：</label>
+					<input id="paymentID" name="paymentID" type="text" style="width:97%;height:27px;float:left;" onchange="onchangeOne()" value="${list.paymentID}">
+					<div id="divTwo" style="float:right;">
+						<label class="yansered" style="margin-top:7px;">*</label>
+					</div>
+				</div>
+				<div class="span3">
+					<label>型号：</label>
+					<input id="model" name="model" type="text" style="width:97%;height:27px;float:left;" onchange="onchangeOne()" value="${list.model}">
+				</div>
+				<div class="span3">
+					<label>价格：</label>
+					<input id="price" name="price" type="text" style="width:97%;height:27px;float:left;" onchange="onchangeOne()"  value="${list.price}">
+					<div  id="divThree" style="float:right;">
+						<label class="yansered" style="margin-top:7px;">*</label>
+					</div>
+				</div>
+			</div>
+			<div class="row-fluid">
+				<div class="span3">
+					<label>定金：</label>
+					<input id="deposit" name="deposit" type="text" style="width:97%;height:27px;float:left;" onchange="onchangeOne()"  value="${list.deposit}">
+					<div  id="divfour" style="float:right;">
+						<label class="yansered" style="margin-top:7px;">*</label>
+					</div>
+				</div>
+				<div class="span3">
+					<label>下单日期：</label>
+					<input style="width:97%;height:27px;float:left;" type="text" id="playDateStr" name="playDateStr" class="input-text Wdate"
+						   onfocus="WdatePicker({dateFmt: 'yyyy-MM-dd HH:mm:ss',maxDate:'%y-%M-%d'})"
+						   value="<fmt:formatDate value="${list.playDate}" pattern="yyyy-MM-dd HH:mm:ss"/>">
+				</div>
+				<div class="span3">
+					<label>交款日期：</label>
+					<input style="width:97%;height:27px;float:left;" type="text" id="payDateStr" name="payDateStr" class="input-text Wdate"
+						   onfocus="WdatePicker({dateFmt: 'yyyy-MM-dd HH:mm:ss',maxDate:'%y-%M-%d'})"
+						   value="<fmt:formatDate value="${list.payDate}" pattern="yyyy-MM-dd HH:mm:ss"/>">
+				</div>
+				<div class="span3">
+					<label>智能锁：</label>
+					<input id="smartLock" name="smartLock" type="text" style="width:97%;height:27px;float:left;" onchange="onchangeOne()"  value="${list.smartLock}">
+				</div>
+			</div>
+			<div class="row-fluid">
+				<div class="span3">
+					<label>智能猫眼：</label>
+					<input id="smartCatEye" name="smartCatEye" type="text" style="width:97%;height:27px;float:left;" onchange="onchangeOne()" value="${list.smartCatEye}">
+				</div>
+				<div class="span3">
+					<label>客户：</label>
+					<input id="merName" name="merName" type="text" style="width:97%;height:27px;float:left;" onchange="onchangeOne()" value="${list.merName}">
+				</div>
+				<div class="span3">
+					<label>备注：</label>
+					<input id="remarks" name="remarks" type="text" style="width:97%;height:27px;float:left;" onchange="onchangeOne()" value="${list.remarks}">
+				</div>
+			</div>
 		  <div class="span6" style="text-align:center;">
 		      <div class="row-fluid">
 			      <div class="span12" style="margin-top: 10px;margin-bottom: 8px;">
@@ -206,20 +246,22 @@
 				 
 			  </div>
 	      </div>
+			<div class="span4" style="text-align:center;">
+				<div class="row-fluid">
+					<div class="span4"  style="margin-top: 10px;margin-bottom: 8px;">
+						<button class="btn btn-warning" type="button" onclick="deletefunction()">
+							<li class="icon-remove icon-white"></li>取消</button>
+					</div>
+				</div>
+			</div>
+		</div>
       </form>
       
       
-      <div class="span4" style="text-align:center;">
-      <div class="row-fluid">
-		   <div class="span4"  style="margin-top: 10px;margin-bottom: 8px;"> 
-		   	 <button class="btn btn-warning" type="button" onclick="deletefunction()">
-		   	  <li class="icon-remove icon-white"></li>取消</button>
-		   </div>
-	     </div>
-      </div>
+
        
     </div>
-  
+  </div>
  
  
  
@@ -254,7 +296,7 @@
    }
    
     function deletefunction(){
-     parent.document.getElementById('Mainid').src='${ctx}/User/tolist.do';
+     parent.document.getElementById('Mainid').src='${ctx}/TranStatistics/tolist.do';
    }
    
    function onchangeOne(){

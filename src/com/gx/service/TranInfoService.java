@@ -32,4 +32,5 @@ public interface TranInfoService {
 	public int selectByAgreementID(String userName);
 
 	public  TransInfoPo statisticsInfo(TransInfoPo vo);
+
 }
