@@ -98,52 +98,6 @@
 
 				<ul class="nav nav-list">
 
-					<%--<li>
-						<a id="roomManageId" onclick="roomManage()" class="dropdown-toggle">
-							<i class="icon-home"></i>
-							<span class="menu-text">房间管理 </span>
-
-							<b class="arrow icon-angle-down"></b>
-						</a>
-
-						<ul class="submenu">
-							<li>
-								<a id="roomSetId" onclick="roomSet()">
-									<i class="icon-double-angle-right"></i>
-									<span>客房设置</span>
-								</a>
-							</li>
-
-							<li>
-								<a id="commoditySetId" onclick="commoditySet()">
-									<i class="icon-double-angle-right"></i>
-									<span>商品设置</span>
-								</a>
-							</li>
-
-						</ul>
-					</li>--%>
-
-						<%--<li>
-							<a id="dateViewId" onclick="" class="dropdown-toggle">
-								<i class="icon-dashboard"></i>
-								<span class="menu-text">数据视图 </span>
-								<b class="arrow icon-angle-down"></b>
-							</a>
-							<ul class="submenu">
-								<li>
-									<a id="yingYeJinEId" onclick="dateView()">
-										<i class="icon-double-angle-right"></i>
-										<span>营业金额</span>
-									</a>
-								</li>
-
-
-							</ul>
-						</li>--%>
-
-
-					
 
 					<li>
 						<a id="passengerManageId" onclick="passengerManage()" class="dropdown-toggle">
@@ -189,7 +143,7 @@
 						</li>
 
 						<li>
-							<a id="stayManageId" onclick="stayManage()" class="dropdown-toggle">
+							<a id="sheetManageId" onclick="sheetManage()" class="dropdown-toggle">
 								<%--<i class="icon-move"></i>--%>
 								<i class="icon-home"></i>
 								<span class="menu-text">表格管理 </span>
@@ -199,27 +153,13 @@
 
 							<ul class="submenu">
 								<li>
-									<a id="reservationsId" onclick="reservations()">
+									<a id="parametersId" onclick="parametersHandle()">
 										<i class="icon-double-angle-right"></i>
-										<span>客房预订</span>
+										<span>参数信息</span>
 									</a>
 								</li>
-
-								<li>
-									<a id="personageId" onclick="personage()">
-										<i class="icon-double-angle-right"></i>
-										<span>住宿登记</span>
-									</a>
-								</li>
-
-								<!-- <li>
-                                    <a id="groupId" onclick="group()">
-                                        <i class="icon-double-angle-right"></i>
-                                        <span>团队住宿登记 </span>
-                                    </a>
-                                </li> -->
-
 							</ul>
+
 						</li>
 
 
@@ -558,17 +498,7 @@
 				
 			
 			})
-			
-			
-			
-			
-			function dateView(){
-			     var a=document.getElementById("dateViewId").getElementsByTagName('span')[0].innerHTML;
-			     document.getElementById("bigGuide").innerHTML=a+"";
-			     var s=document.getElementById("yingYeJinEId").getElementsByTagName('span')[0].innerHTML;
-			     document.getElementById("smallGuide").innerHTML=s+"";
-			     document.getElementById('Mainid').src='${ctx}/DateView/tolist.do';
-			}
+
 			
 			function passengerManage(){
 			    
@@ -581,14 +511,7 @@
 			     document.getElementById("smallGuide").innerHTML=s+"";
 			     document.getElementById('Mainid').src='${ctx}/Passenger/tolist.do';
 			}
-			function receiveTarget(){
-			     var a=document.getElementById("passengerManageId").getElementsByTagName('span')[0].innerHTML;
-			     document.getElementById("bigGuide").innerHTML=a+"";
-			     var s=document.getElementById("receiveTargetId").getElementsByTagName('span')[0].innerHTML;
-			     document.getElementById("smallGuide").innerHTML=s+"";
-			     document.getElementById('Mainid').src='${ctx}/ReceiveTarget/tolist.do';
-			}
-			
+
 			function userManage(){
 			    
 			}
@@ -600,71 +523,21 @@
 			     document.getElementById("smallGuide").innerHTML=s+"";
 			     document.getElementById('Mainid').src='${ctx}/User/tolist.do';
 			}
-			function userPassWord(){
-			     var a=document.getElementById("userManageId").getElementsByTagName('span')[0].innerHTML;
-			     document.getElementById("bigGuide").innerHTML=a+"";
-			     var s=document.getElementById("passWordId").getElementsByTagName('span')[0].innerHTML;
-			     document.getElementById("smallGuide").innerHTML=s+"";
-			     document.getElementById('Mainid').src='${ctx}/User/tolist.do';
-			}
-			     
-			function roomManage(){
-			    
-			}
-			function roomSet(){
-			     var a=document.getElementById("roomManageId").getElementsByTagName('span')[0].innerHTML;
-			     document.getElementById("bigGuide").innerHTML=a+"";
-			     var s=document.getElementById("roomSetId").getElementsByTagName('span')[0].innerHTML;
-			     document.getElementById("smallGuide").innerHTML=s+"";
-			     document.getElementById('Mainid').src='${ctx}/RoomSet/tolist.do';
-			}
-			function commoditySet(){
-			     var a=document.getElementById("roomManageId").getElementsByTagName('span')[0].innerHTML;
-			     document.getElementById("bigGuide").innerHTML=a+"";
-			     var s=document.getElementById("commoditySetId").getElementsByTagName('span')[0].innerHTML;
-			     document.getElementById("smallGuide").innerHTML=s+"";
-			     document.getElementById('Mainid').src='${ctx}/Commodity/tolist.do';
-			}
+
 			
-			
-			function stayManage(){
-			    
+			function sheetManage(){
+
 			}
-			function reservations(){
-			     var a=document.getElementById("stayManageId").getElementsByTagName('span')[0].innerHTML;
+			function parametersHandle(){
+			     var a=document.getElementById("sheetManageId").getElementsByTagName('span')[0].innerHTML;
 			     document.getElementById("bigGuide").innerHTML=a+"";
-			     var s=document.getElementById("reservationsId").getElementsByTagName('span')[0].innerHTML;
+			     var s=document.getElementById("parametersId").getElementsByTagName('span')[0].innerHTML;
 			     document.getElementById("smallGuide").innerHTML=s+"";
-			     document.getElementById('Mainid').src='${ctx}/Predetermine/tolist.do';
-			}
-			function personage(){
-			     var a=document.getElementById("stayManageId").getElementsByTagName('span')[0].innerHTML;
-			     document.getElementById("bigGuide").innerHTML=a+"";
-			     var s=document.getElementById("personageId").getElementsByTagName('span')[0].innerHTML;
-			     document.getElementById("smallGuide").innerHTML=s+"";
-			     document.getElementById('Mainid').src='${ctx}/StayRegister/tolist.do';
-			}
-			function group(){
-			     var a=document.getElementById("stayManageId").getElementsByTagName('span')[0].innerHTML;
-			     document.getElementById("bigGuide").innerHTML=a+"";
-			     var s=document.getElementById("groupId").getElementsByTagName('span')[0].innerHTML;
-			     document.getElementById("smallGuide").innerHTML=s+"";
-			}
-			
-			
-			function financeManage(){
-			    
+			     document.getElementById('Mainid').src='${ctx}/ParametersHandle/tolist.do';
 			}
 
-
-			function financeStatistics(){
-			     var a=document.getElementById("financeManageId").getElementsByTagName('span')[0].innerHTML;
-			     document.getElementById("bigGuide").innerHTML=a+"";
-			     var s=document.getElementById("financeStatisticsId").getElementsByTagName('span')[0].innerHTML;
-			     document.getElementById("smallGuide").innerHTML=s+"";
-			     document.getElementById('Mainid').src='${ctx}/FinancialStatistics/tolist.do';
-			}
-
+			
+			
             function transManage(){
 
             }

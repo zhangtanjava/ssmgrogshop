@@ -29,7 +29,7 @@ public interface TranInfoService {
 	public List<TransInfoPo> selectAjaxList(String name);
 
 	//通过合同号查询
-	public int selectByAgreementID(String userName);
+	public int selectByAgreementID(String agreementID);
 
 	public  TransInfoPo statisticsInfo(TransInfoPo vo);
 

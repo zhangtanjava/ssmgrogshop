@@ -45,5 +45,6 @@
     <orderEntry type="jdk" jdkName="1.7" jdkType="JavaSDK" />
     <orderEntry type="library" scope="PROVIDED" name="Tomcat 7.0.86" level="application_server_libraries" />
     <orderEntry type="library" name="aopalliance-1.0" level="project" />
+    <orderEntry type="library" name="javax.persistence-2.0.0" level="project" />
   </component>
 </module>
