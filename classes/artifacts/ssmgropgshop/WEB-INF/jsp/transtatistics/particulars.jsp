@@ -211,7 +211,7 @@
 		        <label class="yanseblue">${list.paymentID}</label>
 		     </div>
 		     <div class="span4">
-		        <label class="floatont">型号：：</label> <!-- 散客 -->
+		        <label class="floatont">产品型号：：</label> <!-- 散客 -->
 		        <label class="yanseblue">${list.model}</label>
 		     </div>
 		  </div>

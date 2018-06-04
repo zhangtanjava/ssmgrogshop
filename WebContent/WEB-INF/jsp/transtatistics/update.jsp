@@ -173,7 +173,7 @@
 			<div class="row-fluid">
 				<div class="span3">
 					<label>合同编号：</label>
-					<input id="agreementID" name="agreementID"  type="text" style="width:97%;height:27px;float:left;"  onblur="selectAgreementID(this.value)"
+					<input id="agreementID" name="agreementID"  type="text" style="width:97%;height:27px;float:left;"
 						   onchange="onchangeOne()" value="${list.agreementID}" readonly="readonly"/>
 					<div id="divOne" style="float:right;">
 						<label class="yansered" style="margin-top:7px;">*</label>

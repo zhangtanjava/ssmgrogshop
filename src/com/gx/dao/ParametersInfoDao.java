@@ -9,8 +9,6 @@ import java.util.List;
 public interface ParametersInfoDao {
 
 
-	public Parametersinfo selectByname(Parametersinfo Parametersinfo);
-
 	public int selectByAgreementID(String agreementID);
 
 	public int deleteById(Integer id);

@@ -93,8 +93,8 @@
 <div class="container" style="height:630px;overflow-x:auto;">
     <div class="span12" style="margin-top:10px;">
         <div class="row-fluid">
-            <div class="span5">
-                <label style="float:left;">下单日期：</label>
+            <div class="span6">
+                <label style="float:left;">测量日期：</label>
                 <!--最大日期为 id="datemax"的选中值或者当前系统日期-->
                 <input style="width:25%;height:26px;" type="text" id="datemin" class="input-text Wdate"
                        onfocus="WdatePicker({maxDate:'#F{$dp.$D(\'datemax\')||\'%y-%M-%d\'}'})" value="${min}"> ~
@@ -115,10 +115,6 @@
                     </button>
                 </div>
             </div>
-            <label style="float:left;">订单总金额：</label>
-            <label style="float:left;margin-right:15px;color:blue;">${sumMoney}</label>
-            <label style="float:left;">订单数量：</label>
-            <label style="float:left;color:red;">${sumCount}</label>
         </div>
         <div class="span6">
             <div class="row-fluid">
@@ -141,13 +137,13 @@
                 <tr>
                     <th>选择</th>
                     <th>合同编号</th>
-                    <th>交款凭证ID</th>
-                    <th>型号</th>
-                    <th>订单金额</th>
-                    <th>定金</th>
-                    <th>下单日期</th>
-                    <th>交款日期</th>
                     <th>客户名称</th>
+                    <th>测量师</th>
+                    <th>测量日期</th>
+                    <th>安装师</th>
+                    <th>安装日期</th>
+                    <th>测量图片</th>
+                    <th>安装图片</th>
                 </tr>
                 </thead>
                 <tbody id="tbody">
@@ -155,13 +151,21 @@
                     <tr>
                         <td><input type="radio" name="id" value="${item.id}"></td>
                         <td>${item.agreementID}</td>
-                        <td>${item.paymentID}</td>
-                        <td>${item.model}</td>
-                        <td>${item.price}</td>
-                        <td>${item.deposit}</td>
-                        <td><fmt:formatDate value="${item.playDate}" pattern="yyyy-MM-dd HH:mm:ss"/> </td>
-                        <td><fmt:formatDate value="${item.payDate}" pattern="yyyy-MM-dd HH:mm:ss"/> </td>
                         <td>${item.merName}</td>
+                        <td>${item.surveyor}</td>
+                        <td><fmt:formatDate value="${item.surveyorDate}" pattern="yyyy-MM-dd HH:mm:ss"/></td>
+                        <td>${item.installPerson}</td>
+                        <td><fmt:formatDate value="${item.installDate}" pattern="yyyy-MM-dd HH:mm:ss"/> </td>
+                        <td>
+                            <a id="downloadsurvery" href="${ctx}/Download/download.do?filepath=${item.surveyorPhotoPath}" <%--onclick="downloadSurVal()"--%>>
+                                    ${item.surveyorPhotoName}
+                            </a>
+                        </td>
+                        <td>
+                            <a id="downloadistall" href="${ctx}/Download/download.do?filepath=${item.istallPhotoPath}" <%--onclick="downloadIstallVal()"--%>>
+                                    ${item.istallPhotoName}
+                            </a>
+                        </td>
                         </td>
                     </tr>
                 </c:forEach>
@@ -184,7 +188,7 @@
         var datemin = document.getElementById("datemin").value;
         var datemax = document.getElementById("datemax").value;
         var agreementID = document.getElementById("agreementID").value;
-        parent.document.getElementById('Mainid').src = '${ctx}/TranStatistics/tolist.do?datemin=' +
+        parent.document.getElementById('Mainid').src = '${ctx}/ParametersHandle/tolist.do?datemin=' +
             datemin + '&datemax=' + datemax +'&agreementID=' + agreementID;
     }
 
@@ -205,7 +209,7 @@
             return false;
         }*/
         if (id != "") {
-            parent.document.getElementById('Mainid').src = '${ctx}/TranStatistics/toinformation.do?id='
+            parent.document.getElementById('Mainid').src = '${ctx}/ParametersHandle/toinformation.do?id='
                 + id + '&stayregisterdetailsId=' + stayregisterdetailsId + '&min=' + datemin + '&max=' + datemax;
         } else {
             alert("请选择一条数据再按 详情");
@@ -226,7 +230,7 @@
     });
 
     function addfunction(){
-        parent.document.getElementById('Mainid').src='${ctx}/TranStatistics/toadd.do';
+        parent.document.getElementById('Mainid').src='${ctx}/ParametersHandle/toadd.do';
     }
 
     function updatefunction(){
@@ -238,7 +242,7 @@
             if(chk_value.toString().indexOf(",")>0){
                 alert("修改只能选择一条");
             }else{
-                parent.document.getElementById("Mainid").src='${ctx}/TranStatistics/toupdate.do?id='+chk_value;
+                parent.document.getElementById("Mainid").src='${ctx}/ParametersHandle/toupdate.do?id='+chk_value;
             }
         }else{
             alert("请选择一条数据进行修改");
@@ -253,12 +257,32 @@
         if(chk_value!=""){
             var flag=window.confirm("注意：您确定要永久删除该信息吗?");
             if(flag){
-                parent.document.getElementById("Mainid").src='${ctx}/TranStatistics/delete.do?id='+chk_value;
+                parent.document.getElementById("Mainid").src='${ctx}/ParametersHandle/delete.do?id='+chk_value;
             }
         }else{
             alert("请选择一条或多条数据进行删除");
         }
     }
+    /*function downloadSurVal() {
+        var  path = document.getElementById('downloadsurvery').href;
+        var strs=new Array()
+        strs = path.split(File.separator);
+        var names = strs[strs.length-1].split("=");
+        if (names[names.length-1] == '') {
+            alert("文件不存在！");
+            return false;
+        }
+    }
+    function downloadIstallVal() {
+        var  path = document.getElementById('downloadistall').href;
+        var strs=new Array()
+        strs = path.split(File.separator);
+        var names = strs[strs.length-1].split("=");
+        if (names[names.length-1] == '') {
+            alert("文件不存在！");
+            return false;
+        }
+    }*/
 </script>
 
 </body>

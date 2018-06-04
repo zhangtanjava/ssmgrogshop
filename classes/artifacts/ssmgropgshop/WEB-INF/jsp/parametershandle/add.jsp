@@ -161,78 +161,117 @@
     <div class="span11" style=" border: solid; border-color: #DDDDDD;">
     <div class="span9 margin-top-one">
       <div class="row-fluid">
-        <h3 style="text-align: center;">交易新增</h3>
+        <h3 style="text-align: center;">参数新增</h3>
 
       </div>
     </div>
 
-    <form action="${ctx}/TranStatistics/add.do" method="post" onsubmit="return verify()">
+    <form action="${ctx}/ParametersHandle/add.do" method="post" onsubmit="return verify()" enctype="multipart/form-data">
     <!--  ———————————————————————————————————————————————————————————————————————————————————————— -->
 	    <div class="span12">
 	      <div class="row-fluid">
 		     <div class="span3">
 		        <label>合同编号：</label>
-		        <input id="agreementID" name="agreementID"  type="text" style="width:97%;height:27px;float:left;"  onblur="selectAgreementID(this.value)" onchange="onchangeOne()">
+		        <input id="agreementID" name="agreementID"  type="text" style="width:97%;height:27px;float:left;"  onblur="selectAgreementID(this.value)" >
 		        <div id="divOne" style="float:right;">
 			         <label class="yansered" style="margin-top:7px;">*</label>
 			    </div>
 		      </div>
+			  <div class="span3">
+				  <label>商户名称：</label>
+				  <input id="merName" name="merName" type="text" style="width:97%;height:27px;float:left;" >
+				  <div  id="divThree" style="float:right;">
+					  <label class="yansered" style="margin-top:7px;">*</label>
+				  </div>
+			  </div>
 		     <div class="span3">
-		        <label>交款凭证号：</label>
-		        <input id="paymentID" name="paymentID" type="text" style="width:97%;height:27px;float:left;" onchange="onchangeOne()">
+		        <label>测量师：</label>
+		        <input id="surveyor" name="surveyor" type="text" style="width:97%;height:27px;float:left;" >
 		        <div id="divTwo" style="float:right;">
 			         <label class="yansered" style="margin-top:7px;">*</label>
 			    </div>
 		      </div>
 			  <div class="span3">
-				  <label>型号：</label>
-				  <input id="model" name="model" type="text" style="width:97%;height:27px;float:left;" onchange="onchangeOne()">
-			  </div>
-			  <div class="span3">
-				  <label>价格：</label>
-				  <input id="price" name="price" type="text" style="width:97%;height:27px;float:left;" onchange="onchangeOne()">
-				  <div  id="divThree" style="float:right;">
-					  <label class="yansered" style="margin-top:7px;">*</label>
-				  </div>
+				  <label>测量日期：</label>
+				  <input style="width:97%;height:27px;float:left;" type="text" id="surveyorDateStr" name="surveyorDateStr" class="input-text Wdate"
+						 onfocus="WdatePicker({dateFmt: 'yyyy-MM-dd HH:mm:ss',maxDate:'%y-%M-%d'})">
 			  </div>
 		  </div>
 		  <div class="row-fluid">
 			  <div class="span3">
-				  <label>定金：</label>
-				  <input id="deposit" name="deposit" type="text" style="width:97%;height:27px;float:left;" onchange="onchangeOne()">
-				  <div  id="divfour" style="float:right;">
-					  <label class="yansered" style="margin-top:7px;">*</label>
-				  </div>
+				  <label>洞口尺寸：</label>
+				  <input id="holeSize" name="holeSize" type="text" style="width:97%;height:27px;float:left;" >
 			  </div>
 			  <div class="span3">
-				  <label>下单日期：</label>
-				  <input style="width:97%;height:27px;float:left;" type="text" id="playDateStr" name="playDateStr" class="input-text Wdate"
-						 onfocus="WdatePicker({dateFmt: 'yyyy-MM-dd HH:mm:ss',maxDate:'%y-%M-%d'})">
+				  <label>门尺寸：</label>
+				  <input id="doorSize" name="doorSize" type="text" style="width:97%;height:27px;float:left;" >
 			  </div>
 			  <div class="span3">
-				  <label>交款日期：</label>
-				  <input style="width:97%;height:27px;float:left;" type="text" id="payDateStr" name="payDateStr" class="input-text Wdate"
-						 onfocus="WdatePicker({dateFmt: 'yyyy-MM-dd HH:mm:ss',maxDate:'%y-%M-%d'})">
+				  <label>开口方向：</label>
+				  <input id="direction" name="direction" type="text" style="width:97%;height:27px;float:left;" >
 			  </div>
 			  <div class="span3">
-				  <label>智能锁：</label>
-				  <input id="smartLock" name="smartLock" type="text" style="width:97%;height:27px;float:left;" onchange="onchangeOne()">
+				  <label>室内情况：</label>
+				  <input id="indoorInfo" name="indoorInfo" type="text" style="width:97%;height:27px;float:left;" >
 			  </div>
 		  </div>
+			<div class="row-fluid">
+				<div class="span12">
+					<label>测量备注：</label>
+					<input id="surveyorSmark" name="surveyorSmark" type="text" style="width:99.5%;height:27px;float:left;" >
+				</div>
+			</div>
 		  <div class="row-fluid">
 			  <div class="span3">
-				  <label>智能猫眼：</label>
-				  <input id="smartCatEye" name="smartCatEye" type="text" style="width:97%;height:27px;float:left;" onchange="onchangeOne()">
+				  <label>安装师：</label>
+				  <input id="installPerson" name="installPerson" type="text" style="width:97%;height:27px;float:left;" >
 			  </div>
 			  <div class="span3">
-				  <label>客户：</label>
-				  <input id="merName" name="merName" type="text" style="width:97%;height:27px;float:left;" onchange="onchangeOne()">
+				  <label>安装日期：</label>
+				  <input style="width:97%;height:27px;float:left;" type="text" id="installDateStr" name="installDateStr" class="input-text Wdate"
+						 onfocus="WdatePicker({dateFmt: 'yyyy-MM-dd HH:mm:ss',maxDate:'%y-%M-%d'})">
 			  </div>
 			  <div class="span3">
-				  <label>备注：</label>
-				  <input id="remarks" name="remarks" type="text" style="width:97%;height:27px;float:left;" onchange="onchangeOne()">
+				  <label>木套尺寸：</label>
+				  <input id="woodcase" name="woodcase" type="text" style="width:97%;height:27px;float:left;" >
+			  </div>
+			  <div class="span3">
+				  <label>压条尺寸：</label>
+				  <input id="moundlayer" name="moundlayer" type="text" style="width:97%;height:27px;float:left;" >
 			  </div>
 		  </div>
+			<div class="row-fluid">
+				<div class="span12">
+					<label>安装备注：</label>
+					<input id="installPerSmark" name="installPerSmark" type="text" style="width:98.5%;height:27px;float:left;" >
+				</div>
+			</div>
+			<div class="row-fluid">
+				<div class="span12">
+					<label>其它备注：</label>
+					<input id="otherSmark" name="otherSmark" type="text" style="width:98.5%;height:27px;float:left;" >
+				</div>
+
+			</div>
+			<div class="row-fluid">
+				<div class="span3">
+					<label>测量图片描述：</label>
+					<input type="text" id="surveyorPhotoDes" name="surveyorPhotoDes" style="width:97%;height:27px;float:left;">
+				</div>
+				<div class="span3">
+					<label>请选择文件：</label>
+					<input type="file" name="surveyorFile" style="width:97%;height:27px;float:left;">
+				</div>
+				<div class="span3">
+					<label>安装图片描述：</label>
+					<input type="text" id="istallPhotoDes" name="istallPhotoDes" style="width:97%;height:27px;float:left;">
+				</div>
+				<div class="span3">
+					<label>请选择文件：</label>
+					<input type="file" name="istallFile" style="width:97%;height:27px;float:left;">
+				</div>
+			</div>
+
 	    </div>
 
 		  <div class="span6" style="text-align:center;">
@@ -270,36 +309,52 @@
 	       alert("合同编号长度不能超过64位！");
 	       document.getElementById("agreementID").focus();
 	       return false;
-	    }if(document.getElementById("paymentID").value==""){
-            alert("交款凭证号  是必填项，不能为空哦！");
-            document.getElementById("agreementID").focus();
-            return false;
-        }else if(document.getElementById("paymentID").value.length>64){
-	     alert("付款凭证号不能超过64位！");
-	     document.getElementById("paymentID").focus();
+	    }else if(document.getElementById("holeSize").value.length>16){
+	     alert("洞口尺寸不能超过16位！");
+	     document.getElementById("holeSize").focus();
 	     return false;
-        }else if(document.getElementById("model").value.length>16){
-	     alert("型号不能超过16位");
-	     document.getElementById("model").focus();
+        }else if(document.getElementById("doorSize").value.length>16){
+	     alert("门尺寸不能超过16位");
+	     document.getElementById("doorSize").focus();
 	     return false;
-        }else  if (!reg.test(document.getElementById("price").value)){
-            alert("输入的金额格式不对");
-            document.getElementById("price").focus();
-            return false;
-        }else  if (!reg.test(document.getElementById("deposit").value)){
-            alert("输入的金额格式不对");
-            document.getElementById("deposit").focus();
-            return false;
-        }else if(document.getElementById("smartLock").value.length>32){
-	       alert("长度不能超过32位！");
-	       document.getElementById("smartLock").focus();
+        }else if(document.getElementById("direction").value.length>4){
+	       alert("开口方向长度不能超过4位！");
+	       document.getElementById("direction").focus();
 	       return false;
-	    }else if(document.getElementById("smartCatEye").value.length>32){
-            alert("长度不能超过32位！");
-            document.getElementById("smartCatEye").focus();
+	    }else if(document.getElementById("indoorInfo").value.length>64){
+            alert("室内情况长度不能超过64位！");
+            document.getElementById("indoorInfo").focus();
             return false;
-        }else if(document.getElementById("merName").value.length>32){
-            alert("长度不能超过32位！");
+        }else if(document.getElementById("surveyor").value.length>16){
+            alert("测量师长度不能超过16位！");
+            document.getElementById("surveyor").focus();
+            return false;
+        }else if(document.getElementById("surveyorSmark").value.length>64){
+            alert("测量师备注长度不能超过64位！");
+            document.getElementById("surveyorSmark").focus();
+            return false;
+        }else if(document.getElementById("woodcase").value.length>16){
+            alert("木套长度不能超过16位！");
+            document.getElementById("woodcase").focus();
+            return false;
+        }else if(document.getElementById("moundlayer").value.length>16){
+            alert("压条长度不能超过16位！");
+            document.getElementById("moundlayer").focus();
+            return false;
+        }else if(document.getElementById("installPerson").value.length>16){
+            alert("安装师长度不能超过16位！");
+            document.getElementById("installPerson").focus();
+            return false;
+        }else if(document.getElementById("installPerSmark").value.length>16){
+            alert("安装师备注长度不能超过16位！");
+            document.getElementById("installPerSmark").focus();
+            return false;
+        }else if(document.getElementById("otherSmark").value.length>64){
+            alert("其它备注长度不能超过64位！");
+            document.getElementById("otherSmark").focus();
+            return false;
+        }else if(document.getElementById("merName").value.length>16){
+            alert("商户名长度不能超过16位！");
             document.getElementById("merName").focus();
             return false;
         }else{
@@ -308,7 +363,7 @@
    }
 
     function deletefunction(){
-     parent.document.getElementById('Mainid').src='${ctx}/TranStatistics/tolist.do';
+     parent.document.getElementById('Mainid').src='${ctx}/ParametersHandle/tolist.do';
    }
 
 
@@ -332,7 +387,7 @@
 	       $.ajax({
 	          cache:false,                                             //是否使用缓存提交 如果为TRUE 会调用浏览器的缓存 而不会提交
 	          type: "POST",                                           //上面3行都是必须要的
-	          url: '${ctx}/TranStatistics/selectByAgreementID.do',       //地址 type 带参数
+	          url: '${ctx}/ParametersHandle/selectByAgreementID.do',       //地址 type 带参数
 	          data:"agreementID="+value,                         // IDCardValue 自定义的。相当于name把值赋予给 他可以在servlet 获取
 	          async:false,                                          // 是否 异步 提交
 	          success: function (result) {                          // 不出现异常 进行立面方

@@ -207,66 +207,88 @@
 		        <label class="yanseblue">${list.agreementID}</label>
 		     </div>
 		     <div class="span4">
-		        <label class="floatont">交款凭证号：</label>
-		        <label class="yanseblue">${list.paymentID}</label>
-		     </div>
-		     <div class="span4">
-		        <label class="floatont">型号：：</label> <!-- 散客 -->
-		        <label class="yanseblue">${list.model}</label>
-		     </div>
-		  </div>
-	    </div>
-	    <!--  ———————————————————————————————————————————————————————————————————————————————————————— -->
-	    <div class="span12">
-	      <div class="row-fluid">
-		     <div class="span4">
-		        <label class="floatont">价格：</label>
-		        <label class="yanseblue">${list.price}</label>
-		     </div>
-		     <div class="span4">
-		        <label class="floatont">定金：</label>
-		        <label class="yanseblue">${list.deposit}</label>
-		     </div>
-		     <div class="span4">
-		        <label class="floatont">下单日期：</label> <!-- 团队 -->
-		        <label class="yanseblue"><fmt:formatDate value="${list.playDate}" pattern="yyyy-MM-dd HH:mm:ss"/></label>
-		     </div>
-		  </div>
-	    </div>
-	    <!--  ———————————————————————————————————————————————————————————————————————————————————————— -->
-	    <div class="span12">
-	      <div class="row-fluid">
-	         <div class="span4">
-		        <label class="floatont">交款日期：</label>
-		        <label class="yanseblue"><fmt:formatDate value="${list.payDate}" pattern="yyyy-MM-dd HH:mm:ss"/></label>
-		     </div>
-		     <div class="span4">
-		        <label class="floatont">智能锁：</label>
-		        <label class="yanseblue">${list.smartLock}</label>
-		     </div>
-		     <div class="span4">
-		        <label class="floatont">智能猫眼：</label>
-		        <label class="yanseblue">${list.smartCatEye}</label>
-		     </div>
-		  </div>
-	    </div>
-	    <!--  ———————————————————————————————————————————————————————————————————————————————————————— -->
-	    <div class="span12">
-	      <div class="row-fluid">
-	         <div class="span4">
-		        <label class="floatont">客户：</label>
+		        <label class="floatont">商户名称：</label>
 		        <label class="yanseblue">${list.merName}</label>
 		     </div>
 		     <div class="span4">
-		        <label class="floatont">备注：</label>
-		        <label class="yanseblue">${list.remarks}</label>
-		     </div>
-		     <div class="span4">
-		        <label class="floatont">操作员工：</label>
-		        <label class="yanseblue">${list.operatorID}</label>
+		        <label class="floatont">测量师：</label> <!-- 散客 -->
+		        <label class="yanseblue">${list.surveyor}</label>
 		     </div>
 		  </div>
 	    </div>
+	    <!--  ———————————————————————————————————————————————————————————————————————————————————————— -->
+	    <div class="span12">
+	      <div class="row-fluid">
+		     <div class="span4">
+		        <label class="floatont">测量日期：</label>
+		        <label class="yanseblue"><fmt:formatDate value="${list.surveyorDate}" pattern="yyyy-MM-dd HH:mm:ss"/></label>
+		     </div>
+		     <div class="span4">
+		        <label class="floatont">洞口尺寸：</label>
+		        <label class="yanseblue">${list.holeSize}</label>
+		     </div>
+			  <div class="span4">
+				  <label class="floatont">门尺寸：</label>
+				  <label class="yanseblue">${list.doorSize}</label>
+			  </div>
+		  </div>
+	    </div>
+	    <!--  ———————————————————————————————————————————————————————————————————————————————————————— -->
+	    <div class="span12">
+	      <div class="row-fluid">
+		     <div class="span4">
+		        <label class="floatont">开口方向：</label>
+		        <label class="yanseblue">${list.direction}</label>
+		     </div>
+			  <div class="span4">
+				  <label class="floatont">压条尺寸：</label>
+				  <label class="yanseblue">${list.moundlayer}</label>
+			  </div>
+			  <div class="span4">
+				  <label class="floatont">木套尺寸：</label>
+				  <label class="yanseblue">${list.woodcase}</label>
+			  </div>
+		  </div>
+		</div>
+			<div class="span12">
+				<div class="row-fluid">
+					<div class="span4">
+						<label class="floatont">安装师：</label>
+						<label class="yanseblue">${list.installPerson}</label>
+					</div>
+					<div class="span4">
+						<label class="floatont">安装日期：</label>
+						<label class="yanseblue"><fmt:formatDate value="${list.installDate}" pattern="yyyy-MM-dd HH:mm:ss"/></label>
+					</div>
+
+				</div>
+			</div>
+		<div class="span12">
+			<label class="floatont">室内情况：</label>
+			<label class="yanseblue">${list.indoorInfo}</label>
+		</div>
+
+		<div class="span12">
+			<label class="floatont">测量备注：</label>
+			<label class="yanseblue">${list.surveyorSmark}</label>
+		</div>
+	    <!--  ———————————————————————————————————————————————————————————————————————————————————————— -->
+			<div class="span12">
+				<label class="floatont">安装备注：</label>
+				<label class="yanseblue">${list.installPerSmark}</label>
+			</div>
+			<div class="span12">
+				<label class="floatont">其它备注：</label>
+				<label class="yanseblue">${list.otherSmark}</label>
+			</div>
+			<div class="span12">
+				<label class="floatont">测量图片描述：</label>
+				<label class="yanseblue">${list.surveyorPhotoDes}</label>
+			</div>
+			<div class="span12">
+				<label class="floatont">安装图片描述：</label>
+				<label class="yanseblue">${list.istallPhotoDes}</label>
+			</div>
     </div>
     </form>
 
@@ -286,7 +308,7 @@
  function deletefunction(){
      var datemin=document.getElementById("minId").value;
      var datemax=document.getElementById("maxId").value;
-     parent.document.getElementById('Mainid').src='${ctx}/TranStatistics/tolist.do?datemin='+
+     parent.document.getElementById('Mainid').src='${ctx}/ParametersHandle/tolist.do?datemin='+
      datemin+'&datemax='+datemax;
  }
  

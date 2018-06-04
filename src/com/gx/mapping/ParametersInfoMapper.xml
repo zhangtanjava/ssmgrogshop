@@ -9,42 +9,45 @@
         -->
         <constructor>
             <idArg column="id" jdbcType="INTEGER" javaType="java.lang.Integer"/>
-            <arg column="holeSize" jdbcType="VARCHAR" javaType="holesize" />
-            <arg column="doorSize" jdbcType="VARCHAR" javaType="doorsize" />
-            <arg column="direction" jdbcType="VARCHAR" javaType="direction" />
-            <arg column="indoorInfo" jdbcType="VARCHAR" javaType="indoorinfo" />
-            <arg column="surveyor" jdbcType="VARCHAR" javaType="surveyor" />
-            <arg column="surveyorSmark" jdbcType="VARCHAR" javaType="surveyorsmark" />
-            <arg column="surveyorDate" jdbcType="TIMESTAMP" javaType="surveyordate" />
-            <arg column="woodcase" jdbcType="VARCHAR" javaType="woodcase" />
-            <arg column="moundlayer" jdbcType="VARCHAR" javaType="moundlayer" />
-            <arg column="installPerson" jdbcType="VARCHAR" javaType="installperson" />
-            <arg column="installPerSmark" jdbcType="VARCHAR" javaType="installpersmark" />
-            <arg column="installDate" jdbcType="TIMESTAMP" javaType="installdate" />
-            <arg column="surveyorPhotoPath" jdbcType="VARCHAR" javaType="surveyorphotopath" />
-            <arg column="istallPhotoPath" jdbcType="VARCHAR" javaType="istallphotopath" />
-            <arg column="otherSmark" jdbcType="VARCHAR" javaType="othersmark" />
-            <arg column="agreementID" jdbcType="VARCHAR" javaType="agreementid" />
+            <arg column="holeSize" jdbcType="VARCHAR" javaType="java.lang.String" />
+            <arg column="doorSize" jdbcType="VARCHAR" javaType="java.lang.String" />
+            <arg column="direction" jdbcType="VARCHAR" javaType="java.lang.String" />
+            <arg column="indoorInfo" jdbcType="VARCHAR" javaType="java.lang.String" />
+            <arg column="surveyor" jdbcType="VARCHAR" javaType="java.lang.String" />
+            <arg column="surveyorSmark" jdbcType="VARCHAR" javaType="java.lang.String" />
+            <arg column="surveyorDate" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+            <arg column="woodcase" jdbcType="VARCHAR" javaType="java.lang.String" />
+            <arg column="moundlayer" jdbcType="VARCHAR" javaType="java.lang.String" />
+            <arg column="installPerson" jdbcType="VARCHAR" javaType="java.lang.String" />
+            <arg column="installPerSmark" jdbcType="VARCHAR" javaType="java.lang.String" />
+            <arg column="installDate" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+            <arg column="surveyorPhotoPath" jdbcType="VARCHAR" javaType="java.lang.String" />
+            <arg column="istallPhotoPath" jdbcType="VARCHAR" javaType="java.lang.String" />
+            <arg column="otherSmark" jdbcType="VARCHAR" javaType="java.lang.String" />
+            <arg column="agreementID" jdbcType="VARCHAR" javaType="java.lang.String" />
             <arg column="operatorID" jdbcType="VARCHAR" javaType="java.lang.String"/>
             <arg column="storeID" jdbcType="VARCHAR" javaType="java.lang.String"/>
             <arg column="roleID" jdbcType="VARCHAR" javaType="java.lang.String"/>
+            <arg column="merName" jdbcType="VARCHAR" javaType="java.lang.String"/>
+            <arg column="createDate" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+            <arg column="updateDate" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+            <arg column="surveyorPhotoDes" jdbcType="VARCHAR" javaType="java.lang.String"/>
+            <arg column="istallPhotoDes" jdbcType="VARCHAR" javaType="java.lang.String"/>
+            <arg column="surveyorPhotoName" jdbcType="VARCHAR" javaType="java.lang.String"/>
+            <arg column="istallPhotoName" jdbcType="VARCHAR" javaType="java.lang.String"/>
         </constructor>
     </resultMap>
 
-
-    <select id="selectByname" resultType="com.gx.po.ParametersInfoDao" parameterType="com.gx.po.ParametersInfoDao">
-    Select * From parametersInfo Where agreementID = #{agreementID,jdbcType=VARCHAR}
-  </select>
 
     <select id="selectByAgreementID" resultType="java.lang.Integer" parameterType="java.lang.String">
     Select count(*) From parametersInfo Where agreementID = #{agreementID,jdbcType=VARCHAR}
   </select>
 
     <!--   新增 -->
-    <insert id="insertAll" useGeneratedKeys="true" keyProperty="id" parameterType="com.gx.po.ParametersInfoDao">
+    <insert id="insertAll" useGeneratedKeys="true" keyProperty="id" parameterType="com.gx.po.Parametersinfo">
        INSERT INTO parametersInfo (holeSize,doorSize,direction,indoorInfo,surveyor,surveyorSmark,surveyorDate,woodcase,moundlayer,
        installPerson,installPerSmark,installDate,surveyorPhotoPath,istallPhotoPath,otherSmark,agreementID,operatorID,storeID,
-       roleID)
+       roleID,merName,createDate,updateDate,surveyorPhotoDes,istallPhotoDes,surveyorPhotoName,istallPhotoName)
      values (#{holeSize,jdbcType=VARCHAR},
 		     #{doorSize,jdbcType=VARCHAR},
 		     #{direction,jdbcType=VARCHAR},
@@ -63,7 +66,14 @@
 		     #{agreementID,jdbcType=VARCHAR},
 		     #{operatorID,jdbcType=VARCHAR},
              #{storeID,jdbcType=VARCHAR},
-             #{roleID,jdbcType=VARCHAR}
+             #{roleID,jdbcType=VARCHAR},
+             #{merName,jdbcType=VARCHAR},
+             #{createDate,jdbcType=TIMESTAMP},
+             #{updateDate,jdbcType=TIMESTAMP},
+             #{surveyorPhotoDes,jdbcType=VARCHAR},
+             #{istallPhotoDes,jdbcType=VARCHAR},
+             #{surveyorPhotoName,jdbcType=VARCHAR},
+             #{istallPhotoName,jdbcType=VARCHAR}
 		     )
   </insert>
 
@@ -75,17 +85,17 @@
     </select> -->
 
     <!--   修改要用的精确查询 -->
-    <select id="selectById" resultType="com.gx.po.ParametersInfoDao" parameterType="java.lang.Integer">
+    <select id="selectById" resultType="com.gx.po.Parametersinfo" parameterType="java.lang.Integer">
     select * from parametersInfo where id=#{id,jdbcType=INTEGER}
    </select>
 
     <!--    修改 -->
-    <update id="updateById" parameterType="com.gx.po.ParametersInfoDao">
+    <update id="updateById" parameterType="com.gx.po.Parametersinfo">
       UPDATE parametersInfo SET holeSize=#{holeSize,jdbcType=VARCHAR},
 		     doorSize=#{doorSize,jdbcType=VARCHAR},
 		     direction=#{direction,jdbcType=VARCHAR},
 		     indoorInfo=#{indoorInfo,jdbcType=VARCHAR},
-		    surveyor= #{surveyor,jdbcType=VARCHAR},
+		     surveyor= #{surveyor,jdbcType=VARCHAR},
 		     surveyorSmark=#{surveyorSmark,jdbcType=VARCHAR},
 		     surveyorDate=#{surveyorDate,jdbcType=TIMESTAMP},
 		     woodcase=#{woodcase,jdbcType=VARCHAR},
@@ -93,14 +103,29 @@
 		     installPerson=#{installPerson,jdbcType=VARCHAR},
 		     installPerSmark=#{installPerSmark,jdbcType=VARCHAR},
 		     installDate=#{installDate,jdbcType=TIMESTAMP},
-		     surveyorPhotoPath=#{surveyorPhotoPath,jdbcType=VARCHAR},
-		     istallPhotoPath=#{istallPhotoPath,jdbcType=VARCHAR},
 		     otherSmark=#{otherSmark,jdbcType=VARCHAR},
 		     agreementID=#{agreementID,jdbcType=VARCHAR},
 		     operatorID=#{operatorID,jdbcType=VARCHAR},
              storeID=#{storeID,jdbcType=VARCHAR},
-             roleID=#{roleID,jdbcType=VARCHAR}
-                   WHERE id = #{id,jdbcType=INTEGER}
+             roleID=#{roleID,jdbcType=VARCHAR},
+             merName=#{merName,jdbcType=VARCHAR},
+             updateDate=#{updateDate,jdbcType=TIMESTAMP},
+             surveyorPhotoDes=#{surveyorPhotoDes,jdbcType=VARCHAR},
+            istallPhotoDes=#{istallPhotoDes,jdbcType=VARCHAR}
+            <if test="surveyorPhotoPath != null and surveyorPhotoPath != ''">
+                ,surveyorPhotoPath=#{surveyorPhotoPath}
+            </if>
+            <if test="istallPhotoPath != null and istallPhotoPath !=''">
+                ,istallPhotoPath=#{istallPhotoPath}
+            </if>
+            <if test="surveyorPhotoName != null and surveyorPhotoName != ''">
+                ,surveyorPhotoName=#{surveyorPhotoName}
+            </if>
+            <if test="istallPhotoName != null and istallPhotoName != ''">
+                ,istallPhotoName=#{istallPhotoName}
+            </if>
+
+            WHERE id = #{id,jdbcType=INTEGER}
    </update>
 
     <delete id="deleteById" parameterType="java.lang.Integer">
@@ -108,7 +133,7 @@
   </delete>
 
     <!--   分页查询 -->
-    <select id="pageFuzzyselect" resultType="com.gx.po.ParametersInfoDao">
+    <select id="pageFuzzyselect" resultType="com.gx.po.Parametersinfo">
        SELECT * from parametersInfo
 
         <where>
@@ -116,10 +141,10 @@
                 agreementID = #{agreementID}
             </if>
             <if test="beginDate != null">
-                and playDate &gt;= #{beginDate}
+                and surveyorDate &gt;= #{beginDate}
             </if>
             <if test="endDate != null">
-                AND playDate &lt;= #{endDate}
+                AND surveyorDate &lt;= #{endDate}
             </if>
         </where>
         limit #{start},#{pageSize}
@@ -136,14 +161,14 @@
   </select>
 
     <!--   查询所有数据  非本派所用 -->
-    <select id="selectAll" resultType="com.gx.po.ParametersInfoDao" parameterType="com.gx.po.ParametersInfoDao" >
+    <select id="selectAll" resultType="com.gx.po.Parametersinfo" parameterType="com.gx.po.Parametersinfo" >
         SELECT * from parametersInfo;
     </select>
 
     <!--   查询所有数据  非本派所用 -->
 
 
-    <select id="statisticsInfo" resultType="com.gx.po.ParametersInfoDao" parameterType="com.gx.po.ParametersInfoDao" >
+    <select id="statisticsInfo" resultType="com.gx.po.Parametersinfo" parameterType="com.gx.po.Parametersinfo" >
     SELECT count(*) as counts,sum(price) as sumMoney from parametersInfo
         <where>
             <if test="agreementID != null and agreementID != '' ">
@@ -159,7 +184,7 @@
    </select>
 
     <!--  模糊查询 运用 Ajax 非分页 -->
-    <select id="selectAjaxList" resultType="com.gx.po.ParametersInfoDao">
+    <select id="selectAjaxList" resultType="com.gx.po.Parametersinfo">
     SELECT * from parametersInfo
       WHERE userName like CONCAT('%',#{userName,jdbcType=VARCHAR},'%')
    </select>

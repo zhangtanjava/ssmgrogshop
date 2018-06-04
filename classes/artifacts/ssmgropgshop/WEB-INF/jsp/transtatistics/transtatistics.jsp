@@ -93,7 +93,7 @@
 <div class="container" style="height:630px;overflow-x:auto;">
     <div class="span12" style="margin-top:10px;">
         <div class="row-fluid">
-            <div class="span5">
+            <div class="span6">
                 <label style="float:left;">下单日期：</label>
                 <!--最大日期为 id="datemax"的选中值或者当前系统日期-->
                 <input style="width:25%;height:26px;" type="text" id="datemin" class="input-text Wdate"
@@ -142,7 +142,7 @@
                     <th>选择</th>
                     <th>合同编号</th>
                     <th>交款凭证ID</th>
-                    <th>型号</th>
+                    <th>产品型号</th>
                     <th>订单金额</th>
                     <th>定金</th>
                     <th>下单日期</th>

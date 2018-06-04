@@ -93,7 +93,7 @@
 <div class="container" style="height:630px;overflow-x:auto;">
     <div class="span12" style="margin-top:10px;">
         <div class="row-fluid">
-            <div class="span5">
+            <div class="span6">
                 <label style="float:left;">下单日期：</label>
                 <!--最大日期为 id="datemax"的选中值或者当前系统日期-->
                 <input style="width:25%;height:26px;" type="text" id="datemin" class="input-text Wdate"

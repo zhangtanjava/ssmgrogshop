@@ -40,7 +40,15 @@ public class Parametersinfo implements Serializable{
 
 	private String surveyorPhotoPath;//测量照片
 
+	private String surveyorPhotoName;//测量照片文件名
+
+	private String surveyorPhotoDes;//测量照片描述
+
 	private String istallPhotoPath;//安装照片
+
+	private String istallPhotoName;//测量照片文件名
+
+	private String istallPhotoDes;//安装照片描述
 
 	private String otherSmark;//其它备注
 
@@ -50,9 +58,9 @@ public class Parametersinfo implements Serializable{
 
 	private Date endDate;                    //结束时间
 
-	private String playDateStr;                //下单日期
+	private String surveyorDateStr;                //测量日期
 
-	private String payDateStr;           //交款日期
+	private String installDateStr;           //安装日期
 
 	private String operatorID;           //操作员ID
 
@@ -60,34 +68,59 @@ public class Parametersinfo implements Serializable{
 
 	private String roleID;                //角色id
 
-	@Override
-	public String toString() {
-		return "Parametersinfo{" +
-				"id=" + id +
-				", holeSize='" + holeSize + '\'' +
-				", doorSize='" + doorSize + '\'' +
-				", direction='" + direction + '\'' +
-				", indoorInfo='" + indoorInfo + '\'' +
-				", surveyor='" + surveyor + '\'' +
-				", surveyorSmark='" + surveyorSmark + '\'' +
-				", surveyorDate=" + surveyorDate +
-				", woodcase='" + woodcase + '\'' +
-				", moundlayer='" + moundlayer + '\'' +
-				", installPerson='" + installPerson + '\'' +
-				", installPerSmark='" + installPerSmark + '\'' +
-				", installDate=" + installDate +
-				", surveyorPhotoPath='" + surveyorPhotoPath + '\'' +
-				", istallPhotoPath='" + istallPhotoPath + '\'' +
-				", otherSmark='" + otherSmark + '\'' +
-				", agreementID='" + agreementID + '\'' +
-				", beginDate=" + beginDate +
-				", endDate=" + endDate +
-				", playDateStr='" + playDateStr + '\'' +
-				", payDateStr='" + payDateStr + '\'' +
-				", operatorID='" + operatorID + '\'' +
-				", storeID='" + storeID + '\'' +
-				", roleID='" + roleID + '\'' +
-				'}';
+	private  String merName; //商户名
+
+	private Date createDate; //创建日期
+
+	private Date updateDate;//更新日期
+
+
+	public String getSurveyorPhotoDes() {
+		return surveyorPhotoDes;
+	}
+
+	public void setSurveyorPhotoDes(String surveyorPhotoDes) {
+		this.surveyorPhotoDes = surveyorPhotoDes;
+	}
+
+	public String getIstallPhotoDes() {
+		return istallPhotoDes;
+	}
+
+	public void setIstallPhotoDes(String istallPhotoDes) {
+		this.istallPhotoDes = istallPhotoDes;
+	}
+
+	public String getSurveyorDateStr() {
+		return surveyorDateStr;
+	}
+
+	public void setSurveyorDateStr(String surveyorDateStr) {
+		this.surveyorDateStr = surveyorDateStr;
+	}
+
+	public String getInstallDateStr() {
+		return installDateStr;
+	}
+
+	public void setInstallDateStr(String installDateStr) {
+		this.installDateStr = installDateStr;
+	}
+
+	public Date getCreateDate() {
+		return createDate;
+	}
+
+	public void setCreateDate(Date createDate) {
+		this.createDate = createDate;
+	}
+
+	public Date getUpdateDate() {
+		return updateDate;
+	}
+
+	public void setUpdateDate(Date updateDate) {
+		this.updateDate = updateDate;
 	}
 
 	public String getOperatorID() {
@@ -112,22 +145,6 @@ public class Parametersinfo implements Serializable{
 
 	public void setRoleID(String roleID) {
 		this.roleID = roleID;
-	}
-
-	public String getPlayDateStr() {
-		return playDateStr;
-	}
-
-	public void setPlayDateStr(String playDateStr) {
-		this.playDateStr = playDateStr;
-	}
-
-	public String getPayDateStr() {
-		return payDateStr;
-	}
-
-	public void setPayDateStr(String payDateStr) {
-		this.payDateStr = payDateStr;
 	}
 
 	public static long getSerialVersionUID() {
@@ -286,5 +303,65 @@ public class Parametersinfo implements Serializable{
 		this.endDate = endDate;
 	}
 
+	public String getMerName() {
+		return merName;
+	}
+
+	public void setMerName(String merName) {
+		this.merName = merName;
+	}
+
+	@Override
+	public String toString() {
+		return "Parametersinfo{" +
+				"id=" + id +
+				", holeSize='" + holeSize + '\'' +
+				", doorSize='" + doorSize + '\'' +
+				", direction='" + direction + '\'' +
+				", indoorInfo='" + indoorInfo + '\'' +
+				", surveyor='" + surveyor + '\'' +
+				", surveyorSmark='" + surveyorSmark + '\'' +
+				", surveyorDate=" + surveyorDate +
+				", woodcase='" + woodcase + '\'' +
+				", moundlayer='" + moundlayer + '\'' +
+				", installPerson='" + installPerson + '\'' +
+				", installPerSmark='" + installPerSmark + '\'' +
+				", installDate=" + installDate +
+				", surveyorPhotoPath='" + surveyorPhotoPath + '\'' +
+				", surveyorPhotoName='" + surveyorPhotoName + '\'' +
+				", surveyorPhotoDes='" + surveyorPhotoDes + '\'' +
+				", istallPhotoPath='" + istallPhotoPath + '\'' +
+				", istallPhotoName='" + istallPhotoName + '\'' +
+				", istallPhotoDes='" + istallPhotoDes + '\'' +
+				", otherSmark='" + otherSmark + '\'' +
+				", agreementID='" + agreementID + '\'' +
+				", beginDate=" + beginDate +
+				", endDate=" + endDate +
+				", surveyorDateStr='" + surveyorDateStr + '\'' +
+				", installDateStr='" + installDateStr + '\'' +
+				", operatorID='" + operatorID + '\'' +
+				", storeID='" + storeID + '\'' +
+				", roleID='" + roleID + '\'' +
+				", merName='" + merName + '\'' +
+				", createDate=" + createDate +
+				", updateDate=" + updateDate +
+				'}';
+	}
+
+	public String getSurveyorPhotoName() {
+		return surveyorPhotoName;
+	}
+
+	public void setSurveyorPhotoName(String surveyorPhotoName) {
+		this.surveyorPhotoName = surveyorPhotoName;
+	}
+
+	public String getIstallPhotoName() {
+		return istallPhotoName;
+	}
+
+	public void setIstallPhotoName(String istallPhotoName) {
+		this.istallPhotoName = istallPhotoName;
+	}
 }
 

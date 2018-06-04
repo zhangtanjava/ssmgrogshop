@@ -39,7 +39,7 @@
   <body>
   
   <div class="container change">
-  
+      <h2 style="text-align: center;font-size:25px; color:#ff9900">防盗门系统管理平台</h2>
   <div class="modal" id="login">
       <div class="modal-header">
         <h4>用户登录</h4>
@@ -58,9 +58,9 @@
                 <input id="password" name="password" type="password">
               </div>
             </div>
-            <div class="control-group">
+            <%--<div class="control-group">
 					<span id="passwordTip" style="color:red; text-align: center;display:block;">${sessionScope.retMsg}</span>
-            </div>
+            </div>--%>
           </form>
       </div>
       <div class="modal-footer">

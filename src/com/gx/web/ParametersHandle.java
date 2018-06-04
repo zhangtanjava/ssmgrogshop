@@ -1,18 +1,25 @@
 package com.gx.web;
 
+import com.alibaba.druid.sql.visitor.functions.If;
 import com.alibaba.druid.util.StringUtils;
 import com.google.gson.Gson;
 import com.gx.page.Page;
 import com.gx.po.Parametersinfo;
 import com.gx.po.Parametersinfo;
 import com.gx.service.ParametersHandleService;
+import com.gx.utils.DateUtils;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.HttpServletRequest;
+import java.io.File;
+import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -58,9 +65,6 @@ public class ParametersHandle {
 
 		vo=this.parametersHandleService.pageFuzzyselect(vo,req);
 
-
-		Parametersinfo res = this.parametersHandleService.selectAllInfo(req);
-
 		mv.addObject("list",vo);
 		mv.addObject("min",datemin);
 		mv.addObject("max",datemax);
@@ -86,48 +90,192 @@ public class ParametersHandle {
 	}
 
 	@RequestMapping("/add")
-	public ModelAndView add(Parametersinfo Parametersinfo){
+	public ModelAndView add(HttpServletRequest request, Parametersinfo parametersinfo,
+	@RequestParam("surveyorFile") MultipartFile surveyorFile
+	,@RequestParam("istallFile") MultipartFile istallFile){
 		ModelAndView mv=null;
-		String payDateStr = Parametersinfo.getPayDateStr();
-		String playdateStr = Parametersinfo.getPlayDateStr();
 
-//		try {
-//			if (!StringUtils.isEmpty(payDateStr)){
-//				Parametersinfo.setPayDate(simpleDateFormat.parse(payDateStr));
-//			}
-//			if (!StringUtils.isEmpty(playdateStr)){
-//				Parametersinfo.setPlayDate(simpleDateFormat.parse(playdateStr));
-//			}
-//		}catch (Exception e){
-//			logger.info("日期转换异常："+e);
-//		}
+		//如果测量文件不为空，写入上传路径
+		if(!surveyorFile.isEmpty()) {
+			//上传文件路径
+			String path = "/Users/zhangtan/Pictures"+
+					File.separator + DateUtils.getToday()+
+					File.separator + parametersinfo.getAgreementID()+
+					File.separator + "surveyorFile";
+			logger.info("上传文件路径："+path);
+			//上传文件名
+			String filename = surveyorFile.getOriginalFilename();
+            logger.info("上传文件名："+filename);
 
-//		Parametersinfo.setCreateDate(new Date());
-//		Parametersinfo.setUpdateDate(new Date());
-		parametersHandleService.insertAll(Parametersinfo);
+			File filepath = new File(path,filename);
+			//判断路径是否存在，如果不存在就创建一个
+			if (!filepath.getParentFile().exists()) {
+				filepath.getParentFile().mkdirs();
+			}
+			//将上传文件保存到一个目标文件当中
+			try {
+				surveyorFile.transferTo(new File(path + File.separator + filename));
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+			parametersinfo.setSurveyorPhotoPath(path + File.separator + filename);
+			parametersinfo.setSurveyorPhotoName(filename);
+			logger.info("测量图片保存成功！");
+		} else {
+			logger.info("测量图片保存失败！");
+		}
+
+		//如果安装文件不为空，写入上传路径
+		if(!istallFile.isEmpty()) {
+			//上传文件路径
+			String path = "/Users/zhangtan/Pictures"+
+					File.separator + DateUtils.getToday()+
+					File.separator + parametersinfo.getAgreementID()+
+					File.separator + "istallFile";
+			logger.info("上传文件路径："+path);
+			//上传文件名
+			String filename = istallFile.getOriginalFilename();
+			logger.info("上传文件名："+filename);
+			File filepath = new File(path,filename);
+			//判断路径是否存在，如果不存在就创建一个
+			if (!filepath.getParentFile().exists()) {
+				filepath.getParentFile().mkdirs();
+			}
+			//将上传文件保存到一个目标文件当中
+			try {
+                istallFile.transferTo(new File(path + File.separator + filename));
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+			parametersinfo.setIstallPhotoPath(path + File.separator + filename);
+			parametersinfo.setIstallPhotoName(filename);
+			logger.info("安装图片保存成功！");
+		} else {
+			logger.info("安装图片保存失败！");
+		}
+
+		String surveyorDateStr = parametersinfo.getSurveyorDateStr();
+		String installDateStr = parametersinfo.getInstallDateStr();
+
+		try {
+			if (!StringUtils.isEmpty(surveyorDateStr)){
+				parametersinfo.setSurveyorDate(simpleDateFormat.parse(surveyorDateStr));
+			}
+			if (!StringUtils.isEmpty(installDateStr)){
+				parametersinfo.setInstallDate(simpleDateFormat.parse(installDateStr));
+			}
+		}catch (Exception e){
+			logger.info("日期转换异常："+e);
+		}
+
+		parametersinfo.setCreateDate(new Date());
+		parametersinfo.setUpdateDate(new Date());
+
+
+
+		parametersHandleService.insertAll(parametersinfo);
 		mv=new ModelAndView("redirect:/ParametersHandle/tolist.do");
 		return mv;
 	}
 
 	@RequestMapping("/update")
-	public ModelAndView update(Parametersinfo Parametersinfo){
+	public ModelAndView update(HttpServletRequest request, Parametersinfo parametersinfo,
+                               @RequestParam("surveyorFile") MultipartFile surveyorFile
+            ,@RequestParam("istallFile") MultipartFile istallFile){
 		ModelAndView mv=null;
-		String payDateStr = Parametersinfo.getPayDateStr();
-		String playdateStr = Parametersinfo.getPlayDateStr();
+
+        Parametersinfo parametersinfo1 = parametersHandleService.selectById(parametersinfo.getId());
+        String surveyPath = parametersinfo1.getSurveyorPhotoPath();
+        String istallPath = parametersinfo1.getIstallPhotoPath();
+
+        //如果文件不为空，写入上传路径
+        if(!surveyorFile.isEmpty()) {
+			//删除原来的文件，新建文件
+			if (!StringUtils.isEmpty(surveyPath)){
+				File file = new File(surveyPath);
+				file.delete();
+			}
+
+            //上传文件路径
+            String path = "/Users/zhangtan/Pictures"+
+					File.separator + DateUtils.getToday()+
+					File.separator + parametersinfo.getAgreementID()+
+					File.separator + "surveyorFile";
+            logger.info("上传文件路径："+path);
+            //上传文件名
+            String filename = surveyorFile.getOriginalFilename();
+            logger.info("上传文件名："+filename);
+
+            File filepath = new File(path,filename);
+            //判断路径是否存在，如果不存在就创建一个
+            if (!filepath.getParentFile().exists()) {
+                filepath.getParentFile().mkdirs();
+            }
+            //将上传文件保存到一个目标文件当中
+            try {
+                surveyorFile.transferTo(new File(path + File.separator + filename));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            parametersinfo.setSurveyorPhotoPath(path + File.separator + filename);
+			parametersinfo.setSurveyorPhotoName(filename);
+            logger.info("测量图片保存成功！");
+        } else {
+            logger.info("测量图片保存失败！");
+        }
+
+        //如果文件不为空，写入上传路径
+        if(!istallFile.isEmpty()) {
+        	//删除原来文件
+			if (!StringUtils.isEmpty(istallPath)){
+				File file = new File(istallPath);
+				file.delete();
+			}
+
+            //上传文件路径
+            String path = "/Users/zhangtan/Pictures"+
+			File.separator + DateUtils.getToday()+
+					File.separator + parametersinfo.getAgreementID()+
+					File.separator + "istallFile";
+            logger.info("上传文件路径："+path);
+            //上传文件名
+            String filename = istallFile.getOriginalFilename();
+            logger.info("上传文件名："+filename);
+            File filepath = new File(path,filename);
+            //判断路径是否存在，如果不存在就创建一个
+            if (!filepath.getParentFile().exists()) {
+                filepath.getParentFile().mkdirs();
+            }
+            //将上传文件保存到一个目标文件当中
+            try {
+                istallFile.transferTo(new File(path + File.separator + filename));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            parametersinfo.setIstallPhotoPath(path + File.separator + filename);
+			parametersinfo.setIstallPhotoName(filename);
+            logger.info("安装图片保存成功！");
+        } else {
+            logger.info("安装图片保存失败！");
+        }
+
+
+        String surveyorDateStr = parametersinfo.getSurveyorDateStr();
+		String installDateStr = parametersinfo.getInstallDateStr();
 
 		try {
-//			if (!StringUtils.isEmpty(payDateStr)){
-//				Parametersinfo.setPayDate(simpleDateFormat.parse(payDateStr));
-//			}
-//			if (!StringUtils.isEmpty(playdateStr)){
-//				Parametersinfo.setPlayDate(simpleDateFormat.parse(playdateStr));
-//			}
+			if (!StringUtils.isEmpty(surveyorDateStr)){
+				parametersinfo.setSurveyorDate(simpleDateFormat.parse(surveyorDateStr));
+			}
+			if (!StringUtils.isEmpty(installDateStr)){
+				parametersinfo.setInstallDate(simpleDateFormat.parse(installDateStr));
+			}
 		}catch (Exception e){
 			logger.info("日期转换异常："+e);
 		}
 
-//		Parametersinfo.setUpdateDate(new Date());
-		parametersHandleService.updateById(Parametersinfo);
+		parametersinfo.setUpdateDate(new Date());
+		parametersHandleService.updateById(parametersinfo);
 		mv=new ModelAndView("redirect:/ParametersHandle/tolist.do");
 		return mv;
 	}
@@ -163,4 +311,6 @@ public class ParametersHandle {
 		mv.addObject("max",max);
 		return mv;
 	}
+
+
 }
