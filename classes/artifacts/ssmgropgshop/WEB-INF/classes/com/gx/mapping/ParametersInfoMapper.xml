@@ -146,6 +146,9 @@
             <if test="endDate != null">
                 AND surveyorDate &lt;= #{endDate}
             </if>
+            <if test="storeID != null  and storeID != '' and storeID != 1 ">
+                AND storeID = #{storeID}
+            </if>
         </where>
         limit #{start},#{pageSize}
   </select>
@@ -153,6 +156,21 @@
 
     <select id="countFuzzyselect" resultType="java.lang.Integer">
        SELECT count(*) FROM parametersInfo
+        <where>
+            <if test="agreementID != null and agreementID != '' ">
+                agreementID = #{agreementID}
+            </if>
+            <if test="beginDate != null">
+                and surveyorDate &gt;= #{beginDate}
+            </if>
+            <if test="endDate != null">
+                AND surveyorDate &lt;= #{endDate}
+            </if>
+            <if test="storeID != null  and storeID != '' and storeID != 1 ">
+                AND storeID = #{storeID}
+            </if>
+        </where>
+
   </select>
 
 

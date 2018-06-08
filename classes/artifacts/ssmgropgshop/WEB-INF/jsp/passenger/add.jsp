@@ -165,15 +165,13 @@
     </div>
     
     <form action="${ctx}/Passenger/add.do" method="post" onsubmit="return verify()">
+		<input type="hidden" name="userID" value="${sessionScope.userPo.id}" >
     <!--  ———————————————————————————————————————————————————————————————————————————————————————— -->
 	    <div class="span12">
 	      <div class="row-fluid">
 		     <div class="span3">
-		        <label>姓名：</label>
+		        <label>*姓名：</label>
 		        <input id="nameId" name="name" type="text" style="width:97%;height:27px;float:left;" onchange="onchangeOne()" onblur="selectName(this.value)">
-		        <div id="divOne" style="float:right;">
-			         <label class="yansered" style="margin-top:7px;">*</label>
-			    </div> 
 		      </div>
 		     <div class="span3">
 		        <label>性别：</label>
@@ -259,7 +257,7 @@
    }
    
     function deletefunction(){
-     parent.document.getElementById('Mainid').src='${ctx}/Passenger/tolist.do';
+     parent.document.getElementById('Mainid').src='${ctx}/Passenger/tolist.do?userID=${sessionScope.userPo.id}';
    }
    
    function onchangeOne(){

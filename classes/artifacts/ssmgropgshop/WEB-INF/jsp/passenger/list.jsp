@@ -73,7 +73,7 @@
     <div class="span5">
 	    <div class="row-fluid">
 		    <label class="labelroomnumber">客户名称：</label>
-		    <form action="${ctx}/Passenger/tolist.do" method="post" style="float: left;">
+		    <form action="${ctx}/Passenger/tolist.do?userID=${sessionScope.userPo.id}" method="post" style="float: left;">
 			   <input id="txtnameid" name="txtname" class="textone roomnumberwidth" style="border-radius:0px; border-top-left-radius:4px; border-bottom-left-radius:4px;height:26px;" type="text" placeholder="请输入关键字" value="${txtname}">
 			   <div class="input-append">  
 			      <button type="submit" class="btn-success textone" style="margin-left:-4px;height:26px;"><li class="icon-search icon-white"></li>搜索</button>
@@ -169,7 +169,7 @@
   	if(chk_value!=""){
   	var flag=window.confirm("注意：您确定要永久删除该信息吗?");
      if(flag){
-  	  parent.document.getElementById("Mainid").src='${ctx}/Passenger/delete.do?id='+chk_value;
+  	  parent.document.getElementById("Mainid").src='${ctx}/Passenger/delete.do?id='+chk_value+'&userID=${sessionScope.userPo.id}';
   	}
   	}else{
 	  alert("请选择一条或多条数据进行删除");
@@ -178,18 +178,14 @@
   }
   
   
-  
-  
-   
-   
-   
+
   /* 分页要用的 */
   $(".tcdPageCode").createPage({
      pageCount:${list.totalPage},
      current:${list.currentPage},
      backFn:function(p){
      var txtname=document.getElementById("txtnameid").value;
-     location.href="${ctx}/Passenger/tolist.do?currentPage="+p+"&txtname="+txtname;
+     location.href="${ctx}/Passenger/tolist.do?currentPage="+p+"&txtname="+txtname+"&userID=${sessionScope.userPo.id}";
      }
    });
   

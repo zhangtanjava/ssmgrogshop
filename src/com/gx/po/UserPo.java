@@ -3,67 +3,89 @@ package com.gx.po;
 import java.util.Date;
 
 public class UserPo {
-	
-	private Integer id;
-	
-	private String userName;
-	
-	private String password;
-	
-	private Date createTime;
-	
-	private Date updateTime;
-	
-	private String roleID;
 
-	public Integer getId() {
-		return id;
-	}
+    private Integer id;
 
-	public void setId(Integer id) {
-		this.id = id;
-	}
+    private String userName;
 
-	public String getUserName() {
-		return userName;
-	}
+    private String password;
 
-	public void setUserName(String userName) {
-		this.userName = userName;
-	}
+    private Date createTime;
 
-	public String getPassword() {
-		return password;
-	}
+    private Date updateTime;
 
-	public void setPassword(String password) {
-		this.password = password;
-	}
+    private String roleID;
+
+    private String storeID;
 
 
-	public Date getCreateTime() {
-		return createTime;
-	}
+    public Integer getId() {
+        return id;
+    }
 
-	public void setCreateTime(Date createTime) {
-		this.createTime = createTime;
-	}
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
-	public Date getUpdateTime() {
-		return updateTime;
-	}
+    public String getUserName() {
+        return userName;
+    }
 
-	public void setUpdateTime(Date updateTime) {
-		this.updateTime = updateTime;
-	}
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
 
-	public String getRoleID() {
-		return roleID;
-	}
+    public String getPassword() {
+        return password;
+    }
 
-	public void setRoleID(String roleID) {
-		this.roleID = roleID;
-	}
+    public void setPassword(String password) {
+        this.password = password;
+    }
 
 
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
+    }
+
+    public Date getUpdateTime() {
+        return updateTime;
+    }
+
+    public void setUpdateTime(Date updateTime) {
+        this.updateTime = updateTime;
+    }
+
+    public String getRoleID() {
+        return roleID;
+    }
+
+    public void setRoleID(String roleID) {
+        this.roleID = roleID;
+    }
+
+    public String getStoreID() {
+        return storeID;
+    }
+
+    public void setStoreID(String storeID) {
+        this.storeID = storeID;
+    }
+
+    @Override
+    public String toString() {
+        return "UserPo{" +
+                "id=" + id +
+                ", userName='" + userName + '\'' +
+                ", password='" + password + '\'' +
+                ", createTime=" + createTime +
+                ", updateTime=" + updateTime +
+                ", roleID='" + roleID + '\'' +
+                ", storeID='" + storeID + '\'' +
+                '}';
+    }
 }

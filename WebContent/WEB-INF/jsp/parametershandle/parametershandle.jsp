@@ -189,7 +189,7 @@
         var datemax = document.getElementById("datemax").value;
         var agreementID = document.getElementById("agreementID").value;
         parent.document.getElementById('Mainid').src = '${ctx}/ParametersHandle/tolist.do?datemin=' +
-            datemin + '&datemax=' + datemax +'&agreementID=' + agreementID;
+            datemin + '&datemax=' + datemax +'&agreementID=' + agreementID+'&userID=' + ${sessionScope.userPo.id};
     }
 
     function particulars() {
@@ -225,7 +225,7 @@
             var datemin = document.getElementById("datemin").value;
             var datemax = document.getElementById("datemax").value;
             location.href = "${ctx}/FinancialStatistics/tolist.do?currentPage=" + p +
-                "&datemin=" + datemin + "&datemax=" + datemax;
+                "&datemin=" + datemin + "&datemax=" + datemax+"&userID=${sessionScope.userPo.id}";
         }
     });
 
@@ -257,7 +257,7 @@
         if(chk_value!=""){
             var flag=window.confirm("注意：您确定要永久删除该信息吗?");
             if(flag){
-                parent.document.getElementById("Mainid").src='${ctx}/ParametersHandle/delete.do?id='+chk_value;
+                parent.document.getElementById("Mainid").src='${ctx}/ParametersHandle/delete.do?id='+chk_value+'userID'+${sessionScope.userPo.id};
             }
         }else{
             alert("请选择一条或多条数据进行删除");

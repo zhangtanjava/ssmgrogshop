@@ -51,14 +51,14 @@ public class PassengerServiceImpl implements PassengerService {
 	}
 
 	@Override
-	public Page<PassengerPo> pageFuzzyselect(String name, Page<PassengerPo> vo) {
+	public Page<PassengerPo> pageFuzzyselect(String storeID,String name, Page<PassengerPo> vo) {
 		int start=0;
 		if (vo.getCurrentPage()>1) {
 			start=(vo.getCurrentPage()-1)*vo.getPageSize();
 		}
-		List<PassengerPo> list=passengerDao.pageFuzzyselect(name, start, vo.getPageSize());
+		List<PassengerPo> list=passengerDao.pageFuzzyselect(storeID,name, start, vo.getPageSize());
 		vo.setResult(list);
-		int count=passengerDao.countFuzzyselect(name);
+		int count=passengerDao.countFuzzyselect(storeID,name);
 		vo.setTotal(count);
 		return vo;
 	}

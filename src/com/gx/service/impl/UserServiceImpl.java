@@ -22,7 +22,6 @@ public class UserServiceImpl implements UserService {
 	
 	@Override
 	public UserPo selectLogin(UserPo user) {
-		// TODO Auto-generated method stub
 		return userDao.selectLogin(user);
 	}
 	

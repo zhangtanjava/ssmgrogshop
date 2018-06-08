@@ -5,10 +5,13 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.jsp.tagext.TryCatchFinally;
 
+import com.gx.po.UserPo;
+import com.gx.service.UserService;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -29,9 +32,12 @@ public class Passenger {
 	
 	@Autowired
 	private PassengerService passengerService;
-	
+	@Autowired
+	private UserService userService;
+
 	@RequestMapping("/tolist")
-	public ModelAndView tolist(HttpServletRequest request,Integer currentPage,String txtname){
+	public ModelAndView tolist(HttpServletRequest request,Integer currentPage,String txtname,Integer userID){
+		logger.info("Passenger tolist req:userID"+userID);
 		ModelAndView mv=null;
 		mv=new ModelAndView("/passenger/list");
 		Page<PassengerPo> vo=new Page<PassengerPo>();
@@ -44,8 +50,14 @@ public class Passenger {
 		{
 			txtname="";
 		}
+		String storeID ="0";
+		UserPo userPo = userService.selectById(userID);
+		if (userPo != null){
+			storeID=userPo.getStoreID();
+		}
+
 		vo.setCurrentPage(currentPage);
-		vo=this.passengerService.pageFuzzyselect(txtname, vo);
+		vo=this.passengerService.pageFuzzyselect(storeID,txtname, vo);
 		mv.addObject("list",vo);
 		mv.addObject("txtname",txtname);
 		return mv;
@@ -54,45 +66,30 @@ public class Passenger {
 	@RequestMapping("/toadd")
 	public ModelAndView toadd(){
 		ModelAndView mv=null;
-		List<AttributePo> listGender=attributeService.selectGender();                      //性别
-		List<AttributePo> listNation=attributeService.selectNation();                      //民族
-		List<AttributePo> listPassengerLevel=attributeService.selectPassengerLevel();      //旅客级别
-		List<AttributePo> listEducationDegree=attributeService.selectEducationDegree();    //文化程度
-		List<AttributePo> listPapers=attributeService.selectPapers();                      //证件类型
-		List<AttributePo> listThingReason=attributeService.selectThingReason();            //事由
 		mv=new ModelAndView("/passenger/add");
-		mv.addObject("listGender",listGender);
-		mv.addObject("listNation",listNation);
-		mv.addObject("listPassengerLevel",listPassengerLevel);
-		mv.addObject("listEducationDegree",listEducationDegree);
-		mv.addObject("listPapers",listPapers);
-		mv.addObject("listThingReason",listThingReason);
 		return mv;
 	}
 	
 	@RequestMapping("/toupdate")
 	public ModelAndView toupdate(int id){
 		ModelAndView mv=null;
-		List<AttributePo> listGender=attributeService.selectGender();                      //性别
-		List<AttributePo> listNation=attributeService.selectNation();                      //民族
-		List<AttributePo> listPassengerLevel=attributeService.selectPassengerLevel();      //旅客级别
-		List<AttributePo> listEducationDegree=attributeService.selectEducationDegree();    //文化程度
-		List<AttributePo> listPapers=attributeService.selectPapers();                      //证件类型
-		List<AttributePo> listThingReason=attributeService.selectThingReason();            //事由
 		PassengerPo list=passengerService.selectById(id);
 		mv=new ModelAndView("/passenger/update");
-		mv.addObject("listGender",listGender);
-		mv.addObject("listNation",listNation);
-		mv.addObject("listPassengerLevel",listPassengerLevel);
-		mv.addObject("listEducationDegree",listEducationDegree);
-		mv.addObject("listPapers",listPapers);
-		mv.addObject("listThingReason",listThingReason);
 		mv.addObject("list",list);
 		return mv;
 	}
 	
 	@RequestMapping("/add")
-	public ModelAndView add(PassengerPo passengerPo){
+	public ModelAndView add(PassengerPo passengerPo
+			,Integer userID){
+
+		logger.info("Passenger add req:"+passengerPo+"..userID:"+userID);
+		UserPo userPo = userService.selectById(userID);
+		if (userPo != null){
+			passengerPo.setStoreID(userPo.getStoreID());
+		}else{
+			passengerPo.setStoreID("0");//1-8正常店
+		}
 
 		ModelAndView mv=null;
 		try {
@@ -101,26 +98,27 @@ public class Passenger {
 			logger.info("添加用户信息异常："+e.getMessage());
 		}
 
-		mv=new ModelAndView("redirect:/Passenger/tolist.do");
+		mv=new ModelAndView("redirect:/Passenger/tolist.do?userID="+userID);
 		return mv;
 	}
 	
 	@RequestMapping("/update")
-	public ModelAndView update(PassengerPo passengerPo){
+	public ModelAndView update(PassengerPo passengerPo,Integer userID){
 		ModelAndView mv=null;
 		passengerService.updateById(passengerPo);
-		mv=new ModelAndView("redirect:/Passenger/tolist.do");
+		mv=new ModelAndView("redirect:/Passenger/tolist.do?userID="+userID);
 		return mv;
 	}
 	
 	@RequestMapping("/delete")
-	public ModelAndView delete(String id){
+	public ModelAndView delete(String id,Integer userID){
+		logger.info("Passenger delete req:"+id+"|"+userID);
 		ModelAndView mv=null;
 		String[] FenGe=id.split(",");
 		for (int i = 0; i < FenGe.length; i++) {
 			passengerService.deleteById(Integer.parseInt(FenGe[i]));
 		}
-		mv=new ModelAndView("redirect:/Passenger/tolist.do");
+		mv=new ModelAndView("redirect:/Passenger/tolist.do?userID="+userID);
 		return mv;
 	}
 	

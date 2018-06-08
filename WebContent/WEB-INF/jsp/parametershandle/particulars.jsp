@@ -309,7 +309,7 @@
      var datemin=document.getElementById("minId").value;
      var datemax=document.getElementById("maxId").value;
      parent.document.getElementById('Mainid').src='${ctx}/ParametersHandle/tolist.do?datemin='+
-     datemin+'&datemax='+datemax;
+     datemin+'&datemax='+datemax+'&userID='+${sessionScope.userPo.id};
  }
  
 

@@ -12,6 +12,7 @@
       <arg column="userName" jdbcType="VARCHAR" javaType="java.lang.String" />
       <arg column="password" jdbcType="VARCHAR" javaType="java.lang.String" />
        <arg column="roleID" jdbcType="VARCHAR" javaType="java.lang.String" />
+        <arg column="storeID" jdbcType="VARCHAR" javaType="java.lang.String" />
       <arg column="createTime" jdbcType="TIMESTAMP" javaType="java.util.Date" />
       <arg column="updateTime" jdbcType="TIMESTAMP" javaType="java.util.Date" />
     </constructor>
@@ -32,12 +33,13 @@
   
   <!--   新增 -->
   <insert id="insertAll" useGeneratedKeys="true" keyProperty="id" parameterType="com.gx.po.UserPo" >
-       INSERT INTO users (userName,password,createTime,updateTime,roleID)
+       INSERT INTO users (userName,password,createTime,updateTime,roleID,storeID)
      values (#{userName,jdbcType=VARCHAR},
 		     #{password,jdbcType=VARCHAR},
 		     #{createTime,jdbcType=TIMESTAMP},
 		     #{updateTime,jdbcType=TIMESTAMP},
-		     #{roleID,jdbcType=VARCHAR}
+		     #{roleID,jdbcType=VARCHAR},
+		     #{storeID,jdbcType=VARCHAR}
 		     )
   </insert>
   
@@ -58,6 +60,7 @@
       UPDATE users SET userName=#{userName,jdbcType=INTEGER},
 					      password=#{password,jdbcType=INTEGER},
 					      roleID=#{roleID,jdbcType=INTEGER},
+					      storeID=#{storeID,jdbcType=VARCHAR},
 					      updateTime=#{updateTime,jdbcType=TIMESTAMP}
                    WHERE id = #{id,jdbcType=INTEGER}
    </update>

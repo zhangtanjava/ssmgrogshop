@@ -43,16 +43,18 @@ public class ParametersHandleServiceImpl implements com.gx.service.ParametersHan
 	}
 
 	@Override
-	public Page<Parametersinfo> pageFuzzyselect(Page<Parametersinfo> vo,Parametersinfo Parametersinfo) {
-		logger.info("TranInfoServiceImpl pageFuzzyselect Parametersinfo:"+Parametersinfo);
+	public Page<Parametersinfo> pageFuzzyselect(Page<Parametersinfo> vo,Parametersinfo parametersinfo) {
+		logger.info("TranInfoServiceImpl pageFuzzyselect Parametersinfo:"+parametersinfo);
 		int start=0;
 		if (vo.getCurrentPage()>1) {
 			start=(vo.getCurrentPage()-1)*vo.getPageSize();
 		}
 		List<Parametersinfo> list=parametersInfoDao.pageFuzzyselect(start, vo.getPageSize(),
-				Parametersinfo.getBeginDate(),Parametersinfo.getEndDate(),Parametersinfo.getAgreementID());
+				parametersinfo.getBeginDate(),parametersinfo.getEndDate(),parametersinfo.getAgreementID(),
+				parametersinfo.getStoreID());
 		vo.setResult(list);
-		int count=parametersInfoDao.countFuzzyselect();
+		int count=parametersInfoDao.countFuzzyselect(parametersinfo.getBeginDate(),parametersinfo.getEndDate(),parametersinfo.getAgreementID(),
+				parametersinfo.getStoreID());
 		vo.setTotal(count);
 		return vo;
 	}

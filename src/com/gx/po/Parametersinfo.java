@@ -70,10 +70,19 @@ public class Parametersinfo implements Serializable{
 
 	private  String merName; //商户名
 
-	private Date createDate; //创建日期
+	private Date createDate; //	创建日期/订货日期
+
+	private String createDateStr; //	创建日期/订货日期
 
 	private Date updateDate;//更新日期
 
+	public String getCreateDateStr() {
+		return createDateStr;
+	}
+
+	public void setCreateDateStr(String createDateStr) {
+		this.createDateStr = createDateStr;
+	}
 
 	public String getSurveyorPhotoDes() {
 		return surveyorPhotoDes;

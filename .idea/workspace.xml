@@ -9,33 +9,81 @@
     <list default="true" id="f2f51f28-9947-4036-91dd-aef10d1b0668" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebContent/WEB-INF/jsp/login/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/WEB-INF/jsp/login/login.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebContent/WEB-INF/jsp/main/main.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/WEB-INF/jsp/main/main.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebContent/WEB-INF/jsp/parametershandle/add.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/WEB-INF/jsp/parametershandle/add.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebContent/WEB-INF/jsp/parametershandle/list.jsp" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/WebContent/WEB-INF/jsp/parametershandle/parametershandle.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/WEB-INF/jsp/parametershandle/parametershandle.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebContent/WEB-INF/jsp/parametershandle/particulars.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/WEB-INF/jsp/parametershandle/particulars.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebContent/WEB-INF/jsp/parametershandle/update.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/WEB-INF/jsp/parametershandle/update.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebContent/WEB-INF/jsp/transtatistics/list.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebContent/WEB-INF/jsp/transtatistics/transtatistics.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/WEB-INF/jsp/transtatistics/transtatistics.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebContent/WEB-INF/jsp/transtatistics/update.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/WEB-INF/jsp/transtatistics/update.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/spring-mvc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/spring-mvc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/artifacts/ssmgropgshop/WEB-INF/classes/com/gx/service/ParametersHandleService.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/artifacts/ssmgropgshop/WEB-INF/classes/com/gx/service/ParametersHandleService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebContent/WEB-INF/jsp/passenger/add.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/WEB-INF/jsp/passenger/add.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebContent/WEB-INF/jsp/passenger/list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/WEB-INF/jsp/passenger/list.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebContent/WEB-INF/jsp/passenger/update.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/WEB-INF/jsp/passenger/update.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebContent/WEB-INF/jsp/user/add.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/WEB-INF/jsp/user/add.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebContent/WEB-INF/jsp/user/list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/WEB-INF/jsp/user/list.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebContent/WEB-INF/jsp/user/update.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/WEB-INF/jsp/user/update.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/com/gx/dao/ParametersInfoDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/com/gx/dao/ParametersInfoDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/com/gx/dao/PassengerDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/com/gx/dao/PassengerDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/com/gx/mapping/ParametersInfoMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/com/gx/mapping/ParametersInfoMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/com/gx/mapping/PassengerMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/com/gx/mapping/PassengerMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/com/gx/mapping/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/com/gx/mapping/UserMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/com/gx/po/Parametersinfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/com/gx/po/Parametersinfo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/com/gx/po/PassengerPo.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/com/gx/po/PassengerPo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/com/gx/po/UserPo.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/com/gx/po/UserPo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/com/gx/service/PassengerService.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/com/gx/service/PassengerService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/com/gx/service/impl/ParametersHandleServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/com/gx/service/impl/ParametersHandleServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/com/gx/service/impl/PassengerServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/com/gx/service/impl/PassengerServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/com/gx/service/impl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/com/gx/service/impl/UserServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/com/gx/web/Login.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/com/gx/web/Login.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/com/gx/web/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/com/gx/web/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/com/gx/web/ParametersHandle.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/com/gx/web/ParametersHandle.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/com/gx/web/Passenger.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/com/gx/web/Passenger.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/com/gx/web/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/com/gx/web/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/ssmgropgshop/WEB-INF/classes/com/gx/dao/ParametersInfoDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/artifacts/ssmgropgshop/WEB-INF/classes/com/gx/dao/ParametersInfoDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/ssmgropgshop/WEB-INF/classes/com/gx/dao/PassengerDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/artifacts/ssmgropgshop/WEB-INF/classes/com/gx/dao/PassengerDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/ssmgropgshop/WEB-INF/classes/com/gx/mapping/ParametersInfoMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/classes/artifacts/ssmgropgshop/WEB-INF/classes/com/gx/mapping/ParametersInfoMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/ssmgropgshop/WEB-INF/classes/com/gx/mapping/PassengerMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/classes/artifacts/ssmgropgshop/WEB-INF/classes/com/gx/mapping/PassengerMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/ssmgropgshop/WEB-INF/classes/com/gx/mapping/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/classes/artifacts/ssmgropgshop/WEB-INF/classes/com/gx/mapping/UserMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/ssmgropgshop/WEB-INF/classes/com/gx/po/Parametersinfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/artifacts/ssmgropgshop/WEB-INF/classes/com/gx/po/Parametersinfo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/ssmgropgshop/WEB-INF/classes/com/gx/po/PassengerPo.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/artifacts/ssmgropgshop/WEB-INF/classes/com/gx/po/PassengerPo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/ssmgropgshop/WEB-INF/classes/com/gx/po/UserPo.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/artifacts/ssmgropgshop/WEB-INF/classes/com/gx/po/UserPo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/ssmgropgshop/WEB-INF/classes/com/gx/service/PassengerService.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/artifacts/ssmgropgshop/WEB-INF/classes/com/gx/service/PassengerService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/classes/artifacts/ssmgropgshop/WEB-INF/classes/com/gx/service/impl/ParametersHandleServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/artifacts/ssmgropgshop/WEB-INF/classes/com/gx/service/impl/ParametersHandleServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/ssmgropgshop/WEB-INF/classes/com/gx/service/impl/PassengerServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/artifacts/ssmgropgshop/WEB-INF/classes/com/gx/service/impl/PassengerServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/ssmgropgshop/WEB-INF/classes/com/gx/service/impl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/artifacts/ssmgropgshop/WEB-INF/classes/com/gx/service/impl/UserServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/ssmgropgshop/WEB-INF/classes/com/gx/web/Login.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/artifacts/ssmgropgshop/WEB-INF/classes/com/gx/web/Login.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/ssmgropgshop/WEB-INF/classes/com/gx/web/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/artifacts/ssmgropgshop/WEB-INF/classes/com/gx/web/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/classes/artifacts/ssmgropgshop/WEB-INF/classes/com/gx/web/ParametersHandle.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/artifacts/ssmgropgshop/WEB-INF/classes/com/gx/web/ParametersHandle.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/artifacts/ssmgropgshop/WEB-INF/classes/spring-mvc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/classes/artifacts/ssmgropgshop/WEB-INF/classes/spring-mvc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/ssmgropgshop/WEB-INF/classes/com/gx/web/Passenger.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/artifacts/ssmgropgshop/WEB-INF/classes/com/gx/web/Passenger.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/ssmgropgshop/WEB-INF/classes/com/gx/web/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/artifacts/ssmgropgshop/WEB-INF/classes/com/gx/web/User.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/classes/artifacts/ssmgropgshop/WEB-INF/jsp/login/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/classes/artifacts/ssmgropgshop/WEB-INF/jsp/login/login.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/ssmgropgshop/WEB-INF/jsp/main/main.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/classes/artifacts/ssmgropgshop/WEB-INF/jsp/main/main.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/classes/artifacts/ssmgropgshop/WEB-INF/jsp/parametershandle/add.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/classes/artifacts/ssmgropgshop/WEB-INF/jsp/parametershandle/add.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/ssmgropgshop/WEB-INF/jsp/parametershandle/list.jsp" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/classes/artifacts/ssmgropgshop/WEB-INF/jsp/parametershandle/parametershandle.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/classes/artifacts/ssmgropgshop/WEB-INF/jsp/parametershandle/parametershandle.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/classes/artifacts/ssmgropgshop/WEB-INF/jsp/parametershandle/particulars.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/classes/artifacts/ssmgropgshop/WEB-INF/jsp/parametershandle/particulars.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/classes/artifacts/ssmgropgshop/WEB-INF/jsp/parametershandle/update.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/classes/artifacts/ssmgropgshop/WEB-INF/jsp/parametershandle/update.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/artifacts/ssmgropgshop/WEB-INF/jsp/transtatistics/add.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/classes/artifacts/ssmgropgshop/WEB-INF/jsp/transtatistics/add.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/artifacts/ssmgropgshop/WEB-INF/jsp/transtatistics/list.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/artifacts/ssmgropgshop/WEB-INF/jsp/transtatistics/particulars.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/classes/artifacts/ssmgropgshop/WEB-INF/jsp/transtatistics/particulars.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/artifacts/ssmgropgshop/WEB-INF/jsp/transtatistics/transtatistics.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/classes/artifacts/ssmgropgshop/WEB-INF/jsp/transtatistics/transtatistics.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/artifacts/ssmgropgshop/WEB-INF/jsp/transtatistics/update.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/classes/artifacts/ssmgropgshop/WEB-INF/jsp/transtatistics/update.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/ssmgropgshop/WEB-INF/jsp/passenger/add.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/classes/artifacts/ssmgropgshop/WEB-INF/jsp/passenger/add.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/ssmgropgshop/WEB-INF/jsp/passenger/list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/classes/artifacts/ssmgropgshop/WEB-INF/jsp/passenger/list.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/ssmgropgshop/WEB-INF/jsp/user/add.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/classes/artifacts/ssmgropgshop/WEB-INF/jsp/user/add.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/ssmgropgshop/WEB-INF/jsp/user/list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/classes/artifacts/ssmgropgshop/WEB-INF/jsp/user/list.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/ssmgropgshop/WEB-INF/jsp/user/update.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/classes/artifacts/ssmgropgshop/WEB-INF/jsp/user/update.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/gx/dao/ParametersInfoDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/gx/dao/ParametersInfoDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/gx/dao/PassengerDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/gx/dao/PassengerDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/gx/mapping/ParametersInfoMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/gx/mapping/ParametersInfoMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/gx/mapping/PassengerMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/gx/mapping/PassengerMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/gx/mapping/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/gx/mapping/UserMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/gx/po/Parametersinfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/gx/po/Parametersinfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/gx/po/PassengerPo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/gx/po/PassengerPo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/gx/po/UserPo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/gx/po/UserPo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/gx/service/PassengerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/gx/service/PassengerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/gx/service/impl/ParametersHandleServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/gx/service/impl/ParametersHandleServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/gx/service/impl/PassengerServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/gx/service/impl/PassengerServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/gx/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/gx/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/gx/web/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/gx/web/Login.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/gx/web/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/gx/web/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/gx/web/ParametersHandle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/gx/web/ParametersHandle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/spring-mvc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/spring-mvc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/gx/web/Passenger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/gx/web/Passenger.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/gx/web/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/gx/web/User.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/build/classes/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -61,11 +109,50 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="update.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/WebContent/WEB-INF/jsp/parametershandle/update.jsp">
+      <file leaf-file-name="ParametersHandle.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/gx/web/ParametersHandle.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="652">
-              <caret line="200" column="18" lean-forward="true" selection-start-line="200" selection-start-column="18" selection-end-line="200" selection-end-column="18" />
+            <state relative-caret-position="323">
+              <caret line="42" column="32" selection-start-line="42" selection-start-column="32" selection-end-line="42" selection-end-column="32" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Passenger.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/gx/web/Passenger.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="206">
+              <caret line="55" column="40" lean-forward="true" selection-start-line="55" selection-start-column="40" selection-end-line="55" selection-end-column="40" />
+              <folding>
+                <element signature="e#1293#1306#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PassengerMapper.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/gx/mapping/PassengerMapper.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="100">
+              <caret line="34" column="2" lean-forward="true" selection-start-line="34" selection-start-column="2" selection-end-line="34" selection-end-column="2" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PassengerServiceImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/gx/service/impl/PassengerServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="154">
+              <caret line="53" column="29" selection-start-line="53" selection-start-column="29" selection-end-line="53" selection-end-column="29" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="list.jsp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/WebContent/WEB-INF/jsp/passenger/list.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="177">
+              <caret line="180" column="2" selection-start-line="180" selection-start-column="2" selection-end-line="180" selection-end-column="2" />
             </state>
           </provider>
         </entry>
@@ -73,78 +160,38 @@
       <file leaf-file-name="parametershandle.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/WebContent/WEB-INF/jsp/parametershandle/parametershandle.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="162" column="29" lean-forward="true" selection-start-line="162" selection-start-column="29" selection-end-line="162" selection-end-column="29" />
+            <state relative-caret-position="287">
+              <caret line="229" column="7" lean-forward="true" selection-start-line="229" selection-start-column="7" selection-end-line="229" selection-end-column="7" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="spring-mvc.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/spring-mvc.xml">
+      <file leaf-file-name="main.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/WebContent/WEB-INF/jsp/main/main.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="188">
-              <caret line="54" column="36" lean-forward="true" selection-start-line="54" selection-start-column="36" selection-end-line="54" selection-end-column="36" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Upload.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/gx/web/Upload.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-91">
-              <caret line="23" column="19" lean-forward="true" selection-start-line="23" selection-start-column="19" selection-end-line="23" selection-end-column="19" />
+            <state relative-caret-position="347">
+              <caret line="215" column="26" lean-forward="true" selection-start-line="215" selection-start-column="26" selection-end-line="215" selection-end-column="26" />
+              <folding>
+                <element signature="n#style#0;n#iframe#0;n#div#1;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="add.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/WebContent/WEB-INF/jsp/parametershandle/add.jsp">
+        <entry file="file://$PROJECT_DIR$/WebContent/WEB-INF/jsp/passenger/add.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="228">
-              <caret line="263" column="22" lean-forward="true" selection-start-line="263" selection-start-column="22" selection-end-line="263" selection-end-column="22" />
-              <folding>
-                <element signature="n#style#0;n#input#0;n#div#3;n#div#6;n#div#0;n#form#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="88">
+              <caret line="165" column="4" lean-forward="true" selection-start-line="165" selection-start-column="4" selection-end-line="165" selection-end-column="4" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ParametersHandle.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/gx/web/ParametersHandle.java">
+      <file leaf-file-name="update.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/WebContent/WEB-INF/jsp/passenger/update.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="173">
-              <caret line="219" column="47" selection-start-line="219" selection-start-column="27" selection-end-line="219" selection-end-column="47" />
-              <folding>
-                <element signature="e#1646#1662#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ParametersInfoMapper.xml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/gx/mapping/ParametersInfoMapper.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="67">
-              <caret line="108" column="49" lean-forward="true" selection-start-line="108" selection-start-column="49" selection-end-line="108" selection-end-column="49" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Parametersinfo.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/gx/po/Parametersinfo.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="112">
-              <caret line="44" column="35" selection-start-line="44" selection-start-column="19" selection-end-line="44" selection-end-column="35" />
-              <folding>
-                <element signature="e#7040#7041#0" expanded="true" />
-                <element signature="e#7071#7072#0" expanded="true" />
-                <element signature="e#7134#7135#0" expanded="true" />
-                <element signature="e#7183#7184#0" expanded="true" />
-                <element signature="e#7222#7223#0" expanded="true" />
-                <element signature="e#7251#7252#0" expanded="true" />
-                <element signature="e#7310#7311#0" expanded="true" />
-                <element signature="e#7355#7356#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="141">
+              <caret line="167" column="77" selection-start-line="167" selection-start-column="77" selection-end-line="167" selection-end-column="77" />
             </state>
           </provider>
         </entry>
@@ -161,27 +208,11 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>reservationsId</find>
-      <find>userPassWord</find>
-      <find>receiveTarget</find>
-      <find>dateView</find>
-      <find>todate.do</find>
-      <find>reservations</find>
-      <find>stayManageId</find>
-      <find>sheetManageId</find>
-      <find>transtatistics</find>
-      <find>tranInfoService</find>
-      <find>型号</find>
-      <find>TransInfoPo</find>
-      <find>TransInfoDao</find>
-      <find>property</find>
-      <find>argType</find>
       <find>transInfo</find>
       <find>ParametersInfoDao</find>
       <find>com.gx.po.ParametersInfoDao</find>
       <find>com.gx.po.Parametersinf</find>
       <find>price</find>
-      <find>pageFuzzyselect</find>
       <find>合同</find>
       <find>parametersHandle</find>
       <find>countFuzzyselect</find>
@@ -191,6 +222,22 @@
       <find>TranStatistics</find>
       <find>viewResolver</find>
       <find>downloadSurVal</find>
+      <find>createTime</find>
+      <find>password</find>
+      <find>createDateStr</find>
+      <find>selectLogin</find>
+      <find>userManage</find>
+      <find>防盗门</find>
+      <find>客户</find>
+      <find>pageFuzzyselect</find>
+      <find>Passenger</find>
+      <find>Main</find>
+      <find>Main/todata</find>
+      <find>搜索</find>
+      <find>查询</find>
+      <find>sessionScope.userPo.id</find>
+      <find>删除</find>
+      <find>下一页</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -220,26 +267,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/WebContent/WEB-INF/jsp/passenger/list.jsp" />
-        <option value="$PROJECT_DIR$/src/com/gx/po/StayRegisterPo.java" />
-        <option value="$PROJECT_DIR$/src/com/gx/service/impl/TranInfoService.java" />
-        <option value="$PROJECT_DIR$/src/com/gx/dao/TranInfoDao.java" />
-        <option value="$PROJECT_DIR$/WebContent/WEB-INF/jsp/transtatistics/mainbak.jsp" />
-        <option value="$PROJECT_DIR$/src/com/gx/page/Page.java" />
-        <option value="$PROJECT_DIR$/src/com/gx/po/TransInfoPo.java" />
-        <option value="$PROJECT_DIR$/src/com/gx/dao/TransInfoDao.java" />
-        <option value="$PROJECT_DIR$/src/com/gx/service/impl/TranInfoServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/com/gx/web/Passenger.java" />
-        <option value="$PROJECT_DIR$/src/com/gx/service/PassengerService.java" />
-        <option value="$PROJECT_DIR$/src/com/gx/service/impl/PassengerServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/com/gx/dao/PassengerDao.java" />
-        <option value="$PROJECT_DIR$/src/com/gx/mapping/PassengerMapper.xml" />
-        <option value="$PROJECT_DIR$/WebContent/WEB-INF/jsp/passenger/add.jsp" />
-        <option value="$PROJECT_DIR$/WebContent/WEB-INF/web.xml" />
-        <option value="$PROJECT_DIR$/src/com/gx/web/FinancialStatistics.java" />
-        <option value="$PROJECT_DIR$/src/com/gx/web/TranStatistics.java" />
-        <option value="$PROJECT_DIR$/src/com/gx/web/Main.java" />
-        <option value="$PROJECT_DIR$/WebContent/WEB-INF/jsp/main/main.jsp" />
         <option value="$PROJECT_DIR$/WebContent/WEB-INF/jsp/transtatistics/add.jsp" />
         <option value="$PROJECT_DIR$/WebContent/WEB-INF/jsp/transtatistics/particulars.jsp" />
         <option value="$PROJECT_DIR$/src/com/gx/test/A.java" />
@@ -249,8 +276,6 @@
         <option value="$PROJECT_DIR$/src/com/gx/test/Parametersinfo.java" />
         <option value="$PROJECT_DIR$/src/com/gx/service/TranInfoService.java" />
         <option value="$PROJECT_DIR$/src/com/gx/service/ParametersHandleService.java" />
-        <option value="$PROJECT_DIR$/src/com/gx/service/impl/ParametersHandleServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/com/gx/dao/ParametersInfoDao.java" />
         <option value="$PROJECT_DIR$/src/com/gx/mapping/TransInfoMapper.xml" />
         <option value="$PROJECT_DIR$/WebContent/WEB-INF/jsp/transtatistics/transtatistics.jsp" />
         <option value="$PROJECT_DIR$/WebContent/WEB-INF/jsp/transtatistics/update.jsp" />
@@ -258,19 +283,41 @@
         <option value="$PROJECT_DIR$/src/com/gx/web/Upload.java" />
         <option value="$PROJECT_DIR$/WebContent/WEB-INF/jsp/upload/success.jsp" />
         <option value="$PROJECT_DIR$/WebContent/WEB-INF/jsp/upload/error.jsp" />
-        <option value="$PROJECT_DIR$/WebContent/WEB-INF/jsp/parametershandle/particulars.jsp" />
-        <option value="$PROJECT_DIR$/WebContent/WEB-INF/jsp/parametershandle/update.jsp" />
         <option value="$PROJECT_DIR$/WebContent/WEB-INF/jsp/error.jsp" />
-        <option value="$PROJECT_DIR$/WebContent/WEB-INF/jsp/login/login.jsp" />
         <option value="$PROJECT_DIR$/src/com/gx/utils/ExceptionHandler.java" />
-        <option value="$PROJECT_DIR$/WebContent/WEB-INF/jsp/parametershandle/add.jsp" />
         <option value="$PROJECT_DIR$/src/com/gx/web/DownLoad.java" />
-        <option value="$PROJECT_DIR$/src/com/gx/po/Parametersinfo.java" />
         <option value="$PROJECT_DIR$/src/spring-mvc.xml" />
-        <option value="$PROJECT_DIR$/WebContent/WEB-INF/jsp/parametershandle/parametershandle.jsp" />
         <option value="$PROJECT_DIR$/src/com/gx/utils/DateUtils.java" />
-        <option value="$PROJECT_DIR$/src/com/gx/web/ParametersHandle.java" />
+        <option value="$PROJECT_DIR$/src/com/gx/mapping/UserMapper.xml" />
+        <option value="$PROJECT_DIR$/src/com/gx/test/ExcelTool.java" />
+        <option value="$PROJECT_DIR$/src/com/gx/po/UserPo.java" />
+        <option value="$PROJECT_DIR$/WebContent/WEB-INF/jsp/user/list.jsp" />
+        <option value="$PROJECT_DIR$/WebContent/WEB-INF/jsp/user/update.jsp" />
+        <option value="$PROJECT_DIR$/src/com/gx/web/Login.java" />
+        <option value="$PROJECT_DIR$/WebContent/WEB-INF/jsp/user/add.jsp" />
+        <option value="$PROJECT_DIR$/src/com/gx/web/User.java" />
+        <option value="$PROJECT_DIR$/src/com/gx/service/impl/UserServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/com/gx/po/Parametersinfo.java" />
+        <option value="$PROJECT_DIR$/WebContent/WEB-INF/jsp/login/login.jsp" />
+        <option value="$PROJECT_DIR$/WebContent/WEB-INF/jsp/parametershandle/update.jsp" />
+        <option value="$PROJECT_DIR$/WebContent/WEB-INF/jsp/parametershandle/add.jsp" />
+        <option value="$PROJECT_DIR$/WebContent/WEB-INF/jsp/parametershandle/particulars.jsp" />
+        <option value="$PROJECT_DIR$/src/com/gx/service/PassengerService.java" />
         <option value="$PROJECT_DIR$/src/com/gx/mapping/ParametersInfoMapper.xml" />
+        <option value="$PROJECT_DIR$/src/com/gx/service/impl/PassengerServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/com/gx/dao/PassengerDao.java" />
+        <option value="$PROJECT_DIR$/src/com/gx/dao/ParametersInfoDao.java" />
+        <option value="$PROJECT_DIR$/src/com/gx/po/PassengerPo.java" />
+        <option value="$PROJECT_DIR$/src/com/gx/service/impl/ParametersHandleServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/com/gx/web/Main.java" />
+        <option value="$PROJECT_DIR$/WebContent/WEB-INF/jsp/main/main.jsp" />
+        <option value="$PROJECT_DIR$/src/com/gx/web/ParametersHandle.java" />
+        <option value="$PROJECT_DIR$/src/com/gx/mapping/PassengerMapper.xml" />
+        <option value="$PROJECT_DIR$/WebContent/WEB-INF/jsp/passenger/update.jsp" />
+        <option value="$PROJECT_DIR$/WebContent/WEB-INF/jsp/passenger/add.jsp" />
+        <option value="$PROJECT_DIR$/src/com/gx/web/Passenger.java" />
+        <option value="$PROJECT_DIR$/WebContent/WEB-INF/jsp/parametershandle/parametershandle.jsp" />
+        <option value="$PROJECT_DIR$/WebContent/WEB-INF/jsp/passenger/list.jsp" />
       </list>
     </option>
   </component>
@@ -306,8 +353,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -325,6 +370,13 @@
               <item name="ssmgrogshop" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="gx" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ssmgrogshop" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ssmgrogshop" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="gx" type="462c0819:PsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ssmgrogshop" type="b2602c69:ProjectViewProjectNode" />
@@ -352,7 +404,15 @@
               <item name="ssmgrogshop" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="gx" type="462c0819:PsiDirectoryNode" />
-              <item name="utils" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="impl" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ssmgrogshop" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ssmgrogshop" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="gx" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ssmgrogshop" type="b2602c69:ProjectViewProjectNode" />
@@ -385,12 +445,38 @@
               <item name="WebContent" type="462c0819:PsiDirectoryNode" />
               <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
               <item name="jsp" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ssmgrogshop" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ssmgrogshop" type="462c0819:PsiDirectoryNode" />
+              <item name="WebContent" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+              <item name="jsp" type="462c0819:PsiDirectoryNode" />
               <item name="parametershandle" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ssmgrogshop" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ssmgrogshop" type="462c0819:PsiDirectoryNode" />
+              <item name="WebContent" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+              <item name="jsp" type="462c0819:PsiDirectoryNode" />
+              <item name="passenger" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ssmgrogshop" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ssmgrogshop" type="462c0819:PsiDirectoryNode" />
+              <item name="WebContent" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+              <item name="jsp" type="462c0819:PsiDirectoryNode" />
+              <item name="user" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -402,7 +488,7 @@
     <property name="project.structure.last.edited" value="Facets" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.completion" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -413,6 +499,7 @@
       <recent name="com.gx.service" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/com/gx/test" />
       <recent name="$PROJECT_DIR$/WebContent/WEB-INF/jsp" />
       <recent name="$PROJECT_DIR$/src/com/gx/mapping" />
       <recent name="$PROJECT_DIR$/WebContent/WEB-INF/jsp/transtatistics" />
@@ -674,12 +761,27 @@
       <workItem from="1527656726104" duration="3123000" />
       <workItem from="1527677280789" duration="858000" />
       <workItem from="1527689535263" duration="3304000" />
-      <workItem from="1528080945729" duration="16925000" />
+      <workItem from="1528080945729" duration="17541000" />
+      <workItem from="1528193879024" duration="2038000" />
+      <workItem from="1528250483173" duration="2381000" />
+      <workItem from="1528272599544" duration="5237000" />
+      <workItem from="1528282644659" duration="730000" />
+      <workItem from="1528339302695" duration="18818000" />
+      <workItem from="1528424981942" duration="3983000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="163384000" />
+    <option name="totallyTimeSpent" value="197187000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="797" extended-state="0" />
@@ -695,11 +797,11 @@
       <window_info anchor="right" id="Maven Projects" order="5" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32857144" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.35714287" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.4242857" />
       <window_info anchor="bottom" id="Spring" order="12" />
       <window_info anchor="bottom" id="Terminal" order="9" />
       <window_info id="Designer" order="5" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22961374" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20028612" />
       <window_info id="Web" order="2" side_tool="true" />
       <window_info anchor="right" id="Database" order="4" weight="0.3297568" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -713,27 +815,27 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" visible="true" weight="0.3557143" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.25857142" />
     </layout>
     <layout-to-restore>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info id="Web" order="2" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.24964234" />
-      <window_info anchor="bottom" id="Application Servers" order="11" weight="0.3287879" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3942857" />
-      <window_info anchor="bottom" id="Java Enterprise" order="13" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.32857144" />
+      <window_info anchor="bottom" id="Message" order="0" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22103004" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="Spring" order="12" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="7" weight="0.32857144" />
-      <window_info anchor="bottom" id="Find" order="1" visible="true" weight="0.3557143" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3942857" />
+      <window_info anchor="bottom" id="Messages" order="14" weight="0.3257143" />
       <window_info id="Designer" order="5" />
       <window_info anchor="right" id="JSF" order="6" />
       <window_info id="UI Designer" order="3" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="right" id="Maven Projects" order="5" />
+      <window_info anchor="bottom" id="Find" order="1" visible="true" weight="0.3557143" />
       <window_info anchor="right" id="Database" order="4" weight="0.3297568" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="bottom" id="Terminal" order="9" />
@@ -741,9 +843,9 @@
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Messages" order="14" weight="0.3257143" />
-      <window_info anchor="bottom" id="Spring" order="12" />
+      <window_info anchor="bottom" id="Application Servers" order="11" weight="0.3287879" />
+      <window_info anchor="bottom" id="Java Enterprise" order="13" />
+      <window_info anchor="right" id="Maven Projects" order="5" />
       <window_info id="Favorites" order="4" side_tool="true" />
     </layout-to-restore>
   </component>
@@ -764,177 +866,13 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/gx/service/impl/ParametersHandleServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="765">
-          <caret line="59" lean-forward="true" selection-start-line="59" selection-end-line="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebContent/WEB-INF/jsp/parametershandle/update.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2652">
-          <caret line="156" column="1" lean-forward="true" selection-start-line="156" selection-start-column="1" selection-end-line="156" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/gx/mapping/ParametersInfoMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1275">
-          <caret line="75" column="63" selection-start-line="75" selection-start-column="63" selection-end-line="75" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/gx/po/Parametersinfo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4845">
-          <caret line="285" lean-forward="true" selection-start-line="285" selection-end-line="285" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/gx/dao/ParametersInfoDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="11" selection-start-line="11" selection-end-line="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebContent/WEB-INF/jsp/passenger/list.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1411">
-          <caret line="83" column="4" lean-forward="true" selection-start-line="83" selection-start-column="4" selection-end-line="83" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebContent/WEB-INF/jsp/transtatistics/transtatistics.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1581">
-          <caret line="93" column="49" lean-forward="true" selection-start-line="93" selection-start-column="49" selection-end-line="93" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebContent/WEB-INF/jsp/main/main.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="9010">
-          <caret line="530" column="37" selection-start-line="530" selection-start-column="21" selection-end-line="530" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/gx/web/ParametersHandle.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="34" selection-start-line="19" selection-start-column="18" selection-end-line="19" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/gx/service/impl/ParametersHandleServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1309">
-          <caret line="77" column="52" lean-forward="true" selection-start-line="77" selection-start-column="52" selection-end-line="77" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebContent/WEB-INF/jsp/parametershandle/parametershandle.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3400">
-          <caret line="200" column="39" lean-forward="true" selection-start-line="200" selection-start-column="39" selection-end-line="200" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/gx/mapping/TransInfoMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/gx/mapping/PassengerMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-169" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebContent/WEB-INF/jsp/transtatistics/list.jsp" />
-    <entry file="file://$PROJECT_DIR$/WebContent/WEB-INF/jsp/transtatistics/transtatistics.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1581">
-          <caret line="93" column="49" selection-start-line="93" selection-start-column="49" selection-end-line="93" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebContent/WEB-INF/jsp/passenger/list.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="83" column="4" selection-start-line="83" selection-start-column="4" selection-end-line="83" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebContent/WEB-INF/jsp/passenger/update.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4557" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebContent/WEB-INF/jsp/transtatistics/update.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="341">
-          <caret line="255" column="18" lean-forward="true" selection-start-line="239" selection-start-column="10" selection-end-line="255" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebContent/bootstrap/css/bootstrap.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="318" column="1" selection-start-line="318" selection-start-column="1" selection-end-line="318" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/gx/web/Commodity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/gx/web/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="22" selection-start-line="22" selection-end-line="23" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/gx/service/impl/ParametersHandleServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="59" selection-start-line="59" selection-end-line="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebContent/WEB-INF/jsp/upload/list.jsp" />
     <entry file="file://$PROJECT_DIR$/WebContent/WEB-INF/jsp/upload/success.jsp" />
     <entry file="file://$PROJECT_DIR$/WebContent/WEB-INF/jsp/upload/error.jsp" />
-    <entry file="file://$PROJECT_DIR$/src/com/gx/dao/ParametersInfoDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="29" column="34" selection-start-line="29" selection-start-column="34" selection-end-line="29" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/WebContent/bootstrap/css/bootstrap-responsive.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="433">
           <caret line="269" column="14" selection-start-line="269" selection-start-column="14" selection-end-line="269" selection-end-column="14" />
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebContent/WEB-INF/jsp/parametershandle/particulars.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="278">
-          <caret line="290" column="18" selection-start-line="290" selection-start-column="18" selection-end-line="290" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebContent/WEB-INF/web.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-877" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/gx/utils/ExceptionHandler.java">
@@ -951,126 +889,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/WebContent/WEB-INF/jsp/login/login.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="63">
-          <caret line="65" column="32" lean-forward="true" selection-start-line="65" selection-start-column="32" selection-end-line="65" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebContent/WEB-INF/jsp/user/list.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-85" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/WebContent/index.jsp">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebContent/WEB-INF/jsp/main/main.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-184">
-          <caret line="530" column="37" selection-start-line="530" selection-start-column="21" selection-end-line="530" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/applicationContext.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-178" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebContent/WEB-INF/jsp/user/add.jsp">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebContent/WEB-INF/jsp/parametershandle/list.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="167">
-          <caret line="69" column="1" lean-forward="true" selection-start-line="69" selection-start-column="1" selection-end-line="69" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebContent/WEB-INF/jsp/parametershandle/update.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="652">
-          <caret line="200" column="18" lean-forward="true" selection-start-line="200" selection-start-column="18" selection-end-line="200" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/gx/web/Login.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/gx/web/Passenger.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="22" column="27" lean-forward="true" selection-start-line="22" selection-start-column="17" selection-end-line="22" selection-end-column="27" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/gx/web/DownLoad.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="189">
           <caret line="29" column="63" selection-start-line="29" selection-start-column="54" selection-end-line="29" selection-end-column="63" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/gx/po/Parametersinfo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="44" column="35" selection-start-line="44" selection-start-column="19" selection-end-line="44" selection-end-column="35" />
-          <folding>
-            <element signature="e#7040#7041#0" expanded="true" />
-            <element signature="e#7071#7072#0" expanded="true" />
-            <element signature="e#7134#7135#0" expanded="true" />
-            <element signature="e#7183#7184#0" expanded="true" />
-            <element signature="e#7222#7223#0" expanded="true" />
-            <element signature="e#7251#7252#0" expanded="true" />
-            <element signature="e#7310#7311#0" expanded="true" />
-            <element signature="e#7355#7356#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/gx/service/ParametersHandleService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/spring-mvc.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="188">
-          <caret line="54" column="36" lean-forward="true" selection-start-line="54" selection-start-column="36" selection-end-line="54" selection-end-column="36" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/gx/web/Upload.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-91">
+        <state relative-caret-position="102">
           <caret line="23" column="19" lean-forward="true" selection-start-line="23" selection-start-column="19" selection-end-line="23" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebContent/WEB-INF/jsp/parametershandle/parametershandle.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="162" column="29" lean-forward="true" selection-start-line="162" selection-start-column="29" selection-end-line="162" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebContent/WEB-INF/jsp/parametershandle/add.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="263" column="22" lean-forward="true" selection-start-line="263" selection-start-column="22" selection-end-line="263" selection-end-column="22" />
-          <folding>
-            <element signature="n#style#0;n#input#0;n#div#3;n#div#6;n#div#0;n#form#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1078,26 +910,282 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="254">
           <caret line="22" column="1" lean-forward="true" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/gx/web/ParametersHandle.java">
+    <entry file="file://$PROJECT_DIR$/src/com/gx/test/GenEntityOracle.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="173">
-          <caret line="219" column="47" selection-start-line="219" selection-start-column="27" selection-end-line="219" selection-end-column="47" />
-          <folding>
-            <element signature="e#1646#1662#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="459">
+          <caret line="37" column="37" lean-forward="true" selection-start-line="37" selection-start-column="37" selection-end-line="37" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/gx/test/ExcelTool.java" />
+    <entry file="file://$PROJECT_DIR$/src/com/gx/test/OperatorExcel2007.java" />
+    <entry file="file://$PROJECT_DIR$/src/com/gx/service/StayRegisterService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="118">
+          <caret line="44" column="32" selection-start-line="44" selection-start-column="32" selection-end-line="44" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/gx/test/CodeProduct.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="164">
+          <caret line="25" column="13" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/gx/po/TransInfoPo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="15" column="28" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebContent/WEB-INF/jsp/user/list.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-6">
+          <caret line="110" column="28" lean-forward="true" selection-start-line="110" selection-start-column="28" selection-end-line="110" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebContent/WEB-INF/jsp/user/update.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="77">
+          <caret line="165" column="5" lean-forward="true" selection-start-line="165" selection-start-column="5" selection-end-line="165" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebContent/WEB-INF/jsp/user/add.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="103">
+          <caret line="299" column="36" selection-start-line="299" selection-start-column="36" selection-end-line="299" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/gx/mapping/UserMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="21" column="25" selection-start-line="21" selection-start-column="14" selection-end-line="21" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/gx/service/impl/UserServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="159">
+          <caret line="24" column="41" lean-forward="true" selection-start-line="24" selection-start-column="41" selection-end-line="24" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/gx/web/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="241">
+          <caret line="116" column="35" lean-forward="true" selection-start-line="116" selection-start-column="35" selection-end-line="116" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/gx/po/UserPo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="27" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebContent/WEB-INF/jsp/parametershandle/list.jsp" />
+    <entry file="file://$PROJECT_DIR$/src/com/gx/service/ParametersHandleService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="123">
+          <caret line="24" column="32" selection-start-line="24" selection-start-column="32" selection-end-line="24" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/gx/po/Parametersinfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-700">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebContent/WEB-INF/jsp/parametershandle/update.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="214">
+          <caret line="380" column="119" lean-forward="true" selection-start-line="380" selection-start-column="84" selection-end-line="380" selection-end-column="119" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebContent/WEB-INF/jsp/parametershandle/particulars.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="94">
+          <caret line="306" column="1" lean-forward="true" selection-start-line="306" selection-start-column="1" selection-end-line="306" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/applicationContext.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-146" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/spring-mvc.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="918">
+          <caret line="54" column="36" selection-start-line="54" selection-start-column="36" selection-end-line="54" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/mybatis-config.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebContent/WEB-INF/web.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="44" column="46" lean-forward="true" selection-start-line="44" selection-start-column="46" selection-end-line="44" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebContent/WEB-INF/jsp/login/login.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="194">
+          <caret line="45" column="12" lean-forward="true" selection-start-line="45" selection-start-column="12" selection-end-line="45" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/gx/web/Login.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="50">
+          <caret line="22" column="20" lean-forward="true" selection-start-line="22" selection-start-column="20" selection-end-line="22" selection-end-column="20" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/gx/mapping/ParametersInfoMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="67">
-          <caret line="108" column="49" lean-forward="true" selection-start-line="108" selection-start-column="49" selection-end-line="108" selection-end-column="49" />
+        <state relative-caret-position="295">
+          <caret line="154" lean-forward="true" selection-start-line="154" selection-end-line="154" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/gx/dao/PassengerDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="284">
+          <caret line="28" column="8" lean-forward="true" selection-start-line="28" selection-start-column="8" selection-end-line="28" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/gx/dao/ParametersInfoDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="23" column="12" lean-forward="true" selection-start-line="23" selection-end-line="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/gx/service/impl/ParametersHandleServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="402">
+          <caret line="55" column="51" selection-start-line="55" selection-start-column="51" selection-end-line="55" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/gx/web/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/gx/po/PassengerPo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/gx/service/UserService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="17" column="19" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/gx/service/PassengerService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="302">
+          <caret line="22" column="44" selection-start-line="22" selection-start-column="29" selection-end-line="22" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/gx/web/ParametersHandle.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="42" column="32" selection-start-line="42" selection-start-column="32" selection-end-line="42" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebContent/WEB-INF/jsp/parametershandle/add.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="171" column="78" selection-start-line="171" selection-start-column="8" selection-end-line="171" selection-end-column="78" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/gx/service/impl/PassengerServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="53" column="29" selection-start-line="53" selection-start-column="29" selection-end-line="53" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/gx/mapping/PassengerMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="34" column="2" lean-forward="true" selection-start-line="34" selection-start-column="2" selection-end-line="34" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebContent/WEB-INF/jsp/main/main.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="347">
+          <caret line="215" column="26" lean-forward="true" selection-start-line="215" selection-start-column="26" selection-end-line="215" selection-end-column="26" />
+          <folding>
+            <element signature="n#style#0;n#iframe#0;n#div#1;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebContent/WEB-INF/jsp/passenger/update.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="141">
+          <caret line="167" column="77" selection-start-line="167" selection-start-column="77" selection-end-line="167" selection-end-column="77" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebContent/WEB-INF/jsp/passenger/add.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="165" column="4" lean-forward="true" selection-start-line="165" selection-start-column="4" selection-end-line="165" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/gx/web/Passenger.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="206">
+          <caret line="55" column="40" lean-forward="true" selection-start-line="55" selection-start-column="40" selection-end-line="55" selection-end-column="40" />
+          <folding>
+            <element signature="e#1293#1306#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebContent/WEB-INF/jsp/parametershandle/parametershandle.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="287">
+          <caret line="229" column="7" lean-forward="true" selection-start-line="229" selection-start-column="7" selection-end-line="229" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebContent/WEB-INF/jsp/passenger/list.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="177">
+          <caret line="180" column="2" selection-start-line="180" selection-start-column="2" selection-end-line="180" selection-end-column="2" />
         </state>
       </provider>
     </entry>

@@ -105,6 +105,7 @@
 	          <th >创建日期</th>
 	          <th >更新日期</th>
 	          <th >角色</th>
+                <th >店铺</th>
 	        </tr>
 	      </thead>
 	      <tbody id="tbody">
@@ -119,6 +120,16 @@
 		          	<c:if test="${item.roleID==0}">领导</c:if>
 		          	<c:if test="${item.roleID==1}">员工</c:if>
 		          </td>
+                    <td>
+                        <c:if test="${item.storeID==1}">1号店</c:if>
+                        <c:if test="${item.storeID==2}">2号店</c:if>
+                        <c:if test="${item.storeID==3}">3号店</c:if>
+                        <c:if test="${item.storeID==4}">4号店</c:if>
+                        <c:if test="${item.storeID==5}">5号店</c:if>
+                        <c:if test="${item.storeID==6}">6号店</c:if>
+                        <c:if test="${item.storeID==7}">7号店</c:if>
+                        <c:if test="${item.storeID==8}">8号店</c:if>
+                    </td>
 		        </tr>
 	        </c:forEach>
 	      </tbody>

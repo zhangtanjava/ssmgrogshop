@@ -24,10 +24,11 @@ public interface ParametersInfoDao {
 	//分页模糊查询
     public List<Parametersinfo> pageFuzzyselect(@Param("start") int start, @Param("pageSize") int pageSize,
                                              @Param("beginDate") Date beginDate, @Param("endDate") Date endDate,
-                                             @Param("agreementID") String agreementID);
+                                             @Param("agreementID") String agreementID,@Param("storeID") String storeID);
 
     //分页模糊查询总条数
-    public int countFuzzyselect();
+    public int countFuzzyselect(@Param("beginDate") Date beginDate, @Param("endDate") Date endDate,
+                                @Param("agreementID") String agreementID,@Param("storeID") String storeID);
     
     
    //ajax 验证是否存在 此身份证号码

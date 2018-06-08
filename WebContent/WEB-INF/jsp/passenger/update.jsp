@@ -165,9 +165,10 @@
       </div>
     </div>
     
-    <form action="${ctx}/Passenger/update.do" method="post" onsubmit="return verify()">
+    <form action="${ctx}/Passenger/update.do?userID=${sessionScope.userPo.id}" method="post" onsubmit="return verify()">
     <!--  ———————————————————————————————————————————————————————————————————————————————————————— -->
 	    <input type="hidden" name="id" value="${list.id}" />
+		<input type="hidden" name="userID" value="${sessionScope.userPo.id}" >
 	    <div class="span12">
 	      <div class="row-fluid">
 		     <div class="span3">
@@ -268,7 +269,7 @@
    }
    
     function deletefunction(){
-     parent.document.getElementById('Mainid').src='${ctx}/Passenger/tolist.do';
+     parent.document.getElementById('Mainid').src='${ctx}/Passenger/tolist.do?userID=${sessionScope.userPo.id}';
    }
    
    function onchangeOne(){

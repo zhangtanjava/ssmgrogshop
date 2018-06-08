@@ -6,7 +6,9 @@ import com.google.gson.Gson;
 import com.gx.page.Page;
 import com.gx.po.Parametersinfo;
 import com.gx.po.Parametersinfo;
+import com.gx.po.UserPo;
 import com.gx.service.ParametersHandleService;
+import com.gx.service.UserService;
 import com.gx.utils.DateUtils;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,9 +34,10 @@ public class ParametersHandle {
 	SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 	@Autowired
 	private ParametersHandleService parametersHandleService;
-	
+	@Autowired
+	private UserService userService;
 	@RequestMapping("/tolist")
-	public ModelAndView tolist(String datemin, String datemax,String agreementID,Integer currentPage){
+	public ModelAndView tolist(String datemin, String datemax,String agreementID,Integer currentPage,Integer userID){
 		logger.info("ParametersHandle tolist req:"+datemin+"|"+datemax+"|"+agreementID);
 		ModelAndView mv=null;
 		if (currentPage==null) {
@@ -60,9 +63,13 @@ public class ParametersHandle {
 		}catch (Exception e){
 			logger.info("日期转换异常："+e);
 		}
-
+		UserPo userPo = userService.selectById(userID);
+		if (userPo != null){
+			req.setStoreID(userPo.getStoreID());
+		}else{
+			req.setStoreID("0");
+		}
 		req.setAgreementID(agreementID);
-
 		vo=this.parametersHandleService.pageFuzzyselect(vo,req);
 
 		mv.addObject("list",vo);
@@ -92,7 +99,9 @@ public class ParametersHandle {
 	@RequestMapping("/add")
 	public ModelAndView add(HttpServletRequest request, Parametersinfo parametersinfo,
 	@RequestParam("surveyorFile") MultipartFile surveyorFile
-	,@RequestParam("istallFile") MultipartFile istallFile){
+	,@RequestParam("istallFile") MultipartFile istallFile
+			,@RequestParam("userID") Integer userID){
+
 		ModelAndView mv=null;
 
 		//如果测量文件不为空，写入上传路径
@@ -156,6 +165,7 @@ public class ParametersHandle {
 
 		String surveyorDateStr = parametersinfo.getSurveyorDateStr();
 		String installDateStr = parametersinfo.getInstallDateStr();
+		String createDateStr = parametersinfo.getCreateDateStr();
 
 		try {
 			if (!StringUtils.isEmpty(surveyorDateStr)){
@@ -164,24 +174,35 @@ public class ParametersHandle {
 			if (!StringUtils.isEmpty(installDateStr)){
 				parametersinfo.setInstallDate(simpleDateFormat.parse(installDateStr));
 			}
+			if (!StringUtils.isEmpty(createDateStr)){
+				parametersinfo.setCreateDate(simpleDateFormat.parse(createDateStr));
+			}
 		}catch (Exception e){
 			logger.info("日期转换异常："+e);
 		}
 
-		parametersinfo.setCreateDate(new Date());
 		parametersinfo.setUpdateDate(new Date());
 
-
+		UserPo userPo = userService.selectById(userID);
+		if (userPo != null){
+			parametersinfo.setStoreID(userPo.getStoreID());
+			parametersinfo.setRoleID(userPo.getRoleID());
+		}else{
+			parametersinfo.setStoreID("0");//1-8正常店
+			parametersinfo.setRoleID("2");//0 领导 1 员工
+		}
 
 		parametersHandleService.insertAll(parametersinfo);
-		mv=new ModelAndView("redirect:/ParametersHandle/tolist.do");
+
+		mv=new ModelAndView("redirect:/ParametersHandle/tolist.do?userID="+userID);
 		return mv;
 	}
 
 	@RequestMapping("/update")
 	public ModelAndView update(HttpServletRequest request, Parametersinfo parametersinfo,
                                @RequestParam("surveyorFile") MultipartFile surveyorFile
-            ,@RequestParam("istallFile") MultipartFile istallFile){
+            ,@RequestParam("istallFile") MultipartFile istallFile
+			,@RequestParam("userID") Integer userID){
 		ModelAndView mv=null;
 
         Parametersinfo parametersinfo1 = parametersHandleService.selectById(parametersinfo.getId());
@@ -260,8 +281,9 @@ public class ParametersHandle {
         }
 
 
-        String surveyorDateStr = parametersinfo.getSurveyorDateStr();
+		String surveyorDateStr = parametersinfo.getSurveyorDateStr();
 		String installDateStr = parametersinfo.getInstallDateStr();
+		String createDateStr = parametersinfo.getCreateDateStr();
 
 		try {
 			if (!StringUtils.isEmpty(surveyorDateStr)){
@@ -270,24 +292,32 @@ public class ParametersHandle {
 			if (!StringUtils.isEmpty(installDateStr)){
 				parametersinfo.setInstallDate(simpleDateFormat.parse(installDateStr));
 			}
+			if (!StringUtils.isEmpty(createDateStr)){
+				parametersinfo.setCreateDate(simpleDateFormat.parse(createDateStr));
+			}
 		}catch (Exception e){
 			logger.info("日期转换异常："+e);
 		}
 
 		parametersinfo.setUpdateDate(new Date());
 		parametersHandleService.updateById(parametersinfo);
-		mv=new ModelAndView("redirect:/ParametersHandle/tolist.do");
+		mv=new ModelAndView("redirect:/ParametersHandle/tolist.do?userID="+userID);
 		return mv;
 	}
 
 	@RequestMapping("/delete")
-	public ModelAndView delete(String id){
+	public ModelAndView delete(@RequestParam("id")String id,@RequestParam("userID") Integer userID){
 		ModelAndView mv=null;
 		String[] FenGe=id.split(",");
 		for (int i = 0; i < FenGe.length; i++) {
 			parametersHandleService.deleteById(Integer.parseInt(FenGe[i]));
 		}
-		mv=new ModelAndView("redirect:/ParametersHandle/tolist.do");
+		String storeID = "0";
+		UserPo userPo = userService.selectById(userID);
+		if (userPo != null){
+			storeID=userPo.getStoreID();
+		}
+		mv=new ModelAndView("redirect:/ParametersHandle/tolist.do?userID="+userID);
 		return mv;
 	}
 

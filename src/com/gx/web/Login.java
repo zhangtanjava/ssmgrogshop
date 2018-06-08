@@ -39,34 +39,19 @@ public class Login {
 	
 	@RequestMapping("/tomain")
 	public ModelAndView tomain(UserPo user,ModelMap map){
-		logger.info("Login tomain..."); 
 		ModelAndView mv=null;
-		double zongFeiYongOne=0;
-		double zongFeiYongTwo=0;
+		logger.info("Login requestParamters user:"+user);
 		UserPo u=userService.selectLogin(user);
-		List<StayRegisterPo> list=stayRegisterService.selectAll();
-		for (int i = 0; i < list.size(); i++) {
-			if (list.get(i).getReceiveTargetID()==2) {
-				zongFeiYongOne+=list.get(i).getSumConst();
-			}else {
-				zongFeiYongTwo+=list.get(i).getSumConst();
-			}
-		}
-		
+
+
 		if (u!=null) {
 			map.addAttribute("userName", u.getUserName());
 			map.addAttribute("userPo", u);
 			mv=new ModelAndView("/main/main");
 		}else {
-			map.addAttribute("retMsg", "用户名或者密码错误！");
-			if (user==null) {
-				map.addAttribute("retMsg", "请重新登陆！");
-			}
-			
 			mv=new ModelAndView("/login/login");
 		}
-		mv.addObject("zongFeiYongOne",zongFeiYongOne);
-		mv.addObject("zongFeiYongTwo",zongFeiYongTwo);
+
 		return mv;
 	}
 	

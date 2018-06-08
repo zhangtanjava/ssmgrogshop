@@ -20,6 +20,15 @@ public class PassengerPo {
 
 	private Date updateTime;
 
+	private String storeID;			//店铺
+
+	public String getStoreID() {
+		return storeID;
+	}
+
+	public void setStoreID(String storeID) {
+		this.storeID = storeID;
+	}
 
 	public Integer getId() {
 		return id;

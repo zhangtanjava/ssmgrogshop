@@ -20,7 +20,7 @@ public interface PassengerService {
 	
 	
 	//分页需要
-	public Page<PassengerPo> pageFuzzyselect(String name,Page<PassengerPo> vo);
+	public Page<PassengerPo> pageFuzzyselect(String storeID,String name,Page<PassengerPo> vo);
 	
     //查询所有数据  非本派所用
     public List<PassengerPo> selectAll();

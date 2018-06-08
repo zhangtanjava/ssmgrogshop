@@ -171,20 +171,14 @@
 	    <div class="span12">
 	      <div class="row-fluid">
 		     <div class="span3">
-		        <label>用户姓名：</label>
+		        <label>*用户名：</label>
 		        <input id="userName" name="userName" type="text" value="${list.userName}"
 		        style="width:97%;height:26px;float:left;" onchange="onchangeOne()">
-		        <div id="divOne" style="float:right;" hidden>
-			         <label class="yansered" style="margin-top:7px;">*</label>
-			    </div> 
 		      </div>
 		       <div class="span3">
-		        <label>密码：</label>
+		        <label>*密码：</label>
 		        <input id="password" name="password" type="text" value="${list.password}"
 		        style="width:97%;height:26px;float:left;" onchange="onchangeOne()">
-		        <div id="divOne" style="float:right;" hidden>
-			         <label class="yansered" style="margin-top:7px;">*</label>
-			    </div> 
 		     </div>
 		     <div class="span3">
 		        <label>角色：</label>
@@ -197,17 +191,49 @@
 			          </option>
 		          </select>
 		     </div>
-		  <div class="span6" style="text-align:center;">
-		      <div class="row-fluid">
-			      <div class="span12" style="margin-top: 10px;margin-bottom: 8px;">
-				   	 <button class="btn btn-primary" type="submit">
-				   	 <li class="icon-check icon-white"></li>修改</button>
-				  </div> 
-				 
+			  <div class="span3">
+				  <label>*店铺：</label>
+				  <select id="storeID" name="storeID" style="width:100%;height:27px;">
+					  <option value="1" <c:if test="${1==list.storeID}">selected="selected"</c:if>>
+						  1号店
+					  </option>
+					  <option value="2"<c:if test="${2==list.storeID}">selected="selected"</c:if>>
+						  2号店
+					  </option>
+					  <option value="3"<c:if test="${3==list.storeID}">selected="selected"</c:if>>
+						  3号店
+					  </option>
+					  <option value="4"<c:if test="${4==list.storeID}">selected="selected"</c:if>>
+						  4号店
+					  </option>
+					  <option value="5"<c:if test="${5==list.storeID}">selected="selected"</c:if>>
+						  5号店
+					  </option>
+					  <option value="6"<c:if test="${6==list.storeID}">selected="selected"</c:if>>
+						  6号店
+					  </option>
+					  <option value="7"<c:if test="${7==list.storeID}">selected="selected"</c:if>>
+						  7号店
+					  </option>
+					  <option value="8"<c:if test="${8==list.storeID}">selected="selected"</c:if>>
+						  8号店
+					  </option>
+				  </select>
 			  </div>
-	      </div>
-      </form>
-      
+	  		</div>
+		</div>
+
+		<div class="span6" style="text-align:center;">
+			<div class="row-fluid">
+				<div class="span12" style="margin-top: 10px;margin-bottom: 8px;">
+					<button class="btn btn-primary" type="submit">
+						<li class="icon-check icon-white"></li>修改</button>
+				</div>
+
+			</div>
+		</div>
+	</form>
+
       
       <div class="span4" style="text-align:center;">
       <div class="row-fluid">
@@ -219,8 +245,8 @@
       </div>
        
     </div>
-  
- 
+  </div>
+
  
  
  
@@ -248,7 +274,11 @@
  	       alert("角色  是必填项，不能为空哦！");
  	       document.getElementById("roleID").focus();
  	       return false;
- 	    }else{
+ 	    }else if(document.getElementById("storeID").value==""){
+            alert("店铺  是必填项，不能为空哦！");
+            document.getElementById("roleID").focus();
+            return false;
+        }else{
  	       return true;
  	    }
    }

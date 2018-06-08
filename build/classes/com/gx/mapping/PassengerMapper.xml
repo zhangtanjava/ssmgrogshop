@@ -16,19 +16,21 @@
       <arg column="remarks" jdbcType="VARCHAR" javaType="java.lang.String" />
         <arg column="creteTime" jdbcType="TIMESTAMP" javaType="java.util.Date" />
         <arg column="updateTime" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+        <arg column="storeID" jdbcType="VARCHAR" javaType="java.lang.String" />
     </constructor>
   </resultMap>
 
 <!--   新增 -->
   <insert id="insertAll" useGeneratedKeys="true" keyProperty="id" parameterType="com.gx.po.PassengerPo" >
-      insert into passenger (name,genderID,contactPhoneNumber,unitsOrAddress,remarks,createTime,updateTime)
+      insert into passenger (name,genderID,contactPhoneNumber,unitsOrAddress,remarks,createTime,updateTime,storeID)
       values (#{name,jdbcType=VARCHAR},
              #{genderID,jdbcType=VARCHAR},
              #{contactPhoneNumber,jdbcType=VARCHAR},
              #{unitsOrAddress,jdbcType=VARCHAR},
              #{remarks,jdbcType=VARCHAR},
              #{createTime,jdbcType=TIMESTAMP},
-             #{updateTime,jdbcType=TIMESTAMP})
+             #{updateTime,jdbcType=TIMESTAMP},
+             #{storeID,jdbcType=VARCHAR})
   </insert>
   
 <!--   查询全部 -->
@@ -61,14 +63,28 @@
    <!--   分页模糊查询 -->
    <select id="pageFuzzyselect" resultType="com.gx.po.PassengerPo">
        SELECT * from passenger
-     WHERE name like CONCAT('%',#{name,jdbcType=VARCHAR},'%') 
+       <where>
+           <if test="storeID != null  and storeID != '' and storeID != 1 ">
+               storeID = #{storeID}
+           </if>
+           <if test="name != null and name != '' ">
+               and name like CONCAT('%',#{name,jdbcType=VARCHAR},'%')
+           </if>
+       </where>
      limit #{start},#{pageSize}
   </select>
   
   
   <select id="countFuzzyselect" resultType="java.lang.Integer">
        SELECT count(*) FROM passenger
-     WHERE name like CONCAT('%',#{name,jdbcType=VARCHAR},'%')
+      <where>
+          <if test="storeID != null  and storeID != '' and storeID != 1 ">
+              storeID = #{storeID}
+          </if>
+          <if test="name != null and name != '' ">
+              and name like CONCAT('%',#{name,jdbcType=VARCHAR},'%')
+          </if>
+      </where>
   </select>
   
 

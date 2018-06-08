@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class Main {
 	
 	@RequestMapping("/todata")
-	public String tologin(){
-		return "redirect:/Passenger/tolist.do";
+	public String tologin(String userID){
+		return "redirect:/Passenger/tolist.do?userID="+userID;
 	}
 
 }

@@ -169,6 +169,7 @@
     <form action="${ctx}/ParametersHandle/update.do" method="post" onsubmit="return verify()" enctype="multipart/form-data">
     <!--  ———————————————————————————————————————————————————————————————————————————————————————— -->
 	    <input type="hidden" name="id" value="${list.id}" >
+		<input type="hidden" name="userID" value="${sessionScope.userPo.id}" >
 		<div class="span12">
 			<div class="row-fluid">
 				<div class="span3">
@@ -213,8 +214,16 @@
 					<input id="direction" name="direction" type="text" style="width:97%;height:27px;float:left;" value="${list.direction}">
 				</div>
 				<div class="span3">
+					<label>订货日期：</label>
+					<input style="width:97%;height:27px;float:left;" type="text" id="createDateStr" name="createDateStr" class="input-text Wdate"
+						   onfocus="WdatePicker({dateFmt: 'yyyy-MM-dd HH:mm:ss',maxDate:'%y-%M-%d'})"
+						   value="<fmt:formatDate value="${list.createDate}" pattern="yyyy-MM-dd HH:mm:ss"/> ">
+				</div>
+			</div>
+			<div class="row-fluid">
+				<div class="span12">
 					<label>室内情况：</label>
-					<input id="indoorInfo" name="indoorInfo" type="text" style="width:97%;height:27px;float:left;" value="${list.indoorInfo}">
+					<input id="indoorInfo" name="indoorInfo" type="text" style="width:99.5%;height:27px;float:left;" value="${list.indoorInfo}">
 				</div>
 			</div>
 			<div class="row-fluid">
@@ -369,7 +378,7 @@
    }
    
     function deletefunction(){
-     parent.document.getElementById('Mainid').src='${ctx}/ParametersHandle/tolist.do';
+     parent.document.getElementById('Mainid').src='${ctx}/ParametersHandle/tolist.do?userID='+${sessionScope.userPo.id};
    }
 	 
    

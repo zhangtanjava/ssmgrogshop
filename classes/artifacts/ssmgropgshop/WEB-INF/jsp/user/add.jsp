@@ -169,21 +169,15 @@
 	    <div class="span12">
 	      <div class="row-fluid">
 		     <div class="span3">
-		        <label>用户名：</label>
-		        <input id="userName" name="userName"  type="text" style="width:97%;height:27px;float:left;"  onblur="selectName(this.value)" onchange="onchangeOne()">
-		        <div id="divOne" style="float:right;">
-			         <label class="yansered" style="margin-top:7px;">*</label>
-			    </div>
+				 <label>*用户名：</label>
+				 <input id="userName" name="userName"  type="text" style="width:97%;height:27px;float:left;"  onblur="selectName(this.value)" onchange="onchangeOne()">
 		      </div>
 		     <div class="span3">
-		        <label>密码：</label>
+		        <label>*密码：</label>
 		        <input id="password" name="password" type="text" style="width:97%;height:27px;float:left;" onchange="onchangeOne()">
-		        <div id="divOne" style="float:right;">
-			         <label class="yansered" style="margin-top:7px;">*</label>
-			    </div>
 		      </div>
 		      <div class="span3">
-		        <label>角色：</label>
+		        <label>*角色：</label>
 		        <select id="roleID" name="roleID" style="width:100%;height:27px;">
 			          <option value="0">
 			            领导
@@ -193,6 +187,35 @@
 			          </option>
 		          </select>
 		     </div>
+			  <div class="span3">
+				  <label>*店铺：</label>
+				  <select id="storeID" name="storeID" style="width:100%;height:27px;">
+					  <option value="1">
+						  1号店
+					  </option>
+					  <option value="2">
+						  2号店
+					  </option>
+					  <option value="3">
+						  3号店
+					  </option>
+					  <option value="4">
+						  4号店
+					  </option>
+					  <option value="5">
+						  5号店
+					  </option>
+					  <option value="6">
+						  6号店
+					  </option>
+					  <option value="7">
+						  7号店
+					  </option>
+					  <option value="8">
+						  8号店
+					  </option>
+				  </select>
+			  </div>
 		  </div>
 	    </div>
 
@@ -242,7 +265,11 @@
 	       alert("角色  是必填项，不能为空哦！");
 	       document.getElementById("roleID").focus();
 	       return false;
-	    }else{
+	    }else if(document.getElementById("storeID").value==""){
+            alert("店铺  是必填项，不能为空哦！");
+            document.getElementById("roleID").focus();
+            return false;
+        }else{
 	       return true;
 	    }
    }
@@ -268,7 +295,6 @@
       }
 
    function selectName(value){
-	   console.log(11);
 	     if(value!=""){
 	       $.ajax({
 	          cache:false,                                             //是否使用缓存提交 如果为TRUE 会调用浏览器的缓存 而不会提交

@@ -39,7 +39,7 @@
   <body>
   
   <div class="container change">
-      <h2 style="text-align: center;font-size:25px; color:#ff9900">防盗门系统管理平台</h2>
+      <%--<h2 style="text-align: center;font-size:25px; color:#ff9900">防盗门系统管理平台</h2>--%>
   <div class="modal" id="login">
       <div class="modal-header">
         <h4>用户登录</h4>
@@ -58,9 +58,6 @@
                 <input id="password" name="password" type="password">
               </div>
             </div>
-            <%--<div class="control-group">
-					<span id="passwordTip" style="color:red; text-align: center;display:block;">${sessionScope.retMsg}</span>
-            </div>--%>
           </form>
       </div>
       <div class="modal-footer">
@@ -74,18 +71,38 @@
   
   <script type="text/javascript"> 
     function check(){
-    	if(document.getElementById("userName").value==""){
- 	       alert("用户名  是必填项，不能为空哦！");
- 	       document.getElementById("userName").focus();
- 	       return false;
- 	    }else if(document.getElementById("password").value==""){
-	       alert("密码  是必填项，不能为空哦！");
-	       document.getElementById("password").focus();
-	       return false;
-	    }else{
-	    	return true;
-	    }
-    	
+        var userName = $("#userName").attr("value");    //用户名
+        var password = $("#password").attr("value");      //密码
+
+        var datas = new Object();                  //返回来的结果
+
+        if(userName==""){
+            alert("用户名  是必填项，不能为空哦！");
+            document.getElementById("userName").focus();
+            return false;
+        }else if(password==""){
+            alert("密码  是必填项，不能为空哦！");
+            document.getElementById("password").focus();
+            return false;
+        }
+
+        $.ajax({
+            cache:false,                                             //是否使用缓存提交 如果为TRUE 会调用浏览器的缓存 而不会提交
+            type: "POST",                                           //上面3行都是必须要的
+            url: '${ctx}/User/selectLogin.do',       //地址 type 带参数
+            data:"userName="+userName+"&password="+password,                         // IDCardValue 自定义的。相当于name把值赋予给 他可以在servlet 获取
+            async:false,                                          // 是否 异步 提交
+            success: function (result) {                          // 不出现异常 进行立面方
+                if(result == null){
+                    alert('用户名或者密码错误！');
+                    return false;
+                }else{
+                    return true;
+                }
+            },
+            error: function(data) {  }
+        });
+
     }
 </script> 
 </html>

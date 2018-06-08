@@ -207,7 +207,7 @@
 				</div>
 				
 				<div style="width:100%;height:100%;">
-				  <iframe id="Mainid" src="${ctx}/Main/todata.do" style="width:100%;height:100%;"  frameBorder="0" scrolling="no"></iframe>
+				  <iframe id="Mainid" src="${ctx}/Main/todata.do?userID=${sessionScope.userPo.id}" style="width:100%;height:100%;"  frameBorder="0" scrolling="no"></iframe>
 				</div>
 
 				<div class="ace-settings-container" id="ace-settings-container">
@@ -248,7 +248,7 @@
 							<label class="lbl" for="ace-settings-rtl">左右互换</label>
 						</div>
 						<div>
-							<a id=HyperLink3 onclick="logout()" href="javascript:window.opener=null;%20window.close();">退出系统</a>
+							<a id=HyperLink3 onclick="logout()" href="javascript:window.opener=null;window.close();">退出系统</a>
 						</div>
 					</div>
 				</div><!--/#ace-settings-container-->
@@ -509,7 +509,7 @@
 			     document.getElementById("bigGuide").innerHTML=a+"";
 			     var s=document.getElementById("passengerInformationId").getElementsByTagName('span')[0].innerHTML;
 			     document.getElementById("smallGuide").innerHTML=s+"";
-			     document.getElementById('Mainid').src='${ctx}/Passenger/tolist.do';
+			     document.getElementById('Mainid').src='${ctx}/Passenger/tolist.do?userID='+${sessionScope.userPo.id};
 			}
 
 			function userManage(){
@@ -533,7 +533,7 @@
 			     document.getElementById("bigGuide").innerHTML=a+"";
 			     var s=document.getElementById("parametersId").getElementsByTagName('span')[0].innerHTML;
 			     document.getElementById("smallGuide").innerHTML=s+"";
-			     document.getElementById('Mainid').src='${ctx}/ParametersHandle/tolist.do';
+			     document.getElementById('Mainid').src='${ctx}/ParametersHandle/tolist.do?userID='+${sessionScope.userPo.id};
 			}
 
 			

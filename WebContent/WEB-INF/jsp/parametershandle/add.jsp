@@ -166,30 +166,23 @@
       </div>
     </div>
 
+
     <form action="${ctx}/ParametersHandle/add.do" method="post" onsubmit="return verify()" enctype="multipart/form-data">
     <!--  ———————————————————————————————————————————————————————————————————————————————————————— -->
+		<input type="hidden" name="userID" value="${sessionScope.userPo.id}" >
 	    <div class="span12">
 	      <div class="row-fluid">
 		     <div class="span3">
 		        <label>合同编号：</label>
 		        <input id="agreementID" name="agreementID"  type="text" style="width:97%;height:27px;float:left;"  onblur="selectAgreementID(this.value)" >
-		        <div id="divOne" style="float:right;">
-			         <label class="yansered" style="margin-top:7px;">*</label>
-			    </div>
 		      </div>
 			  <div class="span3">
 				  <label>商户名称：</label>
 				  <input id="merName" name="merName" type="text" style="width:97%;height:27px;float:left;" >
-				  <div  id="divThree" style="float:right;">
-					  <label class="yansered" style="margin-top:7px;">*</label>
-				  </div>
 			  </div>
 		     <div class="span3">
 		        <label>测量师：</label>
 		        <input id="surveyor" name="surveyor" type="text" style="width:97%;height:27px;float:left;" >
-		        <div id="divTwo" style="float:right;">
-			         <label class="yansered" style="margin-top:7px;">*</label>
-			    </div>
 		      </div>
 			  <div class="span3">
 				  <label>测量日期：</label>
@@ -211,10 +204,17 @@
 				  <input id="direction" name="direction" type="text" style="width:97%;height:27px;float:left;" >
 			  </div>
 			  <div class="span3">
-				  <label>室内情况：</label>
-				  <input id="indoorInfo" name="indoorInfo" type="text" style="width:97%;height:27px;float:left;" >
+				  <label>订货日期：</label>
+				  <input style="width:97%;height:27px;float:left;" type="text" id="createDateStr" name="createDateStr" class="input-text Wdate"
+						 onfocus="WdatePicker({dateFmt: 'yyyy-MM-dd HH:mm:ss',maxDate:'%y-%M-%d'})">
 			  </div>
 		  </div>
+			<div class="row-fluid">
+				<div class="span12">
+					<label>室内情况：</label>
+					<input id="indoorInfo" name="indoorInfo" type="text" style="width:99.5%;height:27px;float:left;" >
+				</div>
+			</div>
 			<div class="row-fluid">
 				<div class="span12">
 					<label>测量备注：</label>
@@ -363,7 +363,7 @@
    }
 
     function deletefunction(){
-     parent.document.getElementById('Mainid').src='${ctx}/ParametersHandle/tolist.do';
+     parent.document.getElementById('Mainid').src='${ctx}/ParametersHandle/tolist.do?userID='+${sessionScope.userPo.id};
    }
 
 
